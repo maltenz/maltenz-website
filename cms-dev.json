@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "cms-proxy": "npx netlify-cms-proxy-server",
-    "dev-with-cms": "concurrently \"npm run dev\" \"npm run cms-proxy\""
-  }
-}
