@@ -1,0 +1,9 @@
+{
+  "title": "CMS Integration",
+  "subtitle": "This content comes from the CMS",
+  "description": "If you can see this on the homepage, the CMS is working perfectly!",
+  "ctaText": "Learn More",
+  "ctaLink": "#about",
+  "backgroundImage": "/images/hero-bg.jpg",
+  "isActive": true
+}

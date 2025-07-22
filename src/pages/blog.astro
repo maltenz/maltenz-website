@@ -1,0 +1,57 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.tsx';
+import Post from '../components/Post.tsx';
+import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
+import { Container, Grid, Typography, Box } from '@mui/material';
+
+// Get content from collections
+const heroData = await getEntry('hero', 'main');
+const posts = await getCollection('posts');
+
+// Sort posts by date (newest first)
+const sortedPosts = posts.sort((a, b) => 
+  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+---
+
+<Layout>
+  <MuiThemeProvider client:load>
+    <!-- Hero Section -->
+    <Hero 
+      client:load
+      title={heroData.data.title}
+      subtitle={heroData.data.subtitle}
+      description={heroData.data.description}
+      ctaText={heroData.data.ctaText}
+      ctaLink={heroData.data.ctaLink}
+    />
+
+    <!-- Posts Section -->
+    <Container maxWidth="lg" client:load>
+      <Box py={8}>
+        <Typography variant="h2" component="h2" textAlign="center" mb={6} fontWeight={600}>
+          Latest Posts
+        </Typography>
+        
+        <Grid container spacing={4}>
+          {sortedPosts.map((post) => (
+            <Grid item xs={12} md={6} lg={4} key={post.slug}>
+              <Post
+                title={post.data.title}
+                description={post.data.description}
+                publishDate={post.data.publishDate}
+                author={post.data.author}
+                tags={post.data.tags}
+                featured={post.data.featured}
+                slug={post.slug}
+                image={post.data.image}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Container>
+  </MuiThemeProvider>
+</Layout>

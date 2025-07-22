@@ -1,18 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Counter from '../components/Counter.tsx';
-import MuiCounter from '../components/MuiCounter.tsx';
+import { getCollection, getEntry } from 'astro:content';
+import Hero from '../components/Hero.tsx';
 import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Get hero content - try main first, then get the first available entry
+let heroData;
+try {
+  heroData = await getEntry('hero', 'main');
+  console.log('Loaded main hero entry');
+} catch (error) {
+  console.log('Main hero not found, getting all hero entries...');
+  const allHero = await getCollection('hero');
+  heroData = allHero?.[0];
+  console.log('Loaded first hero entry:', heroData?.slug);
+}
+
+console.log('Final hero data:', heroData?.data);
 ---
 
 <Layout>
-	<Welcome />
-	<Counter client:load initialCount={5} />
 	<MuiThemeProvider client:load>
-		<MuiCounter initialCount={10} />
+		<Hero 
+			client:load
+			title={heroData?.data?.title || "Welcome to My Portfolio"}
+			subtitle={heroData?.data?.subtitle || "Full-Stack Developer & UI/UX Enthusiast"}
+			description={heroData?.data?.description || "I'm a full-stack developer passionate about creating amazing web experiences with modern technologies like React, TypeScript, and Astro."}
+			ctaText={heroData?.data?.ctaText || "View My Work"}
+			ctaLink={heroData?.data?.ctaLink || "#projects"}
+		/>
 	</MuiThemeProvider>
 </Layout>

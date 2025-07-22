@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import MuiThemeProvider from '../../components/MuiThemeProvider.tsx';
+import { Container, Typography, Box, Chip, Stack } from '@mui/material';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import PersonIcon from '@mui/icons-material/Person';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout>
+  <MuiThemeProvider client:load>
+    <Container maxWidth="md" client:load>
+      <Box py={8}>
+        <!-- Post Header -->
+        <Box mb={6}>
+          <Typography variant="h1" component="h1" gutterBottom fontWeight={700}>
+            {post.data.title}
+          </Typography>
+          
+          <Typography variant="h5" color="text.secondary" paragraph>
+            {post.data.description}
+          </Typography>
+          
+          <Stack direction="row" spacing={3} alignItems="center" mb={3}>
+            <Box display="flex" alignItems="center" gap={1}>
+              <CalendarTodayIcon fontSize="small" color="action" />
+              <Typography variant="body2" color="text.secondary">
+                {formattedDate}
+              </Typography>
+            </Box>
+            
+            {post.data.author && (
+              <Box display="flex" alignItems="center" gap={1}>
+                <PersonIcon fontSize="small" color="action" />
+                <Typography variant="body2" color="text.secondary">
+                  {post.data.author}
+                </Typography>
+              </Box>
+            )}
+          </Stack>
+          
+          {post.data.tags && (
+            <Stack direction="row" spacing={1} flexWrap="wrap" gap={1}>
+              {post.data.tags.map((tag) => (
+                <Chip key={tag} label={tag} size="small" variant="outlined" />
+              ))}
+            </Stack>
+          )}
+        </Box>
+        
+        <!-- Post Content -->
+        <Box 
+          sx={{
+            '& h1, & h2, & h3, & h4, & h5, & h6': {
+              mt: 4,
+              mb: 2,
+              fontWeight: 600,
+            },
+            '& p': {
+              mb: 2,
+              lineHeight: 1.7,
+            },
+            '& code': {
+              bgcolor: 'grey.100',
+              px: 1,
+              py: 0.5,
+              borderRadius: 1,
+              fontFamily: 'monospace',
+            },
+            '& pre': {
+              bgcolor: 'grey.900',
+              color: 'white',
+              p: 2,
+              borderRadius: 1,
+              overflow: 'auto',
+            },
+          }}
+        >
+          <Content />
+        </Box>
+      </Box>
+    </Container>
+  </MuiThemeProvider>
+</Layout>
