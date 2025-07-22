@@ -1,6 +1,8 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Counter from '../components/Counter.tsx';
+import MuiCounter from '../components/MuiCounter.tsx';
+import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -10,4 +12,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<Welcome />
 	<Counter client:load initialCount={5} />
+	<MuiThemeProvider client:load>
+		<MuiCounter initialCount={10} />
+	</MuiThemeProvider>
 </Layout>
