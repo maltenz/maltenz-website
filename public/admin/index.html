@@ -14,6 +14,11 @@
   
   <script>
     if (window.netlifyIdentity) {
+      // Initialize with the correct site URL
+      window.netlifyIdentity.init({
+        site_url: 'https://maltenz-website.netlify.app'
+      });
+      
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {

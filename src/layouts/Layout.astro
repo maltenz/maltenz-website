@@ -18,6 +18,11 @@
 		<slot />
 		<script>
 			if (window.netlifyIdentity) {
+				// Initialize with the correct site URL
+				window.netlifyIdentity.init({
+					site_url: 'https://maltenz-website.netlify.app'
+				});
+				
 				// Handle invitation tokens on any page
 				if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
 					window.netlifyIdentity.open();
