@@ -12,9 +12,18 @@
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>Maltenz Web</title>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
 		<slot />
+		<script>
+			if (window.netlifyIdentity) {
+				// Handle invitation tokens on any page
+				if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
+					window.netlifyIdentity.open();
+				}
+			}
+		</script>
 	</body>
 </html>
 
