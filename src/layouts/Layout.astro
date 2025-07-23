@@ -12,16 +12,15 @@
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>Maltenz Web</title>
+		<meta name="netlify-identity-site-id" content="45785b16-9d27-4286-9eb5-3b67fecb71f5" />
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
 		<slot />
 		<script>
 			if (window.netlifyIdentity) {
-				// Initialize with the correct site URL
-				window.netlifyIdentity.init({
-					site_url: 'https://maltenz-website.netlify.app'
-				});
+				// Initialize without explicit site_url to let it auto-detect
+				window.netlifyIdentity.init();
 				
 				// Handle invitation tokens on any page
 				if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {

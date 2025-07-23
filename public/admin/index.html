@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  <meta name="netlify-identity-site-id" content="45785b16-9d27-4286-9eb5-3b67fecb71f5" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -14,10 +15,8 @@
   
   <script>
     if (window.netlifyIdentity) {
-      // Initialize with the correct site URL
-      window.netlifyIdentity.init({
-        site_url: 'https://maltenz-website.netlify.app'
-      });
+      // Initialize without explicit site_url to let it auto-detect
+      window.netlifyIdentity.init();
       
       window.netlifyIdentity.on("init", user => {
         if (!user) {
