@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const data = await response.json();
     
     if (data.access_token) {
-      // Return JSON response for Decap CMS
+      // Return JSON response for our custom CMS
       return res.status(200).json({
         token: data.access_token,
         provider: 'github',
