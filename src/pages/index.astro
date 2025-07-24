@@ -4,6 +4,7 @@ import Hero from '../components/Hero.tsx';
 import Post from '../components/Post.tsx';
 import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
 import Layout from '../layouts/Layout.astro';
+import { StyledEngineProvider } from '@mui/material';
 
 // Get hero content - try main first, then get the first available entry
 let heroData;
@@ -19,16 +20,19 @@ const posts = await getCollection('posts');
 ---
 
 <Layout>
-	<MuiThemeProvider client:load>
-		<Hero 
-			client:load
-			title={heroData?.data?.title || "Welcome to My Portfolio"}
-			subtitle={heroData?.data?.subtitle || "Full-Stack Developer & UI/UX Enthusiast"}
-			description={heroData?.data?.description || "I'm a full-stack developer passionate about creating amazing web experiences with modern technologies like React, TypeScript, and Astro."}
-			ctaText={heroData?.data?.ctaText || "View My Work"}
-			ctaLink={heroData?.data?.ctaLink || "#projects"}
-		/>
-	</MuiThemeProvider>
+	<StyledEngineProvider injectFirst>
+		<MuiThemeProvider client:load>
+			<Hero 
+				client:load
+				title={heroData?.data?.title || "Welcome to My Portfolio"}
+				subtitle={heroData?.data?.subtitle || "Full-Stack Developer & UI/UX Enthusiast"}
+				description={heroData?.data?.description || "I'm a full-stack developer passionate about creating amazing web experiences with modern technologies like React, TypeScript, and Astro."}
+				ctaText={heroData?.data?.ctaText || "View My Work"}
+				ctaLink={heroData?.data?.ctaLink || "#projects"}
+			/>
+		</MuiThemeProvider>
+	</StyledEngineProvider>
+
 	<section id="posts">
 		<h2>Latest Posts</h2>
 		<div class="posts-grid">

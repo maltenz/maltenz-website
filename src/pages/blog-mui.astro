@@ -1,0 +1,19 @@
+---
+import MuiThemeProvider from '../components/MuiThemeProvider';
+import Blog from '../components/blog/Blog';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <MuiThemeProvider client:load>
+    <Blog client:load />
+  </MuiThemeProvider>
+</Layout>
+
+<style>
+  /* Global styles for the blog page */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>

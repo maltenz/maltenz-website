@@ -18,13 +18,13 @@
 	<body>
 		<slot />
 		<script>
-			if (window.netlifyIdentity) {
+			if ((window as any).netlifyIdentity) {
 				// Initialize without explicit site_url to let it auto-detect
-				window.netlifyIdentity.init();
+				(window as any).netlifyIdentity.init();
 				
 				// Handle invitation tokens on any page
 				if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
-					window.netlifyIdentity.open();
+					(window as any).netlifyIdentity.open();
 				}
 			}
 		</script>
