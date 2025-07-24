@@ -1,29 +1,22 @@
 import * as React from 'react';
 
 import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
 
 import AppAppBar from './AppAppBar';
 import Footer from './Footer';
-import Latest from './Latest';
 import MainContent from './MainContent';
+import Theme from '../../theme/Theme';
 
-type BlogProps = {
-  disableCustomTheme?: boolean;
-};
-
-export default function Blog({ disableCustomTheme }: BlogProps) {
+export default function Blog() {
   return (
-    <>
-      <CssBaseline enableColorScheme />
+    <Theme>
       <AppAppBar />
 
       <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
         <MainContent />
-        <Latest />
       </Container>
 
       <Footer />
-    </>
+    </Theme>
   );
 }

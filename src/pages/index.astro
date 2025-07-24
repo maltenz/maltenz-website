@@ -1,63 +1,32 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import type { PostEntry, HeroEntry } from '../types/content';
 import Hero from '../components/Hero.tsx';
-import Post from '../components/Post.tsx';
-import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
 import Layout from '../layouts/Layout.astro';
-import { StyledEngineProvider } from '@mui/material';
+import { Container, StyledEngineProvider, Typography } from '@mui/material';
+import MainContent from '../components/blog/MainContent';
+import Footer from '../components/blog/Footer';
+import Theme from '../theme/Theme.tsx'
+import Blog from '../components/blog/Blog';
 
-// Get hero content - try main first, then get the first available entry
-let heroData;
+// Get hero content with proper typing - try main first, then get the first available entry
+let heroData: HeroEntry | undefined;
 try {
   heroData = await getEntry('hero', 'main');
 } catch (error) {
-  const allHero = await getCollection('hero');
+  const allHero: HeroEntry[] = await getCollection('hero');
   heroData = allHero?.[0];
 }
 
-// Fetch all blog posts
-const posts = await getCollection('posts');
+// Fetch all blog posts with proper typing
+const posts: PostEntry[] = await getCollection('posts');
 ---
 
 <Layout>
-	<StyledEngineProvider injectFirst>
-		<MuiThemeProvider client:load>
-			<Hero 
-				client:load
-				title={heroData?.data?.title || "Welcome to My Portfolio"}
-				subtitle={heroData?.data?.subtitle || "Full-Stack Developer & UI/UX Enthusiast"}
-				description={heroData?.data?.description || "I'm a full-stack developer passionate about creating amazing web experiences with modern technologies like React, TypeScript, and Astro."}
-				ctaText={heroData?.data?.ctaText || "View My Work"}
-				ctaLink={heroData?.data?.ctaLink || "#projects"}
-			/>
-		</MuiThemeProvider>
+	<StyledEngineProvider injectFirst client:load>
+		<Theme>
+      <Blog />
+		</Theme>
 	</StyledEngineProvider>
 
-	<section id="posts">
-		<h2>Latest Posts</h2>
-		<div class="posts-grid">
-			{posts.map(post => (
-			   <Post
-				   client:load
-				   title={post.data.title}
-				   description={post.data.description}
-				   publishDate={post.data.publishDate}
-				   author={post.data.author}
-				   tags={post.data.tags}
-				   featured={post.data.featured}
-				   slug={post.slug}
-				   image={post.data.image}
-			   />
-			))}
-		</div>
-	</section>
 </Layout>
-
-<style>
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 24px;
-		margin-top: 24px;
-	}
-</style>

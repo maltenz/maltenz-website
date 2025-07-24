@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import MuiThemeProvider from '../../components/MuiThemeProvider.tsx';
 import { Container, Typography, Box, Chip, Stack } from '@mui/material';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PersonIcon from '@mui/icons-material/Person';
+import Theme from '../../theme/Theme';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -25,7 +25,7 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
 ---
 
 <Layout>
-  <MuiThemeProvider client:load>
+  <Theme client:load>
     <Container maxWidth="md" client:load>
       <Box py={8}>
         <!-- Post Header -->
@@ -97,5 +97,5 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
         </Box>
       </Box>
     </Container>
-  </MuiThemeProvider>
+  </Theme>
 </Layout>

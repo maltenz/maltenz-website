@@ -1,13 +1,16 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 /* eslint-disable max-lines */
-import { createTheme, alpha, PaletteMode, Shadows } from '@mui/material/styles';
+import { createTheme, alpha } from '@mui/material/styles';
+import type { PaletteMode, Shadows } from '@mui/material/styles';
 
 declare module '@mui/material/Paper' {
-  type PaperPropsVariantOverrides = {
+  interface PaperPropsVariantOverrides {
     highlighted: true;
-  };
+  }
 }
+
 declare module '@mui/material/styles' {
-  type ColorRange = {
+  interface ColorRange {
     50: string;
     100: string;
     200: string;
@@ -18,13 +21,21 @@ declare module '@mui/material/styles' {
     700: string;
     800: string;
     900: string;
-  };
+  }
 
-  type PaletteColor = {} & ColorRange;
+  interface PaletteColor extends ColorRange {}
 
-  type Palette = {
+  interface Palette {
     baseShadow: string;
-  };
+  }
+
+  interface PaletteOptions {
+    baseShadow?: string;
+  }
+
+  interface TypeText {
+    warning?: string;
+  }
 }
 
 const defaultTheme = createTheme();
@@ -184,7 +195,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
       },
     },
     typography: {
-      fontFamily: 'Inter, sans-serif',
+      fontFamily: '"Georgia", "Times New Roman", Times, serif',
       h1: {
         fontSize: defaultTheme.typography.pxToRem(48),
         fontWeight: 600,
@@ -340,7 +351,7 @@ export const colorSchemes = {
 };
 
 export const typography = {
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
   h1: {
     fontSize: defaultTheme.typography.pxToRem(48),
     fontWeight: 600,
