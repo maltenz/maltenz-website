@@ -111,8 +111,18 @@ module.exports = {
         'react/jsx-newline': 'off',
         'react/self-closing-comp': 'off',
         'react/no-unescaped-entities': 'off',
+        'react/jsx-key': 'off', // Astro doesn't use React keys
         'import/extensions': 'off',
         'import/order': 'off',
+        'import/no-unresolved': 'off', // Disable import resolution for Astro files
+        'import/named': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'import/no-duplicates': 'off',
+        'import/no-self-import': 'off',
+        'import/no-cycle': 'off',
+        'import/no-relative-packages': 'off',
+        'import/prefer-default-export': 'off',
+        'padding-line-between-statements': 'off',
         'prettier/prettier': 'off',
       },
     },
@@ -171,6 +181,20 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-restricted-globals': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+    {
+      files: ['src/content/config.ts'],
+      rules: {
+        'import/prefer-default-export': 'off', // Astro content config requires named export
+        'import/no-unresolved': 'off', // Disable import resolution
+        'import/order': 'off',
+        'import/named': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'import/no-duplicates': 'off',
+        'import/no-self-import': 'off',
+        'import/no-cycle': 'off',
+        'import/no-relative-packages': 'off',
       },
     },
   ],

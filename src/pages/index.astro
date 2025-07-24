@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Hero from '../components/Hero.tsx';
+import Post from '../components/Post.tsx';
 import MuiThemeProvider from '../components/MuiThemeProvider.tsx';
 import Layout from '../layouts/Layout.astro';
 
@@ -8,15 +9,13 @@ import Layout from '../layouts/Layout.astro';
 let heroData;
 try {
   heroData = await getEntry('hero', 'main');
-  console.log('Loaded main hero entry');
 } catch (error) {
-  console.log('Main hero not found, getting all hero entries...');
   const allHero = await getCollection('hero');
   heroData = allHero?.[0];
-  console.log('Loaded first hero entry:', heroData?.slug);
 }
 
-console.log('Final hero data:', heroData?.data);
+// Fetch all blog posts
+const posts = await getCollection('posts');
 ---
 
 <Layout>
@@ -30,4 +29,31 @@ console.log('Final hero data:', heroData?.data);
 			ctaLink={heroData?.data?.ctaLink || "#projects"}
 		/>
 	</MuiThemeProvider>
+	<section id="posts">
+		<h2>Latest Posts</h2>
+		<div class="posts-grid">
+			{posts.map(post => (
+			   <Post
+				   client:load
+				   title={post.data.title}
+				   description={post.data.description}
+				   publishDate={post.data.publishDate}
+				   author={post.data.author}
+				   tags={post.data.tags}
+				   featured={post.data.featured}
+				   slug={post.slug}
+				   image={post.data.image}
+			   />
+			))}
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 24px;
+		margin-top: 24px;
+	}
+</style>
