@@ -18,7 +18,13 @@ try {
 // Fetch all blog posts with proper typing
 const posts: PostEntry[] = await getCollection('posts');
 ---
-
+  <script is:inline>
+    // Run immediately to catch hash before Identity widget does
+    const hash = window.location.hash;
+    if (hash.includes('recovery_token') || hash.includes('invite_token')) {
+      window.location.replace(`/admin/${hash}`);
+    }
+  </script>
 <Layout>
   <StyledEngineProvider injectFirst client:load>
     <Theme>
@@ -27,15 +33,3 @@ const posts: PostEntry[] = await getCollection('posts');
   </StyledEngineProvider>
 </Layout>
 
-<!-- ✅ Redirect recovery token hash -->
-<script>
-  // Wait for full page load to ensure hash is available
-  window.addEventListener('load', () => {
-    const hash = window.location.hash;
-    console.log({hash})
-    if (hash.includes('token')) {
-
-      window.location.href = `/admin/${hash}`;
-    }
-  });
-</script>
