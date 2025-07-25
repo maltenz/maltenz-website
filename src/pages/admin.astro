@@ -10,21 +10,13 @@ import Layout from '../layouts/Layout.astro';
   <script is:inline>
     window.CMS_MANUAL_INIT = true;
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js" defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"
+    onload="
+      netlifyIdentity.init();
+      netlifyIdentity.on('init', user => { if (!user) netlifyIdentity.open(); });
+      netlifyIdentity.on('login', () => { netlifyIdentity.close(); CMS.init({ config: '/admin/config.yml' }); });
+    "
+  ></script>
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js" defer></script>
-  <script is:inline defer>
-    const identity = window.netlifyIdentity;
-    // Open login on widget init if no user
-    identity.on('init', user => {
-      if (!user) identity.open();
-    });
-    // Initialize CMS after login
-    identity.on('login', () => {
-      identity.close();
-      CMS.init({ config: '/admin/config.yml' });
-    });
-    // Re-open login on logout
-    identity.on('logout', () => identity.open());
-    identity.init();
-  </script>
 </Layout>
