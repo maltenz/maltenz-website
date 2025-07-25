@@ -9,8 +9,7 @@
     "astro": "astro",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix",
-    "type-check": "astro check",
-    "deploy": "vercel --prod"
+    "type-check": "astro check"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
