@@ -3,25 +3,14 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Content Manager">
-  <!-- Decap CMS root -->
-  <div id="nc-root" style="height: 100vh;"></div>
+  <div id="nc-root" style="height: 100vh;">
+    <p style="text-align: center; padding-top: 2rem;">Loading CMS... If this message persists, please log in.</p>
+  </div>
 
-  <!-- ✅ Manual init for Decap CMS and Netlify Identity -->
-  <script is:inline>
-    window.CMS_MANUAL_INIT = true;
-  </script>
+  <!-- ✅ Netlify Identity Widget -->
   <script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js"></script>
-  <script is:inline>
-    // Initialize Identity and CMS
-    const identity = window.netlifyIdentity;
-    if (identity) {
-      identity.init();
-      CMS.init({ config: '/admin/config.yml' });
-      // Reload on logout to re-open login modal
-      identity.on('logout', () => window.location.reload());
-    } else {
-      console.error('Netlify Identity widget failed to load');
-    }
-  </script>
+
+  <!-- ✅ Decap CMS -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js" defer></script>
+
 </Layout>
