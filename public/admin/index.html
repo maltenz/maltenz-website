@@ -14,17 +14,13 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   
   <script>
-    // Debug CMS loading
-    console.log('CMS initializing...');
-    
     if (window.netlifyIdentity) {
+      // Initialize without explicit site_url to let it auto-detect
       window.netlifyIdentity.init();
       
       window.netlifyIdentity.on("init", user => {
-        console.log('Netlify Identity initialized, user:', user);
         if (!user) {
           window.netlifyIdentity.on("login", () => {
-            console.log('User logged in, redirecting...');
             document.location.href = "/admin/";
           });
         }
@@ -34,16 +30,6 @@
       if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
         window.netlifyIdentity.open();
       }
-    }
-    
-    // Add CMS event listeners for debugging
-    if (window.CMS) {
-      window.CMS.registerEventListener({
-        name: 'preSave',
-        handler: ({ entry }) => {
-          console.log('About to save entry:', entry);
-        }
-      });
     }
   </script>
 </body>
