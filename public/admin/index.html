@@ -22,18 +22,78 @@
     const debugInfo = document.getElementById('debug-info');
     
     // Function to load Netlify Identity dynamically
-  <div id="nc-root"></div>
-  
-  <!-- Load Netlify Identity via Netlify proxy -->
-  <script src="/.netlify/identity-widget.js"></script>
-  <script>
-    window.netlifyIdentity && window.netlifyIdentity.init({ APIUrl: '/.netlify/identity' });
-    window.netlifyIdentity && window.netlifyIdentity.on('login', () => document.location.reload());
-  </script>
-  
-  <!-- Include the Decap CMS script and initialize using config.yml -->
-  <script src="https://unpkg.com/decap-cms@^3.8.2/dist/decap-cms.js"></script>
-  <script>
-    CMS.init({ config: '/config.yml' });
-  </script>
+    function loadNetlifyIdentity() {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+        script.onload = () => {
+          console.log('✅ Netlify Identity script loaded successfully');
+          resolve();
+        };
+        script.onerror = (error) => {
+          console.error('❌ Failed to load Netlify Identity script:', error);
+          reject(error);
+        };
+        document.head.appendChild(script);
+      });
     }
+    
+    // Try to load Netlify Identity
+    loadNetlifyIdentity()
+      .then(() => {
+        debugInfo.innerHTML = 'IDENTITY SCRIPT LOADED';
+        debugInfo.style.background = 'green';
+        
+        if (window.netlifyIdentity) {
+          console.log('✅ Netlify Identity available');
+          
+          // Initialize with explicit configuration
+          window.netlifyIdentity.init({
+            APIUrl: 'https://maltenz-website.netlify.app/.netlify/identity'
+          });
+          
+          window.netlifyIdentity.on('init', user => {
+            console.log('🔐 Identity initialized, user:', user);
+            debugInfo.innerHTML = user ? `LOGGED IN: ${user.email}` : 'READY FOR LOGIN';
+            
+            if (!user) {
+              window.netlifyIdentity.on('login', () => {
+                console.log('✅ User logged in, redirecting...');
+                window.location.reload();
+              });
+            }
+          });
+          
+          window.netlifyIdentity.on('error', err => {
+            console.error('❌ Identity error:', err);
+            debugInfo.innerHTML = 'IDENTITY ERROR - CHECK CONSOLE';
+            debugInfo.style.background = 'red';
+          });
+          
+        } else {
+          console.error('❌ netlifyIdentity not available after script load');
+          debugInfo.innerHTML = 'IDENTITY NOT AVAILABLE';
+          debugInfo.style.background = 'red';
+        }
+      })
+      .catch((error) => {
+        console.error('❌ CORS or loading error:', error);
+        debugInfo.innerHTML = 'CORS ERROR - IDENTITY NOT CONFIGURED';
+        debugInfo.style.background = 'red';
+        
+        // Show helpful message
+        console.log('🔧 SOLUTION: Please check Netlify Dashboard:');
+        console.log('1. Go to Site Settings > Identity');
+        console.log('2. Click "Enable Identity"');
+        console.log('3. Set Git Gateway as enabled');
+        console.log('4. Add this site URL to allowed origins');
+      });
+  </script>
+  
+  <!-- Replace external CORS-blocked widget with local proxy -->
+  <script>
+    console.log('▶ Loading Netlify Identity widget from same origin');
+  </script>
+  <script src="/.netlify/identity-widget.js"></script>
+</body>
+</html>

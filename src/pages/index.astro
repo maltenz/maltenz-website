@@ -1,11 +1,8 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import type { PostEntry, HeroEntry } from '../types/content';
-import Hero from '../components/Hero.tsx';
 import Layout from '../layouts/Layout.astro';
-import { Container, StyledEngineProvider, Typography } from '@mui/material';
-import MainContent from '../components/blog/MainContent';
-import Footer from '../components/blog/Footer';
+import { StyledEngineProvider } from '@mui/material';
 import Theme from '../theme/Theme.tsx'
 import Blog from '../components/blog/Blog';
 
@@ -20,6 +17,8 @@ try {
 
 // Fetch all blog posts with proper typing
 const posts: PostEntry[] = await getCollection('posts');
+
+console.log({posts})
 ---
 
 <Layout>

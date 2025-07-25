@@ -42,6 +42,7 @@ module.exports = {
   ],
   plugins: ['import', 'prettier'],
   rules: {
+    'spaced-comment': 'off',
     'react/no-danger': 'off',
     'max-lines': ['error', { max: 300, skipBlankLines: true }],
     'no-underscore-dangle': 'off',

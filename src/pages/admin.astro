@@ -1,18 +1,9 @@
 ---
-// CMS Admin Page - Client-side only
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-</head>
-<body>
-  <div id="nc-root"></div>
-  
-  <!-- Include the script that builds the page and powers Decap CMS -->
+<Layout title="Content Manager">
+  <div id="nc-root" style="height: 100vh;"></div>
+
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</body>
-</html>
+</Layout>
