@@ -1,7 +1,9 @@
 backend:
-  name: github
-  repo: maltenz/maltenz-website
+  name: git-gateway
   branch: main
+
+# This ensures content is preserved during migration
+publish_mode: editorial_workflow
 
 media_folder: public/uploads
 public_folder: /uploads
