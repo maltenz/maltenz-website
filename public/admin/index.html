@@ -8,11 +8,32 @@
 <body>
   <div id="nc-root"></div>
   
+  <!-- Debug info -->
+  <div id="debug-info" style="position: fixed; top: 0; right: 0; background: orange; color: white; padding: 10px; z-index: 9999; font-family: monospace; font-size: 12px;">
+    CHECKING IDENTITY SETUP...
+  </div>
+  
   <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.8.2/dist/decap-cms.js"></script>
   
   <script>
-    console.log('CMS loading with GitHub backend...');
+    console.log('🔥 CMS LOADING - CHECKING NETLIFY IDENTITY 🔥');
+    
+    const debugInfo = document.getElementById('debug-info');
+    
+    // Function to load Netlify Identity dynamically
+  <div id="nc-root"></div>
+  
+  <!-- Load Netlify Identity via Netlify proxy -->
+  <script src="/.netlify/identity-widget.js"></script>
+  <script>
+    window.netlifyIdentity && window.netlifyIdentity.init({ APIUrl: '/.netlify/identity' });
+    window.netlifyIdentity && window.netlifyIdentity.on('login', () => document.location.reload());
   </script>
-</body>
-</html>
+  
+  <!-- Include the Decap CMS script and initialize using config.yml -->
+  <script src="https://unpkg.com/decap-cms@^3.8.2/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({ config: '/config.yml' });
+  </script>
+    }

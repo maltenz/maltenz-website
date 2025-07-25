@@ -44,8 +44,9 @@ netlify deploy --prod --dir=dist
 ## 🎛️ Content Management
 
 ### CMS Access
-- **Production**: `https://maltenz-website.netlify.app/admin`
-- **Local**: `http://localhost:4323/admin`
+**Production CMS**: https://maltenz-website.netlify.app/admin/
+
+> **Note**: Use only the production CMS for content editing. Local development is for code changes only.
 
 ### Authentication
 The CMS uses **GitHub OAuth** for authentication:
