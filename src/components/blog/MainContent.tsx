@@ -183,9 +183,9 @@ export default function MainContent() {
         <Typography variant="h1" gutterBottom>
           Hi there 👋
           <br />
-          I&rsquo;m a Product Interface Developer,
+          I&rsquo;m a User Interface Developer,
           <br />
-          come check out some of my work
+          come check out of my work
         </Typography>
       </div>
 
@@ -218,16 +218,30 @@ export default function MainContent() {
             tabIndex={0}
             className={focusedCardIndex === 0 ? 'Mui-focused' : ''}
           >
-            <CardMedia
-              component="img"
-              alt="green iguana"
-              image={cardData[0].img}
+            <Box
               sx={{
-                aspectRatio: '16 / 9',
-                borderBottom: '1px solid',
-                borderColor: 'divider',
+                position: 'relative',
+                width: '100%',
+                paddingBottom: '56.25%', // 16:9 aspect ratio
+                height: 0,
+                overflow: 'hidden',
               }}
-            />
+            >
+              <iframe
+                src="https://player.vimeo.com/video/1104424434?h=96c12fa9ce"
+                title="vimeo-player"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowFullScreen
+              />
+            </Box>
 
             <SyledCardContent>
               <Typography gutterBottom variant="caption" component="div">
