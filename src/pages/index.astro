@@ -3,7 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import type { PostEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
 import { StyledEngineProvider } from '@mui/material';
-import Theme from '../theme/Theme.tsx'
+import Theme from '../theme/Theme.tsx';
 import Blog from '../components/blog/Blog';
 
 // Get hero content with proper typing - try main first, then get the first available entry
@@ -17,8 +17,6 @@ try {
 
 // Fetch all blog posts with proper typing
 const posts: PostEntry[] = await getCollection('posts');
-
-console.log({posts})
 ---
 
 <Layout>
@@ -27,13 +25,17 @@ console.log({posts})
       <Blog />
     </Theme>
   </StyledEngineProvider>
-
 </Layout>
 
-<!-- Redirect password-recovery hash to admin -->
-<script is:inline>
-  if (window.location.hash.includes('recovery_token')) {
-    window.location.replace(`/admin/${window.location.hash}`);
-  }
-</script>
+<!-- ✅ Redirect recovery token hash -->
+<script>
+  // Wait for full page load to ensure hash is available
+  window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    console.log({hash})
+    if (hash.includes('token')) {
 
+      window.location.href = `/admin/${hash}`;
+    }
+  });
+</script>
