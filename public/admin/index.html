@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <meta name="netlify-identity-site-id" content="45785b16-9d27-4286-9eb5-3b67fecb71f5" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <div id="nc-root"></div>
@@ -14,41 +12,7 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init();
-      
-      window.netlifyIdentity.on("init", user => {
-        console.log('Identity initialized, user:', user);
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            console.log('User logged in, redirecting...');
-            document.location.href = "/admin/";
-          });
-        }
-      });
-      
-      // Handle invitation tokens
-      if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
-        console.log('Invitation token detected, opening widget...');
-        window.netlifyIdentity.open();
-      }
-    }
-    
-    // Debug CMS loading
-    console.log('CMS Admin page loaded');
-    
-    // Check authentication status after a delay
-    setTimeout(() => {
-      if (window.netlifyIdentity) {
-        const user = window.netlifyIdentity.currentUser();
-        console.log('Current user status:', user);
-        if (user) {
-          console.log('User is authenticated:', user.email);
-        } else {
-          console.log('User is not authenticated');
-        }
-      }
-    }, 2000);
+    console.log('CMS loading with GitHub backend...');
   </script>
 </body>
 </html>
