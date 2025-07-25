@@ -3,7 +3,24 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Content Manager">
+  <!-- Decap CMS root -->
   <div id="nc-root" style="height: 100vh;"></div>
 
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Prevent automatic CMS init -->
+  <script is:inline>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+
+  <!-- Netlify Identity Widget (CORS-safe in production only) -->
+  <script
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    defer
+  ></script>
+
+  <!-- Decap CMS -->
+  <script
+    src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js"
+    onload="CMS.init({ config: 'config.yml', load_config_file: false })"
+    defer
+  ></script>
 </Layout>

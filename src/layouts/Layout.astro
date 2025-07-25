@@ -1,54 +1,21 @@
-<!doctype html>
+---
+const { title = 'Maltenz Web' } = Astro.props;
+---
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <meta name="generator" content="{Astro.generator}" />
-    <title>Maltenz Web</title>
-
-    <meta name="netlify-identity-site-id" content="45785b16-9d27-4286-9eb5-3b67fecb71f5" />
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <slot />
-
-    <script>
-      const win = window as any;
-
-      if (win.netlifyIdentity) {
-        win.netlifyIdentity.on('init', (user: any) => {
-          console.log('[Netlify Identity] Initialized user:', user);
-
-          if (!user) {
-            win.netlifyIdentity.on('login', (loggedInUser: any) => {
-              console.log('[Netlify Identity] Logged in user:', loggedInUser);
-              document.location.href = '/admin/';
-            });
-          } else {
-            console.log('[Netlify Identity] Already logged in:', user);
-          }
-        });
-
-        win.netlifyIdentity.init();
-
-        if (
-          win.location.hash.includes('invite_token') ||
-          win.location.hash.includes('recovery_token')
-        ) {
-          win.netlifyIdentity.open();
-        }
-      } else {
-        console.warn('Netlify Identity not available on window');
-      }
-    </script>
   </body>
 </html>
 
