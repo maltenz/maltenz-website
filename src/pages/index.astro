@@ -30,3 +30,10 @@ console.log({posts})
 
 </Layout>
 
+<!-- Redirect password-recovery hash to admin -->
+<script is:inline>
+  if (window.location.hash.includes('recovery_token')) {
+    window.location.replace(`/admin/${window.location.hash}`);
+  }
+</script>
+
