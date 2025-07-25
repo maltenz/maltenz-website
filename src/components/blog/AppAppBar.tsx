@@ -14,11 +14,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
-const logoStyle = {
-  width: '140px',
-  height: 'auto',
-  cursor: 'pointer',
-};
+import { brand } from '../../theme/themePrimitives';
 
 function AppAppBar() {
   const [open, setOpen] = React.useState(false);
@@ -86,15 +82,12 @@ function AppAppBar() {
               justifyContent: 'space-between',
               flexShrink: 0,
               borderRadius: '999px',
-              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
+              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
               backdropFilter: 'blur(24px)',
               maxHeight: 40,
               border: '1px solid',
               borderColor: 'divider',
-              boxShadow:
-                theme.palette.mode === 'light'
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                  : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
+              MozBorderRadiusBottomleft: 'none',
             })}
           >
             <Box
@@ -102,48 +95,41 @@ function AppAppBar() {
                 flexGrow: 1,
                 display: 'flex',
                 alignItems: 'center',
-                ml: '-18px',
                 px: 0,
               }}
             >
-              <img src="/favicon.svg" style={logoStyle} alt="logo" />
+              <Button
+                sx={{
+                  minWidth: 0, // override default minWidth
+                  width: 40,
+                  height: 40,
+                  padding: 0,
+                  borderRadius: '40px 40px 40px 10px', // optional: make it round
+                  fontSize: 20,
+                  backgroundColor: brand[900],
+                  '&:hover': { bgcolor: isDark ? 'primary.main' : 'primary.main' },
+                  color: 'primary.contrastText',
+                  fontWeight: 800,
+                  marginRight: '20px',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                }}
+              >
+                m.
+              </Button>
 
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <MenuItem onClick={() => scrollToSection('features')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    Features
-                  </Button>
-                </MenuItem>
+                <Button variant="text" size="small">
+                  Work
+                </Button>
 
-                <MenuItem onClick={() => scrollToSection('testimonials')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    Testimonials
-                  </Button>
-                </MenuItem>
+                <Button variant="text" size="small">
+                  Skills
+                </Button>
 
-                <MenuItem onClick={() => scrollToSection('highlights')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    Highlights
-                  </Button>
-                </MenuItem>
-
-                <MenuItem onClick={() => scrollToSection('pricing')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    Pricing
-                  </Button>
-                </MenuItem>
-
-                <MenuItem onClick={() => scrollToSection('faq')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    FAQ
-                  </Button>
-                </MenuItem>
-
-                <MenuItem onClick={() => scrollToSection('blog')} sx={{ py: '6px', px: '12px' }}>
-                  <Button variant="text" color="info" size="small">
-                    Blog
-                  </Button>
-                </MenuItem>
+                <Button variant="text" size="small">
+                  About
+                </Button>
               </Box>
             </Box>
 
@@ -154,25 +140,9 @@ function AppAppBar() {
                 alignItems: 'center',
               }}
             >
-              <IconButton
-                onClick={toggleColorMode}
-                color="primary"
-                size="small"
-                sx={{
-                  bgcolor: isDark ? 'primary.dark' : 'primary.light',
-                  '&:hover': { bgcolor: isDark ? 'primary.main' : 'primary.main' },
-                }}
-              >
+              <IconButton onClick={toggleColorMode} color="primary" size="small">
                 {isDark ? <LightModeIcon /> : <DarkModeIcon />}
               </IconButton>
-
-              <Button color="primary" variant="text" size="small" component="a" href="/admin" target="_blank">
-                Sign in
-              </Button>
-
-              <Button color="primary" variant="contained" size="small" component="a" href="/admin" target="_blank">
-                Sign up
-              </Button>
             </Box>
 
             <Box sx={{ display: { sm: '', md: 'none' } }}>
