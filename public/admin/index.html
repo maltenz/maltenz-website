@@ -15,12 +15,13 @@
   
   <script>
     if (window.netlifyIdentity) {
-      // Initialize without explicit site_url to let it auto-detect
       window.netlifyIdentity.init();
       
       window.netlifyIdentity.on("init", user => {
+        console.log('Identity initialized, user:', user);
         if (!user) {
           window.netlifyIdentity.on("login", () => {
+            console.log('User logged in, redirecting...');
             document.location.href = "/admin/";
           });
         }
@@ -28,9 +29,26 @@
       
       // Handle invitation tokens
       if (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token')) {
+        console.log('Invitation token detected, opening widget...');
         window.netlifyIdentity.open();
       }
     }
+    
+    // Debug CMS loading
+    console.log('CMS Admin page loaded');
+    
+    // Check authentication status after a delay
+    setTimeout(() => {
+      if (window.netlifyIdentity) {
+        const user = window.netlifyIdentity.currentUser();
+        console.log('Current user status:', user);
+        if (user) {
+          console.log('User is authenticated:', user.email);
+        } else {
+          console.log('User is not authenticated');
+        }
+      }
+    }, 2000);
   </script>
 </body>
 </html>
