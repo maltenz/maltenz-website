@@ -6,21 +6,21 @@ import Layout from '../layouts/Layout.astro';
   <!-- Decap CMS root -->
   <div id="nc-root" style="height: 100vh;"></div>
 
-  <!-- Prevent automatic CMS init -->
+  <!-- ✅ Set CMS_MANUAL_INIT before loading Decap CMS -->
   <script is:inline>
     window.CMS_MANUAL_INIT = true;
   </script>
 
-  <!-- Netlify Identity Widget (CORS-safe in production only) -->
+  <!-- Optional: Netlify Identity Widget (only needed if you're using identity login) -->
   <script
     src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     defer
   ></script>
 
-  <!-- Decap CMS -->
+  <!-- ✅ Decap CMS script -->
   <script
     src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js"
     onload="CMS.init({ config: '/config.yml', load_config_file: false })"
     defer
-  ></script>
+></script>
 </Layout>
