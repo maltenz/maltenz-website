@@ -14,18 +14,15 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Load Decap CMS and Netlify Identity, then initialize on login -->
   <script src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js" defer></script>
-  <script src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js" defer></script>
-  <script is:inline>
-    window.addEventListener('load', () => {
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
-        window.netlifyIdentity.on('login', () => {
-          CMS.init({ config: '/admin/config.yml' });
-          window.location.href = '/admin/';
-        });
-      } else {
-        console.error('Netlify Identity not loaded');
-      }
-    });
-  </script>
+  <script
+    src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"
+    defer
+    onload="
+      netlifyIdentity.init();
+      netlifyIdentity.on('login', () => {
+        CMS.init({ config: '/admin/config.yml' });
+        window.location.href = '/admin/';
+      });
+    "
+  ></script>
 </Layout>
