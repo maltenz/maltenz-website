@@ -2,6 +2,7 @@ backend:
   name: github
   repo: maltenz/maltenz-website
   branch: main
+  squash_merges: true
 
 media_folder: public/uploads
 public_folder: /uploads
