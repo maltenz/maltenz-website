@@ -181,10 +181,12 @@ export default function MainContent() {
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       <div>
         <Typography variant="h1" gutterBottom>
-          Blog
+          Hi there 👋
+          <br />
+          I&rsquo;m a Product Interface Developer,
+          <br />
+          come check out some of my work
         </Typography>
-
-        <Typography>Stay in the loop with the latest about our products</Typography>
       </div>
 
       <Box
@@ -205,6 +207,10 @@ export default function MainContent() {
 
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, md: 12 }}>
+          <Typography variant="h3" mb={4}>
+            Projects
+          </Typography>
+
           <SyledCard
             variant="outlined"
             onFocus={() => handleFocus(0)}

@@ -3,8 +3,12 @@ backend:
   repo: maltenz/maltenz-website
   branch: main
 
-media_folder: public/images/uploads
-public_folder: /images/uploads
+media_folder: public/uploads
+public_folder: /uploads
+
+# Enable large file support
+media_library:
+  max_file_size: 512000000 # 512MB
 
 collections:
   - name: "hero"
@@ -30,6 +34,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Video"
+        name: "video"
+        widget: "file"
+        required: false
+        media_library:
+          config:
+            accept: ['video/mp4']
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", required: false}
