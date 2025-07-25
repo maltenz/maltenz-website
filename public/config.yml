@@ -6,10 +6,6 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 
-# Enable large file support
-media_library:
-  max_file_size: 512000000 # 512MB
-
 collections:
   - name: "hero"
     label: "Hero Section"
@@ -38,9 +34,6 @@ collections:
         name: "video"
         widget: "file"
         required: false
-        media_library:
-          config:
-            accept: ['video/mp4']
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", required: false}
