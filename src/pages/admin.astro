@@ -11,22 +11,16 @@ import Layout from '../layouts/Layout.astro';
     window.CMS_MANUAL_INIT = true;
   </script>
 
-  <!-- ✅ Decap CMS script -->
-  <script src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js" defer></script>
 
-  <!-- Netlify Identity + CMS init on login -->
-  <script
-    src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"
-    defer
-    onload="netlifyIdentity.init(); netlifyIdentity.on('login', () => { CMS.init({ config: '/admin/config.yml' }); window.location.href = '/admin/'; });"
-  ></script>
-
-  <!-- ✅ Decap CMS script -->
+  <!-- Load Decap CMS and Netlify Identity, then initialize on login -->
   <script src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js" defer></script>
+  <script src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js" defer></script>
   <script is:inline>
-    // Only init CMS after login
+    // Initialize Netlify Identity and CMS on login
+    window.netlifyIdentity.init();
     window.netlifyIdentity.on('login', () => {
       CMS.init({ config: '/admin/config.yml' });
+      window.location.href = '/admin/';
     });
   </script>
 </Layout>
