@@ -22,16 +22,16 @@ console.log({posts})
 ---
 
 <Layout>
-	<StyledEngineProvider injectFirst client:load>
-		<Theme>
+  <StyledEngineProvider injectFirst client:load>
+    <Theme>
       <Blog />
-		</Theme>
-	</StyledEngineProvider>
+    </Theme>
+  </StyledEngineProvider>
 
 </Layout>
 
 <!-- Netlify Identity widget for password recovery -->
-<script src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js" defer></script>
 <script is:inline>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.init();
