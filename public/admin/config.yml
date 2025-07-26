@@ -11,15 +11,11 @@ collections:
     folder: "src/content/hero"
     create: true
     slug: "main"
-    extension: "json"
-    format: "json"
+    extension: "md"
+    format: "frontmatter"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "CTA Text", name: "ctaText", widget: "string", required: false}
-      - {label: "CTA Link", name: "ctaLink", widget: "string", required: false}
-      - {label: "Background Image", name: "backgroundImage", widget: "image", required: false}
+      - {label: "Title", name: "title", widget: "text"}
+      - {label: "Vimeo URL", name: "vimeo", widget: "string"}
       - {label: "Is Active", name: "isActive", widget: "boolean", default: true}
   
   - name: "posts"
