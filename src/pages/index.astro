@@ -4,7 +4,8 @@ import type { PostEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
 import { StyledEngineProvider } from '@mui/material';
 import Theme from '../theme/Theme.tsx';
-import Blog from '../components/blog/Blog';
+import { ContentProvider } from '../contexts/ContentContext.tsx';
+import Blog from '../components/Blog/Blog';
 
 // Get hero content with proper typing - try main first, then get the first available entry
 let heroData: HeroEntry | undefined;
