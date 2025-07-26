@@ -56,7 +56,7 @@ The CMS uses **GitHub OAuth** for authentication:
 
 ### Collections
 - **Hero Section**: Site homepage hero content
-- **Blog Posts**: Article management with video support
+- **Projects**: Portfolio management with video support
 
 ## 🏗️ Tech Stack
 
@@ -89,7 +89,7 @@ The CMS uses **GitHub OAuth** for authentication:
 ### CMS Configuration
 The CMS is configured in `public/config.yml` with:
 - GitHub backend for direct repository access
-- Collections for Hero Section and Blog Posts
+- Collections for Hero Section and Projects
 - Media uploads to `public/uploads/`
 
 ### Netlify Configuration
@@ -100,10 +100,10 @@ Deployment settings in `netlify.toml`:
 
 ## 📝 Content Guidelines
 
-### Adding Blog Posts
+### Adding Projects
 1. Go to CMS admin
-2. Select "Blog Posts" collection
-3. Click "New Blog Posts"
+2. Select "Projects" collection
+3. Click "New Projects"
 4. Fill in required fields:
    - Title
    - Description
