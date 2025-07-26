@@ -228,7 +228,7 @@ export default function MainContent() {
               }}
             >
               <iframe
-                src="https://player.vimeo.com/video/1104424434?h=96c12fa9ce"
+                src="https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1"
                 title="vimeo-player"
                 style={{
                   position: 'absolute',
