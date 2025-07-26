@@ -17,11 +17,7 @@ const heroCollection = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
-    subtitle: z.string().optional(),
-    description: z.string(),
-    ctaText: z.string().optional(),
-    ctaLink: z.string().optional(),
-    backgroundImage: z.string().optional(),
+    vimeo: z.string(),
     isActive: z.boolean().default(true),
   }),
 });
