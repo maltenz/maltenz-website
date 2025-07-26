@@ -11,6 +11,7 @@ import Hero from '../components/Hero/index.tsx';
 let heroData: HeroEntry | undefined;
 try {
   heroData = await getEntry('hero', 'main');
+  console.log({heroData})
 } catch (error) {
   const allHero: HeroEntry[] = await getCollection('hero');
   heroData = allHero?.[0];
