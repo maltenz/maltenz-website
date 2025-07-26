@@ -1,9 +1,10 @@
 {
-  "title": "UPDATE Test CMS Integration!",
+  "title": "Hi there 👋 I’m a User Interface Developer, come check out my work",
   "subtitle": "This content comes from the CMS",
   "description": "If you can see this on the homepage, the CMS is working perfectly!",
   "ctaText": "Learn More",
   "ctaLink": "#about",
   "backgroundImage": "/images/hero-bg.jpg",
-  "isActive": true
+  "isActive": true,
+  "vimeo": "https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1"
 }
