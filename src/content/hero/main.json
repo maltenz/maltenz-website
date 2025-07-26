@@ -5,5 +5,6 @@
   "ctaText": "Learn More",
   "ctaLink": "#about",
   "backgroundImage": "/images/hero-bg.jpg",
-  "isActive": true
+  "isActive": true,
+  "vimeo": "https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1"
 }
