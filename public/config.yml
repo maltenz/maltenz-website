@@ -14,7 +14,7 @@ collections:
     extension: "json"
     format: "json"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "text"}
       - {label: "Vimeo URL", name: "vimeo", widget: "string"}
       - {label: "Is Active", name: "isActive", widget: "boolean", default: true}
   
