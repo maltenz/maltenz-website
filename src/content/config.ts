@@ -14,7 +14,7 @@ const postsCollection = defineCollection({
 });
 
 const heroCollection = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
     vimeo: z.string(),
