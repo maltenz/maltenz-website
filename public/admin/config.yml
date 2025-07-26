@@ -23,11 +23,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - label: "Video"
-        name: "video"
-        widget: "file"
-        required: false
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", required: false}
