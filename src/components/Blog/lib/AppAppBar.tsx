@@ -14,7 +14,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
-import { brand } from '../../theme/themePrimitives';
+import { brand } from '../../../theme/themePrimitives';
 
 function AppAppBar() {
   const [open, setOpen] = React.useState(false);

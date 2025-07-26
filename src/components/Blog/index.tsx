@@ -7,8 +7,7 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Chip from '@mui/material/Chip';
+import Container from '@mui/material/Container';
 import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -16,6 +15,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+
+import AppAppBar from './lib/AppAppBar';
+import Footer from './lib/Footer';
+import Theme from '../../theme/Theme';
 
 const cardData = [
   {
@@ -163,104 +166,92 @@ export function Search() {
 }
 
 export default function MainContent() {
-  const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
-
-  const handleFocus = (index: number) => {
-    setFocusedCardIndex(index);
-  };
-
-  const handleBlur = () => {
-    setFocusedCardIndex(null);
-  };
-
-  const handleClick = () => {
-    console.info('You clicked the filter chip.');
-  };
-
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <div>
-        <Typography variant="h1" gutterBottom>
-          Hi there 👋
-          <br />
-          I&rsquo;m a User Interface Developer,
-          <br />
-          come check out of my work
-        </Typography>
-      </div>
+    <Theme>
+      <AppAppBar />
 
-      <Box
-        sx={{
-          display: { xs: 'flex', sm: 'none' },
-          flexDirection: 'row',
-          gap: 1,
-          width: { xs: '100%', md: 'fit-content' },
-          overflow: 'auto',
-        }}
-      >
-        <Search />
+      <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <div>
+            <Typography variant="h1" gutterBottom>
+              Hi there 👋
+              <br />
+              I&rsquo;m a User Interface Developer,
+              <br />
+              come check out of my work
+            </Typography>
+          </div>
 
-        <IconButton size="small" aria-label="RSS feed">
-          <RssFeedRoundedIcon />
-        </IconButton>
-      </Box>
-
-      <Grid container spacing={2} columns={12}>
-        <Grid size={{ xs: 12, md: 12 }}>
-          <Typography variant="h3" mb={4}>
-            Projects
-          </Typography>
-
-          <SyledCard
-            variant="outlined"
-            onFocus={() => handleFocus(0)}
-            onBlur={handleBlur}
-            tabIndex={0}
-            className={focusedCardIndex === 0 ? 'Mui-focused' : ''}
+          <Box
+            sx={{
+              display: { xs: 'flex', sm: 'none' },
+              flexDirection: 'row',
+              gap: 1,
+              width: { xs: '100%', md: 'fit-content' },
+              overflow: 'auto',
+            }}
           >
-            <Box
-              sx={{
-                position: 'relative',
-                width: '100%',
-                paddingBottom: '56.25%', // 16:9 aspect ratio
-                height: 0,
-                overflow: 'hidden',
-              }}
-            >
-              <iframe
-                src="https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1"
-                title="vimeo-player"
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  border: 0,
-                }}
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                allowFullScreen
-              />
-            </Box>
+            <Search />
 
-            <SyledCardContent>
-              <Typography gutterBottom variant="caption" component="div">
-                {cardData[0].tag}
+            <IconButton size="small" aria-label="RSS feed">
+              <RssFeedRoundedIcon />
+            </IconButton>
+          </Box>
+
+          <Grid container spacing={2} columns={12}>
+            <Grid size={{ xs: 12, md: 12 }}>
+              <Typography variant="h3" mb={4}>
+                Projects
               </Typography>
 
-              <Typography gutterBottom variant="h6" component="div">
-                {cardData[0].title}
-              </Typography>
+              <SyledCard variant="outlined">
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    paddingBottom: '56.25%', // 16:9 aspect ratio
+                    height: 0,
+                    overflow: 'hidden',
+                  }}
+                >
+                  <iframe
+                    src="https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1"
+                    title="vimeo-player"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 0,
+                    }}
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    allowFullScreen
+                  />
+                </Box>
 
-              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                {cardData[0].description}
-              </StyledTypography>
-            </SyledCardContent>
+                <SyledCardContent>
+                  <Typography gutterBottom variant="caption" component="div">
+                    {cardData[0].tag}
+                  </Typography>
 
-            <Author authors={cardData[0].authors} />
-          </SyledCard>
-        </Grid>
-      </Grid>
-    </Box>
+                  <Typography gutterBottom variant="h6" component="div">
+                    {cardData[0].title}
+                  </Typography>
+
+                  <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                    {cardData[0].description}
+                  </StyledTypography>
+                </SyledCardContent>
+
+                <Author authors={cardData[0].authors} />
+              </SyledCard>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+
+      <Footer />
+    </Theme>
   );
 }
