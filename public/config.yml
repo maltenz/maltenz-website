@@ -11,6 +11,7 @@ collections:
     folder: "src/content/hero"
     create: true
     slug: "main"
+    identifier_field: "title"
     fields:
       - {label: "Title", name: "title", widget: "text"}
       - {label: "Vimeo URL", name: "vimeo", widget: "string"}
