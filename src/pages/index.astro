@@ -4,7 +4,8 @@ import type { ProjectEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
 import { StyledEngineProvider } from '@mui/material';
 import Theme from '../theme/Theme.tsx';
-import Blog from '../components/Blog';
+import Blog from '../components/Blog/index.tsx';
+import Hero from '../components/Hero/index.tsx';
 
 // Get hero content with proper typing - try main first, then get the first available entry
 let heroData: HeroEntry | undefined;
@@ -15,12 +16,12 @@ try {
   heroData = allHero?.[0];
 }
 
-// Fetch all projects with proper typing
-const projects: ProjectEntry[] = await getCollection('projects');
+// Fetch all blog posts with proper typing
+const posts: ProjectEntry[] = await getCollection('projects');
 ---
   <script is:inline>
     // Run immediately to catch hash before Identity widget does
-    const hash = window.location.hash;
+    const { hash } = window.location;
     if (hash.includes('recovery_token') || hash.includes('invite_token')) {
       window.location.replace(`/admin/${hash}`);
     }
@@ -28,7 +29,8 @@ const projects: ProjectEntry[] = await getCollection('projects');
 <Layout>
   <StyledEngineProvider injectFirst client:load>
     <Theme>
-      <Blog />
+      {heroData?.data && <Hero data={heroData.data} />}
+      <Blog data={posts} />
     </Theme>
   </StyledEngineProvider>
 </Layout>

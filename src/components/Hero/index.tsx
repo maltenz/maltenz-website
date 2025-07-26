@@ -1,25 +1,17 @@
-import * as React from 'react';
-
-import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
-import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
 import AppAppBar from './lib/AppAppBar';
 import Footer from './lib/Footer';
 import Theme from '../../theme/Theme';
-import type { ProjectEntry } from '../../types/content';
+import type { HeroData } from '../../types/content';
 
 const cardData = [
   {
@@ -132,8 +124,8 @@ function Author({ authors }: AuthorProps) {
     >
       <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center' }}>
         <AvatarGroup max={3}>
-          {authors.map((author) => (
-            <Avatar key={author.name} alt={author.name} src={author.avatar} sx={{ width: 24, height: 24 }} />
+          {authors.map((author, index) => (
+            <Avatar key={index} alt={author.name} src={author.avatar} sx={{ width: 24, height: 24 }} />
           ))}
         </AvatarGroup>
 
@@ -145,32 +137,11 @@ function Author({ authors }: AuthorProps) {
   );
 }
 
-export function Search() {
-  return (
-    <FormControl sx={{ width: { xs: '100%', md: '25ch' } }} variant="outlined">
-      <OutlinedInput
-        size="small"
-        id="search"
-        placeholder="Search…"
-        sx={{ flexGrow: 1 }}
-        startAdornment={
-          <InputAdornment position="start" sx={{ color: 'text.primary' }}>
-            <SearchRoundedIcon fontSize="small" />
-          </InputAdornment>
-        }
-        inputProps={{
-          'aria-label': 'search',
-        }}
-      />
-    </FormControl>
-  );
-}
-
-type BlogProps = {
-  data: ProjectEntry[];
+type HeroProps = {
+  data: HeroData;
 };
 
-export default function MainContent({ data }: BlogProps) {
+export default function Hero({ data }: HeroProps) {
   return (
     <Theme>
       <AppAppBar />
@@ -179,29 +150,9 @@ export default function MainContent({ data }: BlogProps) {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div>
             <Typography variant="h1" gutterBottom>
-              Hi there 👋
-              <br />
-              I&rsquo;m a User Interface Developer,
-              <br />
-              come check out my work
+              {data.title}
             </Typography>
           </div>
-
-          <Box
-            sx={{
-              display: { xs: 'flex', sm: 'none' },
-              flexDirection: 'row',
-              gap: 1,
-              width: { xs: '100%', md: 'fit-content' },
-              overflow: 'auto',
-            }}
-          >
-            <Search />
-
-            <IconButton size="small" aria-label="RSS feed">
-              <RssFeedRoundedIcon />
-            </IconButton>
-          </Box>
 
           <Grid container spacing={2} columns={12}>
             <Grid size={{ xs: 12, md: 12 }}>
@@ -244,7 +195,7 @@ export default function MainContent({ data }: BlogProps) {
                     {cardData[0].title}
                   </Typography>
 
-                  <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                  <StyledTypography variant="body1" color="text.secondary" gutterBottom>
                     {cardData[0].description}
                   </StyledTypography>
                 </SyledCardContent>
