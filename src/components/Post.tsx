@@ -105,7 +105,7 @@ export default function Post({ title, description, publishDate, author, tags, fe
       </CardContent>
 
       <CardActions>
-        <Button size="small" endIcon={<ArrowForwardIcon />} href={`/posts/${slug}`} sx={{ ml: 'auto' }}>
+        <Button size="small" endIcon={<ArrowForwardIcon />} href={`/projects/${slug}`} sx={{ ml: 'auto' }}>
           Read More
         </Button>
       </CardActions>

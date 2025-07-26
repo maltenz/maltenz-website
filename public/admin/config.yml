@@ -17,9 +17,9 @@ collections:
       - {label: "Vimeo URL", name: "vimeo", widget: "string"}
       - {label: "Is Active", name: "isActive", widget: "boolean", default: true}
   
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "src/content/posts"
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
     create: true
     slug: "{{slug}}"
     fields:

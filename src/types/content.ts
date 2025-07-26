@@ -4,17 +4,17 @@
 import type { CollectionEntry } from 'astro:content';
 
 // Content collection types
-export type PostEntry = CollectionEntry<'posts'>;
+export type ProjectEntry = CollectionEntry<'projects'>;
 export type HeroEntry = CollectionEntry<'hero'>;
 
 // Data-only types (just the data part without slug/id)
-export type PostData = PostEntry['data'];
+export type ProjectData = ProjectEntry['data'];
 export type HeroData = HeroEntry['data'];
 
 // Utility types for components
-export type BlogPost = {
+export type BlogProject = {
   slug: string;
-  data: PostData;
+  data: ProjectData;
 };
 
 export type HeroContent = {
@@ -22,6 +22,6 @@ export type HeroContent = {
 };
 
 // You can also create more specific types if needed
-export type FeaturedPost = BlogPost & {
-  data: PostData & { featured: true };
+export type FeaturedProject = BlogProject & {
+  data: ProjectData & { featured: true };
 };
