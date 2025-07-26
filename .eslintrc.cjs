@@ -7,18 +7,18 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: './tsconfig.json',
+    // Disable project-wide TypeScript parsing for better performance
+    // project: './tsconfig.json',
   },
   settings: {
     react: {
       version: 'detect',
     },
     'import/resolver': {
+      // Simplified resolver for better performance
       node: {
-        paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-      typescript: {},
     },
   },
   env: {
