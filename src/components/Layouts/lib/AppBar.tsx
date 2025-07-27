@@ -113,6 +113,7 @@ function AppBar() {
                 minHeight: '35px',
                 minWidth: '35px',
                 mr: 1,
+                display: 'flex',
               }}
             >
               {isDark ? <LightModeIcon /> : <DarkModeIcon />}
