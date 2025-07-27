@@ -1,28 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import * as React from 'react';
-
-import FacebookIcon from '@mui/icons-material/GitHub';
+import GithubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-      {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/" sx={{ textDecoration: 'none' }}>
-        maltenz
-      </Link>
-      &nbsp;
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
 
 export default function Footer() {
   return (
@@ -53,8 +37,8 @@ export default function Footer() {
           }}
         >
           <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-            <Box sx={{ ml: '-15px' }}>
-              <img src="/favicon.svg" style={{ width: 60, height: 60 }} alt="logo" />
+            <Box sx={{ mb: 1 }}>
+              <img src="/maltenz-white.svg" alt="logo" />
             </Box>
 
             <Typography variant="body2" sx={{ fontWeight: 600, gutterBottom: true }}>
@@ -62,7 +46,7 @@ export default function Footer() {
             </Typography>
 
             <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-              Subscribe to our newsletter for weekly updates and promotions.
+              Subscribe to our newsletter for updates and promotions.
             </Typography>
 
             <Stack direction="row" spacing={1} useFlexGap>
@@ -73,23 +57,13 @@ export default function Footer() {
                 aria-label="GitHub"
                 sx={{ alignSelf: 'center' }}
               >
-                <FacebookIcon />
+                <GithubIcon />
               </IconButton>
 
               <IconButton
                 color="inherit"
                 size="small"
-                href="https://x.com/"
-                aria-label="X"
-                sx={{ alignSelf: 'center' }}
-              >
-                <TwitterIcon />
-              </IconButton>
-
-              <IconButton
-                color="inherit"
-                size="small"
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/malte-boeing-858990170/"
                 aria-label="LinkedIn"
                 sx={{ alignSelf: 'center' }}
               >
@@ -202,22 +176,7 @@ export default function Footer() {
             },
           }}
         >
-          {'Copyright © '}
-
-          <Link
-            color="text.secondary"
-            href="#"
-            underline="none"
-            sx={{
-              '&:before': {
-                display: 'none',
-              },
-            }}
-          >
-            maltenz
-          </Link>
-          &nbsp;
-          {new Date().getFullYear()}
+          {`Copyright © ${new Date().getFullYear()}`}
         </Typography>
       </Box>
     </Container>

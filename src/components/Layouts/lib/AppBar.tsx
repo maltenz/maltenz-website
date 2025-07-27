@@ -120,11 +120,11 @@ function AppBar() {
 
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <Button variant="text" size="small">
-                  Work
+                  Projects
                 </Button>
 
                 <Button variant="text" size="small">
-                  Skills
+                  Solutions
                 </Button>
 
                 <Button variant="text" size="small">
