@@ -159,7 +159,7 @@ function AppBar() {
                       color="primary"
                       fullWidth
                       size="large"
-                      startIcon={<WorkIcon />}
+                      startIcon={<WorkIcon sx={{ marginRight: '5px' }} />}
                       sx={{
                         justifyContent: 'flex-start',
                         fontWeight: 600,
@@ -175,7 +175,7 @@ function AppBar() {
                       color="primary"
                       fullWidth
                       size="large"
-                      startIcon={<BuildIcon />}
+                      startIcon={<BuildIcon sx={{ marginRight: '5px' }} />}
                       sx={{
                         justifyContent: 'flex-start',
                         fontWeight: 600,
@@ -191,7 +191,7 @@ function AppBar() {
                       color="primary"
                       fullWidth
                       size="large"
-                      startIcon={<PersonIcon />}
+                      startIcon={<PersonIcon sx={{ marginRight: '5px' }} />}
                       sx={{
                         justifyContent: 'flex-start',
                         fontWeight: 600,
