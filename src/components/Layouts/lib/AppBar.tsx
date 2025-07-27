@@ -20,7 +20,6 @@ import { brand } from '../../../theme/themePrimitives';
 function AppBar() {
   const [open, setOpen] = useState(false);
   const { colorScheme, toggleColorScheme } = useThemeStore();
-  console.log(colorScheme);
   const isDark = colorScheme === 'dark';
 
   const toggleDrawer = (newOpen: boolean) => () => {

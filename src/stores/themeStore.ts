@@ -15,8 +15,6 @@ export const useThemeStore = create<ThemeState>()(
       colorScheme: 'dark', // default to dark
       toggleColorScheme: () =>
         set((state) => {
-          console.log({ state });
-
           return {
             colorScheme: state.colorScheme === 'light' ? 'dark' : 'light',
           };
