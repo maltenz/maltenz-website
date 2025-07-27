@@ -4,6 +4,7 @@ import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import { useThemeStore } from '../stores/themeStore';
+import { baseline } from './customizations/baseline';
 import { dataDisplayCustomizations } from './customizations/dataDisplay';
 import { feedbackCustomizations } from './customizations/feedback';
 import { inputsCustomizations } from './customizations/inputs';
@@ -29,6 +30,7 @@ export default function Theme({ children }: Props) {
         shadows,
         shape,
         components: {
+          ...baseline,
           ...inputsCustomizations,
           ...dataDisplayCustomizations,
           ...feedbackCustomizations,

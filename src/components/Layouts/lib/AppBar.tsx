@@ -15,11 +15,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
 import { useThemeStore } from '../../../stores/themeStore';
-import { brand } from '../../../theme/themePrimitives';
+import { gray, brand } from '../../../theme/themePrimitives';
 
 function AppBar() {
   const [open, setOpen] = useState(false);
   const { colorScheme, toggleColorScheme } = useThemeStore();
+
   const isDark = colorScheme === 'dark';
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -84,8 +85,8 @@ function AppBar() {
                   padding: 0,
                   borderRadius: '40px 40px 40px 10px', // optional: make it round
                   fontSize: 20,
-                  backgroundColor: isDark ? brand[800] : brand[600],
-                  '&:hover': { bgcolor: isDark ? brand[600] : brand[400] },
+                  backgroundColor: isDark ? brand[500] : brand[400],
+                  '&:hover': { backgroundColor: isDark ? brand[400] : brand[300] },
                   color: 'primary.contrastText',
                   fontWeight: 800,
                   marginRight: '20px',
@@ -97,15 +98,15 @@ function AppBar() {
               </Button>
 
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <Button variant="text" size="small">
+                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
                   Projects
                 </Button>
 
-                <Button variant="text" size="small">
+                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
                   Solutions
                 </Button>
 
-                <Button variant="text" size="small">
+                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
                   About
                 </Button>
               </Box>
