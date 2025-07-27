@@ -161,7 +161,7 @@ function AppBar() {
                         justifyContent: 'flex-start',
                         fontWeight: 600,
                         borderRadius: 999,
-                        ...bgColor,
+                        py: '10px',
                       }}
                     >
                       Projects
@@ -176,7 +176,7 @@ function AppBar() {
                         justifyContent: 'flex-start',
                         fontWeight: 600,
                         borderRadius: 999,
-                        ...bgColor,
+                        py: '10px',
                       }}
                     >
                       Solutions
@@ -191,7 +191,7 @@ function AppBar() {
                         justifyContent: 'flex-start',
                         fontWeight: 600,
                         borderRadius: 999,
-                        ...bgColor,
+                        py: '10px',
                       }}
                     >
                       About
