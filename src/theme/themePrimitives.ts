@@ -259,54 +259,6 @@ export const getDesignTokens = (mode: PaletteMode) => {
         }),
       },
     },
-    typography: {
-      h1: {
-        fontSize: '2.75rem',
-        fontWeight: 600,
-        lineHeight: 1.2,
-        letterSpacing: -0.5,
-      },
-      h2: {
-        fontSize: '2.25rem',
-        fontWeight: 600,
-        lineHeight: 1.2,
-      },
-      h3: {
-        fontSize: '1.875rem',
-        lineHeight: 1.2,
-      },
-      h4: {
-        fontSize: '1.5rem',
-        fontWeight: 600,
-        lineHeight: 1.5,
-      },
-      h5: {
-        fontSize: '1.25rem',
-        fontWeight: 600,
-      },
-      h6: {
-        fontSize: '1.125rem',
-        fontWeight: 600,
-      },
-      subtitle1: {
-        fontSize: '1.125rem',
-      },
-      subtitle2: {
-        fontSize: '1rem',
-        fontWeight: 500,
-      },
-      body1: {
-        fontSize: '1rem',
-      },
-      body2: {
-        fontSize: '0.85rem',
-        fontWeight: 400,
-      },
-      caption: {
-        fontSize: '0.85rem',
-        fontWeight: 400,
-      },
-    },
     shape: {
       borderRadius: 8,
     },
@@ -417,49 +369,49 @@ export const colorSchemes = {
 export const typography = {
   fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
   h1: {
-    fontSize: defaultTheme.typography.pxToRem(48),
+    fontSize: '2.5rem',
     fontWeight: 600,
     lineHeight: 1.2,
     letterSpacing: -0.5,
   },
   h2: {
-    fontSize: defaultTheme.typography.pxToRem(36),
+    fontSize: '2rem',
     fontWeight: 600,
     lineHeight: 1.2,
   },
   h3: {
-    fontSize: defaultTheme.typography.pxToRem(30),
+    fontSize: '1.875rem',
     lineHeight: 1.2,
   },
   h4: {
-    fontSize: defaultTheme.typography.pxToRem(24),
+    fontSize: '1.5rem',
     fontWeight: 600,
     lineHeight: 1.5,
   },
   h5: {
-    fontSize: defaultTheme.typography.pxToRem(20),
+    fontSize: '1.25rem',
     fontWeight: 600,
   },
   h6: {
-    fontSize: defaultTheme.typography.pxToRem(18),
+    fontSize: '1.125rem',
     fontWeight: 600,
   },
   subtitle1: {
-    fontSize: defaultTheme.typography.pxToRem(18),
+    fontSize: '1.125rem',
   },
   subtitle2: {
-    fontSize: defaultTheme.typography.pxToRem(14),
+    fontSize: '1rem',
     fontWeight: 500,
   },
   body1: {
-    fontSize: defaultTheme.typography.pxToRem(14),
+    fontSize: '1rem',
   },
   body2: {
-    fontSize: defaultTheme.typography.pxToRem(14),
+    fontSize: '0.85rem',
     fontWeight: 400,
   },
   caption: {
-    fontSize: defaultTheme.typography.pxToRem(12),
+    fontSize: '0.85rem',
     fontWeight: 400,
   },
 };
