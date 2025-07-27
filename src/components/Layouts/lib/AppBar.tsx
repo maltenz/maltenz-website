@@ -4,18 +4,17 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
-import { alpha, Stack, useTheme } from '@mui/material';
+import { Stack, useTheme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
 import { useThemeStore } from '../../../stores/themeStore';
-import { brand, gray } from '../../../theme/themePrimitives';
+import { brand } from '../../../theme/themePrimitives';
 
 function AppBar() {
   const [open, setOpen] = useState(false);
@@ -103,7 +102,7 @@ function AppBar() {
               </Box>
             </Box>
 
-            <IconButton onClick={toggleColorScheme} color="primary" size="small" sx={{ mr: 1 }}>
+            <IconButton onClick={toggleColorScheme} color="primary" sx={{ mr: 1 }}>
               {isDark ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
@@ -111,7 +110,6 @@ function AppBar() {
               <IconButton
                 onClick={toggleDrawer(true)}
                 color="primary"
-                size="small"
                 sx={{
                   display: { xs: 'flex', md: 'none' },
                 }}
@@ -146,7 +144,7 @@ function AppBar() {
                       flexGrow: 1,
                     }}
                   >
-                    <IconButton color="primary" size="small" onClick={toggleDrawer(false)}>
+                    <IconButton color="primary" onClick={toggleDrawer(false)}>
                       <CloseRoundedIcon />
                     </IconButton>
                   </Box>
