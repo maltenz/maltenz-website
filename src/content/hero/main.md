@@ -11,12 +11,10 @@ tag:
   - Engineering
   - UI
   - UX
-subtitle: Full-Stack Developer & UI/UX Enthusiast
+subtitle: Explore the BION interface
 description: >-
-  Believe It or Not Quiz Events is New Zealand’s leading provider of live and
-  corporate trivia, founded in 1998 and part of SKY TV since 2014. 🇳🇿 
+  Taking a modern approach to Quiz Trivia.
 
-
-  They run weekly interactive quiz nights in hundreds of pubs, clubs, and workplaces across Aotearoa, offering multimedia-powered rounds like “Last Man Standing,” “The Joker,” and “Ponderous Puzzle.” 
+  Featuring a sleek dashboard, lets hosts present stunning trivia slides — effortlessly.
 ctaText: View My Work
 ---

@@ -12,17 +12,7 @@ import Theme from '../../theme/Theme';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
 
-const cardData = [
-  {
-    img: 'https://picsum.photos/800/450?random=1',
-    tag: 'Engineering',
-    title: 'Revolutionizing software development with cutting-edge tools',
-    description:
-      'Our latest engineering tools are designed to streamline workflows and boost productivity. Discover how these innovations are transforming the software development landscape.',
-  },
-];
-
-const SyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   padding: 0,
@@ -39,7 +29,7 @@ const SyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const SyledCardContent = styled(CardContent)({
+const StyledCardContent = styled(CardContent)({
   display: 'flex',
   flexDirection: 'column',
   gap: 4,
@@ -48,14 +38,7 @@ const SyledCardContent = styled(CardContent)({
   '&:last-child': {
     paddingBottom: 16,
   },
-});
-
-const StyledTypography = styled(Typography)({
-  display: '-webkit-box',
-  WebkitBoxOrient: 'vertical',
-  WebkitLineClamp: 2,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
+  maxWidth: 780,
 });
 
 type HeroProps = {
@@ -93,7 +76,7 @@ export default function Hero({ data }: HeroProps) {
                 Demo
               </Typography>
 
-              <SyledCard variant="outlined">
+              <StyledCard variant="outlined">
                 <Box
                   sx={{
                     position: 'relative',
@@ -119,19 +102,19 @@ export default function Hero({ data }: HeroProps) {
                   />
                 </Box>
 
-                <SyledCardContent>
+                <StyledCardContent>
                   <Typography gutterBottom variant="caption" component="div">
                     {data.tag && data.tag.join(', ')}
                   </Typography>
 
-                  <Typography gutterBottom variant="h6" component="div">
-                    {data.subtitle || cardData[0].title}
+                  <Typography gutterBottom variant="h4" component="div">
+                    {data.subtitle}
                   </Typography>
 
-                  <StyledTypography variant="body1" color="text.secondary" gutterBottom>
-                    {data.description || cardData[0].description}
-                  </StyledTypography>
-                </SyledCardContent>
+                  <Typography variant="body1" color="text.secondary" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
+                    {data.description}
+                  </Typography>
+                </StyledCardContent>
 
                 <Box
                   sx={{
@@ -146,7 +129,7 @@ export default function Hero({ data }: HeroProps) {
                   <Author />
                   <Typography variant="caption">{getDisplayDate()}</Typography>
                 </Box>
-              </SyledCard>
+              </StyledCard>
             </Grid>
           </Grid>
         </Box>
