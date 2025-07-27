@@ -152,11 +152,11 @@ export default function Footer() {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
+          alignItems: 'center',
           pt: { xs: 4, sm: 8 },
           width: '100%',
           borderTop: '1px solid',
           borderColor: 'divider',
-          flexWrap: 'wrap',
         }}
       >
         <Link
