@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -14,35 +14,14 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
+import { useThemeStore } from '../../../stores/themeStore';
 import { brand } from '../../../theme/themePrimitives';
 
 function AppBar() {
-  const [open, setOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(false);
-
-  React.useEffect(() => {
-    // Check the current theme on mount
-    const currentScheme = document.documentElement.getAttribute('data-mui-color-scheme');
-    setIsDark(currentScheme === 'dark');
-  }, []);
-
-  const toggleColorMode = () => {
-    const newMode = isDark ? 'light' : 'dark';
-
-    // Method 1: Set the data attribute for MUI CSS variables
-    document.documentElement.setAttribute('data-mui-color-scheme', newMode);
-
-    // Method 2: Also set a CSS custom property
-    document.documentElement.style.setProperty('--mui-palette-mode', newMode);
-
-    // Method 3: Force a CSS class toggle as fallback
-    document.documentElement.classList.toggle('dark-mode', !isDark);
-
-    // Method 4: Try to trigger a re-render by updating the body class
-    document.body.classList.toggle('dark', !isDark);
-
-    setIsDark(!isDark);
-  };
+  const [open, setOpen] = useState(false);
+  const { colorScheme, toggleColorScheme } = useThemeStore();
+  console.log(colorScheme);
+  const isDark = colorScheme === 'dark';
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -107,7 +86,7 @@ function AppBar() {
                   borderRadius: '40px 40px 40px 10px', // optional: make it round
                   fontSize: 20,
                   backgroundColor: brand[900],
-                  '&:hover': { bgcolor: isDark ? 'primary.main' : 'primary.main' },
+                  // '&:hover': { bgcolor: isDark ? 'primary.main' : 'primary.main' },
                   color: 'primary.contrastText',
                   fontWeight: 800,
                   marginRight: '20px',
@@ -140,7 +119,13 @@ function AppBar() {
                 alignItems: 'center',
               }}
             >
-              <IconButton onClick={toggleColorMode} color="primary" size="small">
+              <IconButton
+                onClick={() => {
+                  console.log('TEST');
+                }}
+                color="primary"
+                size="small"
+              >
                 {isDark ? <LightModeIcon /> : <DarkModeIcon />}
               </IconButton>
             </Box>
