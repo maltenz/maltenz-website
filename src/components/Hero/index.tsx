@@ -125,7 +125,7 @@ export default function Hero({ data }: HeroProps) {
       <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div>
-            <Typography variant="h1" gutterBottom>
+            <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
               {data.title}
             </Typography>
           </div>
