@@ -12,7 +12,11 @@ tag:
   - UI
   - UX
 subtitle: Full-Stack Developer & UI/UX Enthusiast
-description: I'm a full-stack developer passionate about creating amazing web
-  experiences with modern technologies like React, TypeScript, and Astro.
+description: >-
+  Believe It or Not Quiz Events is New Zealand’s leading provider of live and
+  corporate trivia, founded in 1998 and part of SKY TV since 2014. 🇳🇿 
+
+
+  They run weekly interactive quiz nights in hundreds of pubs, clubs, and workplaces across Aotearoa, offering multimedia-powered rounds like “Last Man Standing,” “The Joker,” and “Ponderous Puzzle.” 
 ctaText: View My Work
 ---
