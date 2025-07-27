@@ -72,7 +72,7 @@ export default function Hero({ data }: HeroProps) {
 
           <Grid container spacing={2} columns={12}>
             <Grid size={{ xs: 12, md: 12 }}>
-              <Typography variant="h3" mb={4}>
+              <Typography variant="h4" mb={2} sx={{ fontWeight: '400' }}>
                 Demo
               </Typography>
 
