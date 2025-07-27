@@ -84,8 +84,8 @@ function AppBar() {
                   padding: 0,
                   borderRadius: '40px 40px 40px 10px', // optional: make it round
                   fontSize: 20,
-                  backgroundColor: brand[900],
-                  // '&:hover': { bgcolor: isDark ? 'primary.main' : 'primary.main' },
+                  backgroundColor: isDark ? brand[800] : brand[600],
+                  '&:hover': { bgcolor: isDark ? brand[600] : brand[400] },
                   color: 'primary.contrastText',
                   fontWeight: 800,
                   marginRight: '20px',
