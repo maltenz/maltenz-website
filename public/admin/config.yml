@@ -17,6 +17,9 @@ collections:
           - {label: "Vimeo URL", name: "vimeo", widget: "string"}
           - {label: "Is Active", name: "isActive", widget: "boolean", default: true}
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+          - {label: "Tags", name: "tag", widget: "list", required: false}
+          - {label: "Subtitle", name: "subtitle", widget: "text", required: false}
+          - {label: "Description", name: "description", widget: "text", required: false}
 
   
   - name: "projects"

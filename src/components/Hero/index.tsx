@@ -12,8 +12,6 @@ import Theme from '../../theme/Theme';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
 
-const authors = [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }];
-
 const cardData = [
   {
     img: 'https://picsum.photos/800/450?random=1',
@@ -21,47 +19,6 @@ const cardData = [
     title: 'Revolutionizing software development with cutting-edge tools',
     description:
       'Our latest engineering tools are designed to streamline workflows and boost productivity. Discover how these innovations are transforming the software development landscape.',
-    authors: [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }],
-  },
-  {
-    img: 'https://picsum.photos/800/450?random=2',
-    tag: 'Product',
-    title: 'Innovative product features that drive success',
-    description:
-      'Explore the key features of our latest product release that are helping businesses achieve their goals. From user-friendly interfaces to robust functionality, learn why our product stands out.',
-    authors,
-  },
-  {
-    img: 'https://picsum.photos/800/450?random=3',
-    tag: 'Design',
-    title: 'Designing for the future: trends and insights',
-    description:
-      'Stay ahead of the curve with the latest design trends and insights. Our design team shares their expertise on creating intuitive and visually stunning user experiences.',
-    authors: [{ name: 'Kate Morrison', avatar: '/static/images/avatar/7.jpg' }],
-  },
-  {
-    img: 'https://picsum.photos/800/450?random=4',
-    tag: 'Company',
-    title: "Our company's journey: milestones and achievements",
-    description:
-      "Take a look at our company's journey and the milestones we've achieved along the way. From humble beginnings to industry leader, discover our story of growth and success.",
-    authors,
-  },
-  {
-    img: 'https://picsum.photos/800/450?random=45',
-    tag: 'Engineering',
-    title: 'Pioneering sustainable engineering solutions',
-    description:
-      "Learn about our commitment to sustainability and the innovative engineering solutions we're implementing to create a greener future. Discover the impact of our eco-friendly initiatives.",
-    authors,
-  },
-  {
-    img: 'https://picsum.photos/800/450?random=6',
-    tag: 'Product',
-    title: 'Maximizing efficiency with our latest product updates',
-    description:
-      'Our recent product updates are designed to help you maximize efficiency and achieve more. Get a detailed overview of the new features and improvements that can elevate your workflow.',
-    authors,
   },
 ];
 
@@ -133,7 +90,7 @@ export default function Hero({ data }: HeroProps) {
           <Grid container spacing={2} columns={12}>
             <Grid size={{ xs: 12, md: 12 }}>
               <Typography variant="h3" mb={4}>
-                Projects
+                Demo
               </Typography>
 
               <SyledCard variant="outlined">
@@ -164,15 +121,15 @@ export default function Hero({ data }: HeroProps) {
 
                 <SyledCardContent>
                   <Typography gutterBottom variant="caption" component="div">
-                    {cardData[0].tag}
+                    {data.tag && data.tag.join(', ')}
                   </Typography>
 
                   <Typography gutterBottom variant="h6" component="div">
-                    {cardData[0].title}
+                    {data.subtitle || cardData[0].title}
                   </Typography>
 
                   <StyledTypography variant="body1" color="text.secondary" gutterBottom>
-                    {cardData[0].description}
+                    {data.description || cardData[0].description}
                   </StyledTypography>
                 </SyledCardContent>
 

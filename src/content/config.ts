@@ -7,6 +7,9 @@ const heroCollection = defineCollection({
     vimeo: z.string(),
     isActive: z.boolean().default(true),
     publishDate: z.date().optional(),
+    tag: z.array(z.string()).optional(),
+    subtitle: z.string().optional(),
+    description: z.string().optional(),
   }),
 });
 
