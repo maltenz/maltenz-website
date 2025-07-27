@@ -6,11 +6,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
-import AppAppBar from './lib/AppAppBar';
-import Footer from './lib/Footer';
-import Theme from '../../theme/Theme';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
+import Page from '../Layouts/Page';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -59,9 +57,7 @@ export default function Hero({ data }: HeroProps) {
   };
 
   return (
-    <Theme>
-      <AppAppBar />
-
+    <Page>
       <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div>
@@ -134,8 +130,6 @@ export default function Hero({ data }: HeroProps) {
           </Grid>
         </Box>
       </Container>
-
-      <Footer />
-    </Theme>
+    </Page>
   );
 }
