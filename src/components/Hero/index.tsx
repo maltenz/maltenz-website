@@ -1,5 +1,3 @@
-import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -11,7 +9,8 @@ import { styled } from '@mui/material/styles';
 import AppAppBar from './lib/AppAppBar';
 import Footer from './lib/Footer';
 import Theme from '../../theme/Theme';
-import type { HeroData, ProjectEntry } from '../../types/content';
+import type { HeroData } from '../../types/content';
+import Author from '../Author';
 
 const authors = [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }];
 
@@ -102,37 +101,6 @@ const StyledTypography = styled(Typography)({
   textOverflow: 'ellipsis',
 });
 
-type AuthorProps = {
-  authors: { name: string; avatar: string }[];
-};
-
-function Author({ authors }: AuthorProps) {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 2,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '16px',
-      }}
-    >
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center' }}>
-        <AvatarGroup max={3}>
-          {authors.map((author, index) => (
-            <Avatar key={index} alt={author.name} src={author.avatar} sx={{ width: 24, height: 24 }} />
-          ))}
-        </AvatarGroup>
-
-        <Typography variant="caption">{authors.map((author) => author.name).join(', ')}</Typography>
-      </Box>
-
-      <Typography variant="caption">July 14, 2021</Typography>
-    </Box>
-  );
-}
-
 type HeroProps = {
   data: HeroData;
 };
@@ -140,7 +108,11 @@ type HeroProps = {
 export default function Hero({ data }: HeroProps) {
   const getDisplayDate = () => {
     if (data.publishDate) {
-      return new Date(data.publishDate).toLocaleDateString();
+      return new Date(data.publishDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
     }
 
     return 'No date available';
@@ -214,23 +186,9 @@ export default function Hero({ data }: HeroProps) {
                     padding: '16px',
                   }}
                 >
-                  <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center' }}>
-                    <AvatarGroup max={3}>
-                      {authors.map((author) => (
-                        <Avatar
-                          key={author.name}
-                          alt={author.name}
-                          src={author.avatar}
-                          sx={{ width: 24, height: 24 }}
-                        />
-                      ))}
-                    </AvatarGroup>
-
-                    <Typography variant="caption">{authors.map((author) => author.name).join(', ')}</Typography>
-                  </Box>
-
+                  <Author />
                   <Typography variant="caption">{getDisplayDate()}</Typography>
-                </Box>{' '}
+                </Box>
               </SyledCard>
             </Grid>
           </Grid>

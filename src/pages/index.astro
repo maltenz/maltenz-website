@@ -11,7 +11,6 @@ import Hero from '../components/Hero/index.tsx';
 let heroData: HeroEntry | undefined;
 try {
   heroData = await getEntry('hero', 'main');
-  console.log({heroData})
 } catch (error) {
   const allHero: HeroEntry[] = await getCollection('hero');
   heroData = allHero?.[0];
@@ -31,7 +30,9 @@ const posts: ProjectEntry[] = await getCollection('projects');
   <StyledEngineProvider injectFirst client:load>
     <Theme>
       {heroData?.data && <Hero data={heroData.data} />}
-      <Blog data={posts} />
+      {posts.length && (
+        <Blog data={posts} />
+      )}
     </Theme>
   </StyledEngineProvider>
 </Layout>
