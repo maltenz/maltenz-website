@@ -369,7 +369,7 @@ export const colorSchemes = {
 export const typography = {
   fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
   h1: {
-    fontSize: '2.5rem',
+    fontSize: '2.25rem',
     fontWeight: 600,
     lineHeight: 1.2,
     letterSpacing: -0.5,
