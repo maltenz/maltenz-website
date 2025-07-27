@@ -105,7 +105,16 @@ function AppBar() {
               </Box>
             </Box>
 
-            <IconButton onClick={toggleColorScheme} size="small" color="primary" sx={{ mr: 1.75, scale: 1.2 }}>
+            <IconButton
+              onClick={toggleColorScheme}
+              size="small"
+              color="primary"
+              sx={{
+                minHeight: '35px',
+                minWidth: '35px',
+                mr: 1,
+              }}
+            >
               {isDark ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
@@ -115,7 +124,12 @@ function AppBar() {
                 color="primary"
                 size="small"
                 sx={{
-                  display: { xs: 'flex', md: 'none', scale: 1.2, marginRight: '5px' },
+                  minHeight: '35px',
+                  minWidth: '35px',
+                  display: {
+                    xs: 'flex',
+                    md: 'none',
+                  },
                 }}
               >
                 <MenuIcon />
@@ -148,7 +162,14 @@ function AppBar() {
                       flexGrow: 1,
                     }}
                   >
-                    <IconButton color="primary" onClick={toggleDrawer(false)} sx={{ scale: 1.2 }}>
+                    <IconButton
+                      color="primary"
+                      onClick={toggleDrawer(false)}
+                      sx={{
+                        minHeight: '35px',
+                        minWidth: '35px',
+                      }}
+                    >
                       <CloseRoundedIcon />
                     </IconButton>
                   </Box>
