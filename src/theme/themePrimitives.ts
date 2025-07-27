@@ -370,13 +370,13 @@ export const typography = {
   fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
   h1: {
     fontSize: '2.25rem',
-    fontWeight: 600,
+    fontWeight: 800,
     lineHeight: 1.2,
     letterSpacing: -0.5,
   },
   h2: {
     fontSize: '2rem',
-    fontWeight: 600,
+    fontWeight: 800,
     lineHeight: 1.2,
   },
   h3: {
@@ -385,16 +385,16 @@ export const typography = {
   },
   h4: {
     fontSize: '1.5rem',
-    fontWeight: 600,
+    fontWeight: 800,
     lineHeight: 1.5,
   },
   h5: {
     fontSize: '1.25rem',
-    fontWeight: 600,
+    fontWeight: 800,
   },
   h6: {
     fontSize: '1.125rem',
-    fontWeight: 600,
+    fontWeight: 800,
   },
   subtitle1: {
     fontSize: '1.125rem',
