@@ -105,7 +105,7 @@ function AppBar() {
               </Box>
             </Box>
 
-            <IconButton onClick={toggleColorScheme} color="primary" sx={{ mr: 1 }}>
+            <IconButton onClick={toggleColorScheme} size="small" color="primary" sx={{ mr: 1 }}>
               {isDark ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
@@ -113,6 +113,7 @@ function AppBar() {
               <IconButton
                 onClick={toggleDrawer(true)}
                 color="primary"
+                size="small"
                 sx={{
                   display: { xs: 'flex', md: 'none' },
                 }}
