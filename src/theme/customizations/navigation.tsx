@@ -5,9 +5,10 @@ import { buttonBaseClasses } from '@mui/material/ButtonBase';
 import { dividerClasses } from '@mui/material/Divider';
 import { menuItemClasses } from '@mui/material/MenuItem';
 import { selectClasses } from '@mui/material/Select';
-import { SvgIconProps } from '@mui/material/SvgIcon';
+import type { SvgIconProps } from '@mui/material/SvgIcon';
 import { tabClasses } from '@mui/material/Tab';
-import { Theme, alpha, Components } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
+import type { Theme, Components } from '@mui/material/styles';
 
 import { gray, brand } from '../themePrimitives';
 

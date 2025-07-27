@@ -2,11 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { ProjectEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
-import { StyledEngineProvider } from '@mui/material';
 import Theme from '../theme/Theme.tsx';
-import Blog from '../components/Blog/index.tsx';
 import Hero from '../components/Hero/index.tsx';
-import Footer from '../components/Blog/lib/Footer';
 
 // Get hero content with proper typing - try main first, then get the first available entry
 let heroData: HeroEntry | undefined;
@@ -28,14 +25,12 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-  <StyledEngineProvider injectFirst client:load>
     <Theme>
-      {heroData?.data && <Hero data={heroData.data} />}
+      {heroData?.data && <Hero data={heroData.data} client:load />}
       <!-- {posts.length && (
         <Blog data={posts} />
       )} -->
      
     </Theme>
-  </StyledEngineProvider>
 </Layout>
 

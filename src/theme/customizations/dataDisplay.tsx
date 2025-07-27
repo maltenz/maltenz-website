@@ -3,7 +3,8 @@ import { chipClasses } from '@mui/material/Chip';
 import { iconButtonClasses } from '@mui/material/IconButton';
 import { svgIconClasses } from '@mui/material/SvgIcon';
 import { typographyClasses } from '@mui/material/Typography';
-import { Theme, alpha, Components } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
+import type { Theme, Components } from '@mui/material/styles';
 
 import { gray, red, green } from '../themePrimitives';
 

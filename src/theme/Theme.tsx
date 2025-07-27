@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
 
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -16,24 +16,28 @@ type Props = {
 };
 
 export default function Theme({ children }: Props) {
-  const { colorScheme } = useThemeStore();
+  const colorScheme = useThemeStore((state) => state.colorScheme);
 
-  console.log({ colorScheme });
-
-  const theme = createTheme({
-    colorSchemes,
-    typography,
-    shadows,
-    shape,
-    components: {
-      ...inputsCustomizations,
-      ...dataDisplayCustomizations,
-      ...feedbackCustomizations,
-      ...navigationCustomizations,
-      ...surfacesCustomizations,
-    },
-    defaultColorScheme: colorScheme,
-  });
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: colorScheme,
+          ...(colorScheme === 'light' ? colorSchemes.light.palette : colorSchemes.dark.palette),
+        },
+        typography,
+        shadows,
+        shape,
+        components: {
+          ...inputsCustomizations,
+          ...dataDisplayCustomizations,
+          ...feedbackCustomizations,
+          ...navigationCustomizations,
+          ...surfacesCustomizations,
+        },
+      }),
+    [colorScheme],
+  );
 
   return (
     <ThemeProvider theme={theme}>

@@ -8,7 +8,8 @@ import { outlinedInputClasses } from '@mui/material/OutlinedInput';
 import { svgIconClasses } from '@mui/material/SvgIcon';
 import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { toggleButtonGroupClasses } from '@mui/material/ToggleButtonGroup';
-import { alpha, Theme, Components } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
+import type { Theme, Components } from '@mui/material/styles';
 
 import { gray, brand } from '../themePrimitives';
 

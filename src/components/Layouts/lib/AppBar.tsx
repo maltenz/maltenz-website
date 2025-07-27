@@ -119,13 +119,7 @@ function AppBar() {
                 alignItems: 'center',
               }}
             >
-              <IconButton
-                onClick={() => {
-                  console.log('TEST');
-                }}
-                color="primary"
-                size="small"
-              >
+              <IconButton onClick={toggleColorScheme} color="primary" size="small">
                 {isDark ? <LightModeIcon /> : <DarkModeIcon />}
               </IconButton>
             </Box>
