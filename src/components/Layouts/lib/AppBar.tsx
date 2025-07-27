@@ -4,21 +4,22 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import { alpha, Stack, useTheme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
 import { useThemeStore } from '../../../stores/themeStore';
-import { gray, brand } from '../../../theme/themePrimitives';
+import { brand, gray } from '../../../theme/themePrimitives';
 
 function AppBar() {
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
   const { colorScheme, toggleColorScheme } = useThemeStore();
 
   const isDark = colorScheme === 'dark';
@@ -27,18 +28,12 @@ function AppBar() {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.getBoundingClientRect().top + window.pageYOffset - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      setOpen(false);
-    }
+  const bgColor = {
+    bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+    backdropFilter: 'blur(24px)',
+    border: '1px solid',
+    borderColor: 'divider',
+    MozBorderRadiusBottomleft: 'none',
   };
 
   return (
@@ -55,19 +50,15 @@ function AppBar() {
         <Container maxWidth="lg">
           <Toolbar
             variant="regular"
-            sx={(theme) => ({
+            sx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
               borderRadius: '999px',
-              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
-              backdropFilter: 'blur(24px)',
-              maxHeight: 40,
-              border: '1px solid',
-              borderColor: 'divider',
-              MozBorderRadiusBottomleft: 'none',
-            })}
+              // maxHeight: 40,
+              ...bgColor,
+            }}
           >
             <Box
               sx={{
@@ -112,35 +103,38 @@ function AppBar() {
               </Box>
             </Box>
 
-            <Box
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                gap: 0.5,
-                alignItems: 'center',
-              }}
-            >
-              <IconButton onClick={toggleColorScheme} color="primary" size="small">
-                {isDark ? <LightModeIcon /> : <DarkModeIcon />}
-              </IconButton>
-            </Box>
+            <IconButton onClick={toggleColorScheme} color="primary" size="small" sx={{ mr: 1 }}>
+              {isDark ? <LightModeIcon /> : <DarkModeIcon />}
+            </IconButton>
 
-            <Box sx={{ display: { sm: '', md: 'none' } }}>
-              <Button
-                variant="text"
-                color="primary"
-                aria-label="menu"
+            <Box>
+              <IconButton
                 onClick={toggleDrawer(true)}
-                sx={{ minWidth: '30px', p: '4px' }}
+                color="primary"
+                size="small"
+                sx={{
+                  display: { xs: 'flex', md: 'none' },
+                }}
               >
                 <MenuIcon />
-              </Button>
+              </IconButton>
 
-              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+              <Drawer
+                anchor="right"
+                open={open}
+                onClose={toggleDrawer(false)}
+                PaperProps={{
+                  sx: {
+                    backgroundColor: 'transparent !important',
+                    backgroundImage: 'none',
+                    boxShadow: 'none',
+                  },
+                }}
+              >
                 <Box
                   sx={{
-                    minWidth: '60dvw',
+                    width: '50vw',
                     p: 2,
-                    backgroundColor: 'background.paper',
                     flexGrow: 1,
                   }}
                 >
@@ -152,44 +146,57 @@ function AppBar() {
                       flexGrow: 1,
                     }}
                   >
-                    <IconButton onClick={toggleDrawer(false)}>
+                    <IconButton color="primary" size="small" onClick={toggleDrawer(false)}>
                       <CloseRoundedIcon />
                     </IconButton>
                   </Box>
 
-                  <MenuItem onClick={() => scrollToSection('features')}>Features</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>Testimonials</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('highlights')}>Highlights</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>Pricing</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('blog')}>Blog</MenuItem>
-                  <Divider />
-
-                  <MenuItem>
+                  <Stack gap={2} mt={2}>
                     <Button
-                      color="primary"
-                      variant="contained"
-                      component="a"
-                      href="/admin"
-                      target="_blank"
-                      sx={{ width: '100%' }}
-                    >
-                      Sign up
-                    </Button>
-                  </MenuItem>
-
-                  <MenuItem>
-                    <Button
-                      color="primary"
                       variant="outlined"
-                      component="a"
-                      href="/admin"
-                      target="_blank"
-                      sx={{ width: '100%' }}
+                      color="primary"
+                      fullWidth
+                      size="large"
+                      sx={{
+                        justifyContent: 'flex-start',
+                        fontWeight: 600,
+                        borderRadius: 999,
+                        ...bgColor,
+                      }}
                     >
-                      Sign in
+                      Projects
                     </Button>
-                  </MenuItem>
+
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      fullWidth
+                      size="large"
+                      sx={{
+                        justifyContent: 'flex-start',
+                        fontWeight: 600,
+                        borderRadius: 999,
+                        ...bgColor,
+                      }}
+                    >
+                      Solutions
+                    </Button>
+
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      fullWidth
+                      size="large"
+                      sx={{
+                        justifyContent: 'flex-start',
+                        fontWeight: 600,
+                        borderRadius: 999,
+                        ...bgColor,
+                      }}
+                    >
+                      About
+                    </Button>
+                  </Stack>
                 </Box>
               </Drawer>
             </Box>
