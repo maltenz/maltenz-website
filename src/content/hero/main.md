@@ -11,7 +11,7 @@ tag:
   - Engineering
   - UI
   - UX
-subtitle: Explore the BION interface
+subtitle: Explore the BION Quiz interface
 description: >-
   Taking a modern approach to Quiz Trivia.
 
