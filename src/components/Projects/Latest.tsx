@@ -2,20 +2,11 @@ import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Pagination from '@mui/material/Pagination';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
 import type { ProjectEntry } from '../../types/content';
 import Author from '../Author';
-
-const StyledTypography = styled(Typography)({
-  display: '-webkit-box',
-  WebkitBoxOrient: 'vertical',
-  WebkitLineClamp: 2,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-});
 
 const TitleTypography = styled(Typography)({
   position: 'relative',
@@ -51,11 +42,11 @@ type LatestProps = {
 export default function Latest({ data }: LatestProps) {
   return (
     <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
-      <Typography variant="h2" gutterBottom mt={4}>
+      <Typography variant="h2" mb={-2}>
         Latest
       </Typography>
 
-      <Grid container spacing={20} columns={12} sx={{ my: 2 }}>
+      <Grid container spacing={{ xs: 8, md: 10 }} columns={12} sx={{ my: 2 }}>
         {data?.map((post) => (
           <Grid key={post.slug} size={{ xs: 12, sm: 6 }}>
             <Box
@@ -80,9 +71,9 @@ export default function Latest({ data }: LatestProps) {
                 <NavigateNextRoundedIcon className="arrow" sx={{ fontSize: '1rem' }} />
               </TitleTypography>
 
-              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+              <Typography variant="body1" color="text.secondary" gutterBottom>
                 {post.data.description}
-              </StyledTypography>
+              </Typography>
 
               <Box
                 sx={{
@@ -110,10 +101,6 @@ export default function Latest({ data }: LatestProps) {
           </Grid>
         ))}
       </Grid>
-
-      <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
-        <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
-      </Box>
     </Container>
   );
 }
