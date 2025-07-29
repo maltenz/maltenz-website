@@ -51,16 +51,16 @@ type LatestProps = {
 export default function Latest({ data }: LatestProps) {
   return (
     <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
-      <Typography variant="h2" gutterBottom>
+      <Typography variant="h2" gutterBottom mt={4}>
         Latest
       </Typography>
 
-      <Grid container spacing={20} columns={12} sx={{ my: 4 }}>
+      <Grid container spacing={20} columns={12} sx={{ my: 2 }}>
         {data?.map((post) => (
           <Grid key={post.slug} size={{ xs: 12, sm: 6 }}>
             <Box
               component="img"
-              src={post.data.image || 'https://placehold.co/600x400/orange/white'}
+              src={post.data.image || 'https://placehold.co/600x400/7322c3/orange'}
               alt={post.data.title}
               sx={{
                 width: '100%',
