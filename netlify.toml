@@ -1,7 +1,10 @@
 [build]
   publish = "dist"
-  command = "npm run build"
-  
+  command = "rm -rf dist && npm run build"
+
+[build.environment]
+  CI = "true"
+
 [build.processing]
   skip_processing = true
 
