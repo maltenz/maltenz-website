@@ -11,6 +11,7 @@ import { OrbitControls, useGLTF, Center, Environment, useAnimations } from '@rea
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 
+import { useThemeStore } from '../../stores/themeStore';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
 
@@ -63,7 +64,9 @@ export default function Hero({ data }: HeroProps) {
 
   // Sketchfab-like 3D viewer
   function GLBModel() {
-    const gltf = useGLTF('/technical_difficulties-2.glb', true);
+    const colorScheme = useThemeStore((state) => state.colorScheme);
+    const glbPath = colorScheme === 'dark' ? '/technical_difficulties-dark.glb' : '/technical_difficulties-light.glb';
+    const gltf = useGLTF(glbPath, true);
     const modelRef = useRef();
     const { actions, names } = useAnimations(gltf.animations, gltf.scene);
 
