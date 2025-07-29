@@ -1,7 +1,7 @@
 ---
 title: Apps with Astro and React
 description: Learn how to combine the power of Astro's static site generation
-  with React's interactivity to create fast, modern web applications..
+  with React's interactivity to create fast, modern web applications
 author: Malte
 tags:
   - astro
