@@ -2,7 +2,6 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { ProjectEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
-import Theme from '../theme/Theme.tsx';
 import Hero from '../components/Hero/index.tsx';
 
 // Get hero content with proper typing - try main first, then get the first available entry
@@ -25,12 +24,9 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-    <Theme>
-      {heroData?.data && <Hero data={heroData.data} client:load />}
-      <!-- {posts.length && (
-        <Blog data={posts} />
-      )} -->
-     
-    </Theme>
+  {heroData?.data && <Hero data={heroData.data} client:load />}
+  <!-- {posts.length && (
+    <Blog data={posts} />
+  )} -->
 </Layout>
 
