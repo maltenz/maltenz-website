@@ -1,12 +1,13 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm install && npm run build"
 
 [build.environment]
+  NETLIFY_USE_CACHE = "false"
   CI = "true"
 
 [[plugins]]
-package = "./plugins/netlify-plugin-clear-cache"
+  package = "./plugins/netlify-plugin-clear-cache"
 
 [[headers]]
   for = "/*"

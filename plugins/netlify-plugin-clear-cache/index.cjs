@@ -3,7 +3,6 @@ const { rmSync, existsSync } = require('fs');
 const { join } = require('path');
 
 module.exports = {
-  name: 'netlify-plugin-clear-cache',
   onPreBuild({ utils }) {
     const pathsToClear = ['node_modules', '.cache', 'dist'];
 
