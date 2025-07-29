@@ -24,10 +24,6 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-  <Page heroData={heroData.data} client:load>
-  <!-- {posts.length && (
-    <Blog data={posts} />
-  )} -->
-  </Page>
+  <Page heroData={heroData.data} client:load />
 </Layout>
 
