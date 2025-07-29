@@ -3,11 +3,10 @@
   command = "npm run build"
 
 [build.environment]
-  NETLIFY_USE_CACHE = "false"
   CI = "true"
 
-[build.processing]
-  skip_processing = true
+[[plugins]]
+package = "./plugins/netlify-plugin-clear-cache"
 
 [[headers]]
   for = "/*"
