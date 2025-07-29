@@ -1,14 +1,14 @@
-import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import { defineConfig } from 'astro/config';
 
 function rewriteConfigPlugin() {
   return {
     name: 'rewrite-config-plugin',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        /* 
-        * bugfix: localhost and server resolve descrepancy
-        */
+        /*
+         * bugfix: localhost and server resolve descrepancy
+         */
         if (req.url === '/config.yml') {
           req.url = '/admin/config.yml';
         }
@@ -25,5 +25,9 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
