@@ -86,8 +86,8 @@ export default function Hero({ data }: HeroProps) {
 
     useEffect(() => {
       if (gltf.scene) {
-        gltf.scene.position.set(18, 0, 0);
-        gltf.scene.scale.set(1.1, 1.1, 1.1);
+        gltf.scene.position.set(21, 0, 0);
+        gltf.scene.scale.set(1.05, 1.05, 1.05);
         gltf.scene.rotation.y = Math.PI / -ROTATE;
         modelRef.current = gltf.scene;
         // Log info
