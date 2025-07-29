@@ -1,18 +1,18 @@
-import type { ReactNode } from 'react';
-
 import AppBar from './lib/AppBar';
 import Footer from './lib/Footer';
 import Theme from '../../theme/Theme';
+import type { HeroData } from '../../types/content';
+import Hero from '../Hero';
 
 type PageProps = {
-  children: ReactNode;
+  heroData: HeroData;
 };
 
-export default function Page({ children }: PageProps) {
+export default function Page({ heroData }: PageProps) {
   return (
     <Theme>
       <AppBar />
-      {children}
+      <Hero data={heroData} />
       <Footer />
     </Theme>
   );

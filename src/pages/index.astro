@@ -2,14 +2,14 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { ProjectEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero/index.tsx';
+import Page from '../components/Layouts/Page';
 
 // Get hero content with proper typing - try main first, then get the first available entry
-let heroData: HeroEntry | undefined;
+let heroData: HeroEntry;
 try {
-  heroData = await getEntry('hero', 'main');
+  heroData = await getEntry('hero', 'main') as HeroEntry;
 } catch (error) {
-  const allHero: HeroEntry[] = await getCollection('hero');
+  const allHero = await getCollection('hero') as HeroEntry[];
   heroData = allHero?.[0];
 }
 
@@ -24,9 +24,10 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-  {heroData?.data && <Hero data={heroData.data} client:load />}
+  <Page heroData={heroData.data} client:load>
   <!-- {posts.length && (
     <Blog data={posts} />
   )} -->
+  </Page>
 </Layout>
 
