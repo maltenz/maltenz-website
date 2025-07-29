@@ -4,11 +4,11 @@ import Theme from '../../theme/Theme';
 import type { HeroData } from '../../types/content';
 import Hero from '../Hero';
 
-type PageProps = {
+type HomeProps = {
   heroData: HeroData;
 };
 
-export default function Page({ heroData }: PageProps) {
+export default function Home({ heroData }: HomeProps) {
   return (
     <Theme>
       <AppBar />

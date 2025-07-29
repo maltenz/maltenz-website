@@ -2,7 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { ProjectEntry, HeroEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
-import Page from '../components/Layouts/Page';
+import Home from '../components/Layouts/Home';
 
 // Get hero content with proper typing - try main first, then get the first available entry
 let heroData: HeroEntry;
@@ -24,6 +24,6 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-  <Page heroData={heroData.data} client:load />
+  <Home heroData={heroData.data} client:load />
 </Layout>
 

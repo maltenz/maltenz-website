@@ -8,7 +8,6 @@ import { styled } from '@mui/material/styles';
 
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
-import Page from '../Layouts/Page';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
