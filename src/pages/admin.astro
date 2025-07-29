@@ -4,9 +4,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Content Manager">
   <!-- ✅ Netlify Identity Widget -->
-  <script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"></script>
+  <script slot="head" src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.1/build/netlify-identity-widget.min.js"></script>
 
   <!-- ✅ Decap CMS -->
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js" defer></script>
-
+  <script slot="head" src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js" defer></script>
 </Layout>
