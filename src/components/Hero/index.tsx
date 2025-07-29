@@ -14,6 +14,8 @@ import * as THREE from 'three';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
 
+const ROTATE = 2;
+
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -70,8 +72,8 @@ export default function Hero({ data }: HeroProps) {
         const x = (e.clientX / window.innerWidth) * 2 - 1;
         const y = (e.clientY / window.innerHeight) * 2 - 1;
         if (modelRef.current) {
-          modelRef.current.rotation.y = Math.PI / -2 + x * 0.17;
-          modelRef.current.rotation.x = y * 0.1;
+          modelRef.current.rotation.y = Math.PI / -ROTATE + x * 0.17;
+          modelRef.current.rotation.x = y * 0.05;
         }
       };
       window.addEventListener('mousemove', handleMouseMove);
@@ -82,8 +84,8 @@ export default function Hero({ data }: HeroProps) {
     useEffect(() => {
       if (gltf.scene) {
         gltf.scene.position.set(18, 0, 0);
-        gltf.scene.scale.set(1.2, 1.2, 1.2);
-        gltf.scene.rotation.y = Math.PI / -2;
+        gltf.scene.scale.set(1.1, 1.1, 1.1);
+        gltf.scene.rotation.y = Math.PI / -ROTATE;
         modelRef.current = gltf.scene;
         // Log info
         console.log('GLB root position:', gltf.scene.position);
@@ -97,7 +99,7 @@ export default function Hero({ data }: HeroProps) {
       }
       // Play the first animation if available
       if (actions && names && names.length > 0) {
-        actions[names[0]]?.reset().play();
+        // actions[names[0]]?.reset().play();
       }
     }, [gltf.scene, actions, names]);
 
@@ -111,7 +113,7 @@ export default function Hero({ data }: HeroProps) {
 
   return (
     <>
-      <Box sx={{ width: '100%', height: '100%', position: 'fixed', bottom: 0, zIndex: -1 }}>
+      <Box sx={{ width: '100%', height: '100%', position: 'absolute', bottom: 0, zIndex: -1 }}>
         <Canvas
           camera={{ position: [25.57389367777905, 14.115426737355802, 20.892499726765436], fov: 50 }}
           style={{ width: '100%', height: '100%' }}
@@ -132,7 +134,7 @@ export default function Hero({ data }: HeroProps) {
       <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div>
-            <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
+            <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 6, mb: 4 }}>
               {data.title}
             </Typography>
           </div>
