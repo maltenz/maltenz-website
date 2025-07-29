@@ -3,6 +3,8 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PersonIcon from '@mui/icons-material/Person';
 import { Card, CardContent, CardActions, Typography, Chip, Button, Box, Stack } from '@mui/material';
 
+import Author from '../Author';
+
 type PostProps = {
   title: string;
   description: string;
@@ -81,16 +83,6 @@ export default function Post({ title, description, publishDate, author, tags, fe
               {formattedDate}
             </Typography>
           </Box>
-
-          {author && (
-            <Box display="flex" alignItems="center" gap={0.5}>
-              <PersonIcon fontSize="small" color="action" />
-
-              <Typography variant="body2" color="text.secondary">
-                {author}
-              </Typography>
-            </Box>
-          )}
         </Stack>
 
         {tags && tags.length > 0 && (

@@ -24,6 +24,6 @@ const posts: ProjectEntry[] = await getCollection('projects');
     }
   </script>
 <Layout>
-  <Home heroData={heroData.data} client:load />
+  <Home heroData={heroData.data} client:load projectsData={posts} />
 </Layout>
 
