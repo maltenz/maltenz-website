@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import { OrbitControls, useGLTF, Center, Environment } from '@react-three/drei';
+import { OrbitControls, useGLTF, Center, Environment, useAnimations } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -62,25 +62,44 @@ export default function Hero({ data }: HeroProps) {
   // Sketchfab-like 3D viewer
   function GLBModel() {
     const gltf = useGLTF('/technical_difficulties-2.glb', true);
+    const modelRef = useRef();
+    const { actions, names } = useAnimations(gltf.animations, gltf.scene);
 
-    // Set model position to provided default
-    if (gltf.scene) {
-      gltf.scene.position.set(10, 0, 0);
-      // Scale by 50%
-      gltf.scene.scale.set(1.5, 1.5, 1.5);
-      // Rotate 90deg horizontally (Y axis)
-      gltf.scene.rotation.y = Math.PI / -2;
-      // Log the root position, rotation, and scale
-      console.log('GLB root position:', gltf.scene.position);
-      console.log('GLB root rotation:', gltf.scene.rotation);
-      console.log('GLB root scale:', gltf.scene.scale);
-      // Compute and log the bounding box
-      const box = new THREE.Box3().setFromObject(gltf.scene);
-      console.log('GLB bounding box:', box);
-      const size = box.getSize(new THREE.Vector3());
-      const center = box.getCenter(new THREE.Vector3());
-      console.log('GLB size:', size, 'center:', center);
-    }
+    useEffect(() => {
+      const handleMouseMove = (e) => {
+        const x = (e.clientX / window.innerWidth) * 2 - 1;
+        const y = (e.clientY / window.innerHeight) * 2 - 1;
+        if (modelRef.current) {
+          modelRef.current.rotation.y = Math.PI / -2 + x * 0.17;
+          modelRef.current.rotation.x = y * 0.1;
+        }
+      };
+      window.addEventListener('mousemove', handleMouseMove);
+
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    useEffect(() => {
+      if (gltf.scene) {
+        gltf.scene.position.set(18, 0, 0);
+        gltf.scene.scale.set(1.2, 1.2, 1.2);
+        gltf.scene.rotation.y = Math.PI / -2;
+        modelRef.current = gltf.scene;
+        // Log info
+        console.log('GLB root position:', gltf.scene.position);
+        console.log('GLB root rotation:', gltf.scene.rotation);
+        console.log('GLB root scale:', gltf.scene.scale);
+        const box = new THREE.Box3().setFromObject(gltf.scene);
+        console.log('GLB bounding box:', box);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        console.log('GLB size:', size, 'center:', center);
+      }
+      // Play the first animation if available
+      if (actions && names && names.length > 0) {
+        actions[names[0]]?.reset().play();
+      }
+    }, [gltf.scene, actions, names]);
 
     // @ts-expect-error: primitive is a valid JSX element for three.js objects
     return (
@@ -92,7 +111,7 @@ export default function Hero({ data }: HeroProps) {
 
   return (
     <>
-      <Box sx={{ width: '100%', height: '100%', position: 'fixed', top: 0, zIndex: -1 }}>
+      <Box sx={{ width: '100%', height: '100%', position: 'fixed', bottom: 0, zIndex: -1 }}>
         <Canvas
           camera={{ position: [25.57389367777905, 14.115426737355802, 20.892499726765436], fov: 50 }}
           style={{ width: '100%', height: '100%' }}
@@ -106,7 +125,7 @@ export default function Hero({ data }: HeroProps) {
             <Environment preset="city" background={false} />
           </Suspense>
 
-          <OrbitControls enableZoom enablePan enableRotate />
+          <OrbitControls enableZoom={false} enablePan enableRotate />
         </Canvas>
       </Box>
 
