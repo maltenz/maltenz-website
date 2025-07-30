@@ -82,7 +82,7 @@ function GLBModel({ colorScheme }: { colorScheme: string }) {
 
     if (actions && names && names.length > 0) {
       // Optional: play animation
-      // actions[names[0]]?.reset().play();
+      actions[names[0]]?.reset().play();
     }
   }, [gltf.scene, actions, names]);
 
