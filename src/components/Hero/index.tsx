@@ -50,6 +50,49 @@ type HeroProps = {
   data: HeroData;
 };
 
+function GLBModel({ colorScheme }: { colorScheme: string }) {
+  const glbPath = colorScheme === 'dark' ? '/technical_difficulties-dark.glb' : '/technical_difficulties-light.glb';
+
+  const gltf = useGLTF(glbPath, true);
+  const modelRef = useRef<THREE.Object3D>();
+  const { actions, names } = useAnimations(gltf.animations, gltf.scene);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      if (modelRef.current) {
+        modelRef.current.rotation.y = Math.PI / -ROTATE + x * 0.17;
+        modelRef.current.rotation.x = y * 0.05;
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    if (gltf.scene) {
+      gltf.scene.position.set(21, 0, 0);
+      gltf.scene.scale.set(1.05, 1.05, 1.05);
+      gltf.scene.rotation.y = Math.PI / -ROTATE;
+      modelRef.current = gltf.scene;
+    }
+
+    if (actions && names && names.length > 0) {
+      // Optional: play animation
+      // actions[names[0]]?.reset().play();
+    }
+  }, [gltf.scene, actions, names]);
+
+  return (
+    <Center disableY>
+      <primitive object={gltf.scene} />
+    </Center>
+  );
+}
+
 export default function Hero({ data }: HeroProps) {
   const getDisplayDate = () => {
     if (data.publishDate) {
@@ -62,57 +105,7 @@ export default function Hero({ data }: HeroProps) {
     return 'No date available';
   };
 
-  // Sketchfab-like 3D viewer
-  function GLBModel() {
-    const colorScheme = useThemeStore((state) => state.colorScheme);
-    const glbPath = colorScheme === 'dark' ? '/technical_difficulties-dark.glb' : '/technical_difficulties-light.glb';
-    const gltf = useGLTF(glbPath, true);
-    const modelRef = useRef();
-    const { actions, names } = useAnimations(gltf.animations, gltf.scene);
-
-    useEffect(() => {
-      const handleMouseMove = (e) => {
-        const x = (e.clientX / window.innerWidth) * 2 - 1;
-        const y = (e.clientY / window.innerHeight) * 2 - 1;
-        if (modelRef.current) {
-          modelRef.current.rotation.y = Math.PI / -ROTATE + x * 0.17;
-          modelRef.current.rotation.x = y * 0.05;
-        }
-      };
-      window.addEventListener('mousemove', handleMouseMove);
-
-      return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
-
-    useEffect(() => {
-      if (gltf.scene) {
-        gltf.scene.position.set(21, 0, 0);
-        gltf.scene.scale.set(1.05, 1.05, 1.05);
-        gltf.scene.rotation.y = Math.PI / -ROTATE;
-        modelRef.current = gltf.scene;
-        // Log info
-        console.log('GLB root position:', gltf.scene.position);
-        console.log('GLB root rotation:', gltf.scene.rotation);
-        console.log('GLB root scale:', gltf.scene.scale);
-        const box = new THREE.Box3().setFromObject(gltf.scene);
-        console.log('GLB bounding box:', box);
-        const size = box.getSize(new THREE.Vector3());
-        const center = box.getCenter(new THREE.Vector3());
-        console.log('GLB size:', size, 'center:', center);
-      }
-      // Play the first animation if available
-      if (actions && names && names.length > 0) {
-        // actions[names[0]]?.reset().play();
-      }
-    }, [gltf.scene, actions, names]);
-
-    // @ts-expect-error: primitive is a valid JSX element for three.js objects
-    return (
-      <Center disableY>
-        <primitive object={gltf.scene} />
-      </Center>
-    );
-  }
+  const colorScheme = useThemeStore((state) => state.colorScheme);
 
   return (
     <>
@@ -126,7 +119,7 @@ export default function Hero({ data }: HeroProps) {
           <directionalLight position={[5, 10, 7]} intensity={1.2} />
 
           <Suspense fallback={null}>
-            <GLBModel />
+            <GLBModel colorScheme={colorScheme} />
             <Environment preset="city" background={false} />
           </Suspense>
 
