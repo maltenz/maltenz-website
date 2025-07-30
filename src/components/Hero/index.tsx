@@ -54,7 +54,7 @@ function GLBModel({ colorScheme }: { colorScheme: string }) {
   const glbPath = colorScheme === 'dark' ? '/technical_difficulties-dark.glb' : '/technical_difficulties-light.glb';
 
   const gltf = useGLTF(glbPath, true);
-  const modelRef = useRef<THREE.Object3D>();
+  const modelRef = useRef<THREE.Object3D | null>(null);
   const { actions, names } = useAnimations(gltf.animations, gltf.scene);
 
   useEffect(() => {
@@ -113,7 +113,7 @@ export default function Hero({ data }: HeroProps) {
         <Canvas
           camera={{ position: [25.57389367777905, 14.115426737355802, 20.892499726765436], fov: 50 }}
           style={{ width: '100%', height: '100%' }}
-          gl={{ toneMapping: THREE.ACESFilmicToneMapping, outputEncoding: THREE.sRGBEncoding }}
+          gl={{ toneMapping: THREE.ACESFilmicToneMapping }}
         >
           <ambientLight intensity={0.7} />
           <directionalLight position={[5, 10, 7]} intensity={1.2} />

@@ -57,6 +57,22 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/no-non-null-assertion': 'off',
     'react/jsx-newline': ['error', { prevent: true, allowMultilines: true }],
+    'react/no-unknown-property': [
+      'error',
+      {
+        ignore: [
+          'object',
+          'intensity',
+          'position',
+          'args',
+          'attach',
+          'castShadow',
+          'receiveShadow',
+          'rotation',
+          'scale',
+        ],
+      },
+    ],
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: 'expression', next: 'return' },
