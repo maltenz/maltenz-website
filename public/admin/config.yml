@@ -14,12 +14,10 @@ collections:
         file: "src/content/hero/main.md"
         fields:
           - {label: "Title", name: "title", widget: "text"}
-          - {label: "Vimeo URL", name: "vimeo", widget: "string"}
-          - {label: "Is Active", name: "isActive", widget: "boolean", default: true}
-          - {label: "Publish Date", name: "publishDate", widget: "datetime"}
-          - {label: "Tags", name: "tag", widget: "list", required: false}
-          - {label: "Subtitle", name: "subtitle", widget: "text", required: false}
           - {label: "Description", name: "description", widget: "text", required: false}
+          - {label: "Vimeo URL", name: "vimeo", widget: "string"}
+          - {label: "Tags", name: "tag", widget: "list", required: false}
+          - {label: "Publish Date", name: "publishDate", widget: "datetime"}
 
   
   - name: "projects"
@@ -28,10 +26,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "Title", name: "title", widget: "text"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Author", name: "author", widget: "string", required: false}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}

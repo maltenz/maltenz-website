@@ -2,9 +2,7 @@
 title: "Material-UI Best Practices"
 description: "Essential tips and patterns for building beautiful, accessible interfaces with Material-UI and React."
 publishDate: 2025-07-15
-author: "Malte"
 tags: ["mui", "material-ui", "react", "design systems"]
-featured: false
 ---
 
 # Material-UI Best Practices

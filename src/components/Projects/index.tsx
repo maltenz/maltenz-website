@@ -1,9 +1,6 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import PersonIcon from '@mui/icons-material/Person';
 import { Card, CardContent, CardActions, Typography, Chip, Button, Box, Stack } from '@mui/material';
-
-import Author from '../Author';
 
 type PostProps = {
   title: string;

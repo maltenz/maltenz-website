@@ -1,39 +1,10 @@
-import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
-import { Container } from '@mui/material';
+import { Container, Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
 
 import type { ProjectEntry } from '../../types/content';
 import Author from '../Author';
-
-const TitleTypography = styled(Typography)({
-  position: 'relative',
-  textDecoration: 'none',
-  '&:hover': { cursor: 'pointer' },
-  '& .arrow': {
-    visibility: 'hidden',
-    position: 'absolute',
-    right: 0,
-    top: '50%',
-    transform: 'translateY(-50%)',
-  },
-  '&:hover .arrow': {
-    visibility: 'visible',
-    opacity: 0.7,
-  },
-  '&:focus-visible': {
-    outline: '3px solid',
-    outlineColor: 'hsla(210, 98%, 48%, 0.5)',
-    outlineOffset: '3px',
-    borderRadius: '8px',
-  },
-  '&.Mui-focused .arrow': {
-    visibility: 'visible',
-    opacity: 1,
-  },
-});
 
 type LatestProps = {
   data: ProjectEntry[];
@@ -66,10 +37,9 @@ export default function Latest({ data }: LatestProps) {
                 {post.data.tags && post.data.tags.length > 0 ? post.data.tags[0] : ''}
               </Typography>
 
-              <TitleTypography gutterBottom variant="h6">
+              <Link href={`/projects/${post.slug}`} gutterBottom variant="h6">
                 {post.data.title}
-                <NavigateNextRoundedIcon className="arrow" sx={{ fontSize: '1rem' }} />
-              </TitleTypography>
+              </Link>
 
               <Typography variant="body1" color="text.secondary" gutterBottom>
                 {post.data.description}
