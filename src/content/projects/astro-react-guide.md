@@ -9,6 +9,7 @@ tags:
   - web development
   - typescript
 featured: true
+slug: /astro
 publishDate: 2025-07-20
 ---
 
