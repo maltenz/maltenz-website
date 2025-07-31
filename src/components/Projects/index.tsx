@@ -6,14 +6,12 @@ type PostProps = {
   title: string;
   description: string;
   publishDate: Date;
-  author?: string;
   tags?: string[];
-  featured?: boolean;
   slug: string;
   image?: string;
 };
 
-export default function Post({ title, description, publishDate, author, tags, featured, slug, image }: PostProps) {
+export default function Post({ title, description, publishDate, tags, slug, image }: PostProps) {
   const formattedDate = publishDate.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -32,26 +30,8 @@ export default function Post({ title, description, publishDate, author, tags, fe
           transform: 'translateY(-4px)',
           boxShadow: 4,
         },
-        ...(featured && {
-          border: 2,
-          borderColor: 'primary.main',
-        }),
       }}
     >
-      {featured && (
-        <Chip
-          label="Featured"
-          color="primary"
-          size="small"
-          sx={{
-            position: 'absolute',
-            top: 16,
-            right: 16,
-            zIndex: 1,
-          }}
-        />
-      )}
-
       {image && (
         <Box
           sx={{

@@ -172,10 +172,6 @@ export default function Hero({ data }: HeroProps) {
                     {data.tag && data.tag.join(', ')}
                   </Typography>
 
-                  <Typography gutterBottom variant="h4" component="div">
-                    {data.subtitle}
-                  </Typography>
-
                   <Typography variant="body1" color="text.secondary" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
                     {data.description}
                   </Typography>
