@@ -71,6 +71,8 @@ function AppBar() {
               }}
             >
               <Button
+                component="a"
+                href="/"
                 sx={{
                   minWidth: 0, // override default minWidth
                   width: 40,

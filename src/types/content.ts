@@ -12,7 +12,7 @@ export type ProjectData = ProjectEntry['data'];
 export type HeroData = HeroEntry['data'];
 
 // Utility types for components
-export type BlogProject = {
+export type Project = {
   slug: string;
   data: ProjectData;
 };
@@ -22,6 +22,6 @@ export type HeroContent = {
 };
 
 // You can also create more specific types if needed
-export type FeaturedProject = BlogProject & {
+export type FeaturedProject = Project & {
   data: ProjectData & { featured: true };
 };

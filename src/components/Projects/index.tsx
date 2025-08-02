@@ -1,17 +1,23 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import { Card, CardContent, CardActions, Typography, Chip, Button, Box, Stack } from '@mui/material';
+import type { ReactNode } from 'react';
 
-type PostProps = {
-  title: string;
-  description: string;
-  publishDate: Date;
-  tags?: string[];
-  slug: string;
-  image?: string;
-};
+import { Typography, Box, Stack, Container, styled } from '@mui/material';
 
-export default function Post({ title, description, publishDate, tags, slug, image }: PostProps) {
+import Theme from '../../theme/Theme';
+import type { ProjectData } from '../../types/content';
+import AppBar from '../Layouts/lib/AppBar';
+import Footer from '../Layouts/lib/Footer';
+
+const StyleInner = styled('div')({
+  maxWidth: 860,
+});
+
+export default function Project({
+  title,
+  publishDate,
+  tags,
+  image = 'https://placehold.co/600x200/7322c3/orange',
+  children,
+}: ProjectData & { children: ReactNode }) {
   const formattedDate = publishDate.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -19,65 +25,47 @@ export default function Post({ title, description, publishDate, tags, slug, imag
   });
 
   return (
-    <Card
-      sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-        transition: 'all 0.3s ease',
-        '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: 4,
-        },
-      }}
-    >
-      {image && (
-        <Box
-          sx={{
-            height: 200,
-            backgroundImage: `url(${image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-      )}
+    <Theme>
+      <AppBar />
 
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+      <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
+        <Typography variant="h1" gutterBottom fontWeight={600}>
           {title}
         </Typography>
 
-        <Typography variant="body2" color="text.secondary" paragraph>
-          {description}
-        </Typography>
+        <Stack gap={4}>
+          {image && (
+            <Box
+              component="img"
+              src={image}
+              sx={{
+                width: '100%',
+                objectFit: 'cover',
+                borderRadius: 2,
+                mb: 2,
+              }}
+            />
+          )}
 
-        <Stack direction="row" spacing={2} alignItems="center" mb={2}>
-          <Box display="flex" alignItems="center" gap={0.5}>
-            <CalendarTodayIcon fontSize="small" color="action" />
-
-            <Typography variant="body2" color="text.secondary">
-              {formattedDate}
+          <StyleInner>
+            <Typography sx={{ mb: 4 }} variant="caption" component="div">
+              {tags && tags.join(', ')}
             </Typography>
-          </Box>
+
+            {children}
+
+            <Stack direction="row" spacing={2} alignItems="center" mb={2}>
+              <Box display="flex" alignItems="center" gap={0.5}>
+                <Typography variant="body2" color="text.secondary">
+                  {formattedDate}
+                </Typography>
+              </Box>
+            </Stack>
+          </StyleInner>
         </Stack>
+      </Container>
 
-        {tags && tags.length > 0 && (
-          <Stack direction="row" spacing={1} flexWrap="wrap" gap={1}>
-            {tags.slice(0, 3).map((tag) => (
-              <Chip key={tag} label={tag} size="small" variant="outlined" />
-            ))}
-
-            {tags.length > 3 && <Chip label={`+${tags.length - 3} more`} size="small" variant="outlined" />}
-          </Stack>
-        )}
-      </CardContent>
-
-      <CardActions>
-        <Button size="small" endIcon={<ArrowForwardIcon />} href={`/projects/${slug}`} sx={{ ml: 'auto' }}>
-          Read More
-        </Button>
-      </CardActions>
-    </Card>
+      <Footer />
+    </Theme>
   );
 }
