@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 
 import type { ProjectEntry } from '../../types/content';
 import Author from '../Author';
+import TagList, { Tags } from '../Taglist';
 
 type LatestProps = {
   data: ProjectEntry[];
@@ -33,9 +34,11 @@ export default function Latest({ data }: LatestProps) {
             />
 
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, height: '100%' }}>
-              <Typography variant="caption">
+              {/* <Typography variant="caption">
                 {post.data.tags && post.data.tags.length > 0 ? post.data.tags[0] : ''}
-              </Typography>
+              </Typography> */}
+
+              <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
 
               <Link href={`/projects/${post.slug}`} gutterBottom variant="h6">
                 {post.data.title}

@@ -14,6 +14,7 @@ import * as THREE from 'three';
 import { useThemeStore } from '../../stores/themeStore';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
+import TagList, { Tags } from '../Taglist';
 
 const ROTATE = 2;
 
@@ -168,9 +169,11 @@ export default function Hero({ data }: HeroProps) {
                 </Box>
 
                 <StyledCardContent>
-                  <Typography gutterBottom variant="caption" component="div">
+                  {/* <Typography gutterBottom variant="caption" component="div">
                     {data.tag && data.tag.join(', ')}
-                  </Typography>
+                  </Typography> */}
+
+                  <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
 
                   <Typography variant="body1" color="text.secondary" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
                     {data.description}

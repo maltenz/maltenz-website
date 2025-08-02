@@ -6,6 +6,7 @@ import Theme from '../../theme/Theme';
 import type { ProjectData } from '../../types/content';
 import AppBar from '../Layouts/lib/AppBar';
 import Footer from '../Layouts/lib/Footer';
+import TagList, { Tags } from '../Taglist';
 
 const StyledInner = styled('div')({
   width: '100%',
@@ -57,9 +58,7 @@ export default function Project({
 
           <StyledInner>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Typography sx={{ mb: 4 }} variant="caption" component="div">
-                {tags && tags.join(', ')}
-              </Typography>
+              <TagList tags={[Tags.Feedback, Tags.Source, Tags.BundleSize]} />
 
               <Typography variant="body2" color="text.secondary" textAlign="right">
                 {formattedDate}
