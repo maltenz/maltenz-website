@@ -9,17 +9,14 @@ tags:
   - typescript
 publishDate: 2025-07-20
 ---
-
-# Building Modern Web Apps with Astro and React
-
 Astro is revolutionizing how we build websites by combining the best of static site generation with the flexibility of modern frameworks like React.
 
 ## Why Astro?
 
-- **Zero JS by default** - Only ship JavaScript when you need it
-- **Framework agnostic** - Use React, Vue, Svelte, or plain HTML
-- **Excellent performance** - Built-in optimizations and lazy loading
-- **Developer experience** - TypeScript support, hot reloading, and more
+* **Zero JS by default** - Only ship JavaScript when you need it
+* **Framework agnostic** - Use React, Vue, Svelte, or plain HTML
+* **Excellent performance** - Built-in optimizations and lazy loading
+* **Developer experience** - TypeScript support, hot reloading, and more
 
 ## Getting Started
 
