@@ -7,15 +7,17 @@ import type { ProjectData } from '../../types/content';
 import AppBar from '../Layouts/lib/AppBar';
 import Footer from '../Layouts/lib/Footer';
 
-const StyleInner = styled('div')({
-  maxWidth: 860,
+const StyledInner = styled('div')({
+  width: '100%',
+  maxWidth: 900,
+  margin: '0 auto',
 });
 
 export default function Project({
   title,
   publishDate,
   tags,
-  image = 'https://placehold.co/600x200/7322c3/orange',
+  image = 'https://placehold.co/600x300/7322c3/orange',
   children,
 }: ProjectData & { children: ReactNode }) {
   const formattedDate = publishDate.toLocaleDateString('en-US', {
@@ -28,12 +30,18 @@ export default function Project({
     <Theme>
       <AppBar />
 
-      <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
-        <Typography variant="h1" gutterBottom fontWeight={600}>
-          {title}
-        </Typography>
-
+      <Container
+        maxWidth="lg"
+        component="main"
+        sx={{ display: 'flex', alignContent: 'flex-start', flexDirection: 'column', my: 16, gap: 4 }}
+      >
         <Stack gap={4}>
+          <StyledInner>
+            <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 6, mb: 4 }}>
+              {title}
+            </Typography>
+          </StyledInner>
+
           {image && (
             <Box
               component="img"
@@ -47,21 +55,19 @@ export default function Project({
             />
           )}
 
-          <StyleInner>
-            <Typography sx={{ mb: 4 }} variant="caption" component="div">
-              {tags && tags.join(', ')}
-            </Typography>
+          <StyledInner>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Typography sx={{ mb: 4 }} variant="caption" component="div">
+                {tags && tags.join(', ')}
+              </Typography>
+
+              <Typography variant="body2" color="text.secondary" textAlign="right">
+                {formattedDate}
+              </Typography>
+            </Box>
 
             {children}
-
-            <Stack direction="row" spacing={2} alignItems="center" mb={2}>
-              <Box display="flex" alignItems="center" gap={0.5}>
-                <Typography variant="body2" color="text.secondary">
-                  {formattedDate}
-                </Typography>
-              </Box>
-            </Stack>
-          </StyleInner>
+          </StyledInner>
         </Stack>
       </Container>
 

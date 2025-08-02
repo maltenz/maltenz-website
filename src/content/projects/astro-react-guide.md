@@ -9,9 +9,10 @@ tags:
   - typescript
 publishDate: 2025-07-20
 ---
-Astro is revolutionizing how we build websites by combining the best of static site generation with the flexibility of modern frameworks like React.
 
 ## Why Astro?
+
+Astro is revolutionizing how we build websites by combining the best of static site generation with the flexibility of modern frameworks like React.
 
 * **Zero JS by default** - Only ship JavaScript when you need it
 * **Framework agnostic** - Use React, Vue, Svelte, or plain HTML

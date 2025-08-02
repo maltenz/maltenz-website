@@ -5,8 +5,6 @@ publishDate: 2025-07-15
 tags: ["mui", "material-ui", "react", "design systems"]
 ---
 
-# Material-UI Best Practices
-
 Material-UI provides a comprehensive set of React components that implement Google's Material Design system. Here are some best practices for getting the most out of MUI.
 
 ## Theme Customization
