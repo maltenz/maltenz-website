@@ -376,25 +376,26 @@ export const typography = {
   },
   h2: {
     fontSize: '2em',
-    fontWeight: 800,
+    fontWeight: 500,
     lineHeight: 1.2,
   },
   h3: {
     fontSize: '1.875em',
+    fontWeight: 500,
     lineHeight: 1.2,
   },
   h4: {
     fontSize: '1.5em',
-    fontWeight: 800,
+    fontWeight: 500,
     lineHeight: 1.5,
   },
   h5: {
     fontSize: '1.25em',
-    fontWeight: 800,
+    fontWeight: 500,
   },
   h6: {
     fontSize: '1.125em',
-    fontWeight: 800,
+    fontWeight: 500,
   },
   subtitle1: {
     fontSize: '1.125em',

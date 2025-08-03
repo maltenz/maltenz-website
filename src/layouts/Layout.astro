@@ -13,13 +13,16 @@ const { title = 'Malte' } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
-    <style>
+    <style is:global>
       html,
       body {
         margin: 0;
         width: 100%;
         height: 100%;
         font-size: 16px;
+      }
+      h2, h3, h4, h5, h6 {
+        font-weight: 500;
       }
       @media (min-width: 768px) {
         html,
