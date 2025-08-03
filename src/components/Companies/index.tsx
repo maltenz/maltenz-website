@@ -12,7 +12,6 @@ const companyLogos = [
   '/logos/loreal.png',
   '/logos/flicks.png',
   '/logos/dmdn.png',
-  '/logos/believeit.png',
 ];
 
 export default function Companies() {
