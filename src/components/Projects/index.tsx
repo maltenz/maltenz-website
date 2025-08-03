@@ -38,7 +38,7 @@ export default function Project({
       >
         <Stack gap={4}>
           <StyledInner>
-            <Typography variant="h2" as="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 6, mb: 4 }}>
+            <Typography variant="h1" as="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 6, mb: 4 }}>
               {title}
             </Typography>
           </StyledInner>

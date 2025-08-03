@@ -9,9 +9,9 @@ const { title = 'Malte' } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500,700;900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
     <style is:global>
       html,
@@ -20,6 +20,7 @@ const { title = 'Malte' } = Astro.props;
         width: 100%;
         height: 100%;
         font-size: 16px;
+        font-family: "Lato", sans-serif;
       }
       h2, h3, h4, h5, h6 {
         font-weight: 500;

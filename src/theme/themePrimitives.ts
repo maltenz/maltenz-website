@@ -367,7 +367,7 @@ export const colorSchemes = {
 };
 
 export const typography = {
-  fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
+  fontFamily: '"Lato", sans-serif',
   h1: {
     fontSize: '2.25em',
     fontWeight: 800,
