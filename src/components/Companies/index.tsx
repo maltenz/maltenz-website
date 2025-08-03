@@ -7,7 +7,8 @@ const companyLogos = [
   '/logos/xero.png',
   '/logos/snipes.png',
   '/logos/sky.png',
-  '/logos/maori.png',
+  '/logos/moari-tv.png',
+  '/logos/bion.png',
   '/logos/loreal.png',
   '/logos/flicks.png',
   '/logos/dmdn.png',
@@ -34,13 +35,12 @@ export default function Companies() {
             src={src}
             alt=""
             sx={{
-              height: { xs: 56, sm: 80, md: 120 },
-              maxWidth: 160,
+              height: { xs: 56, sm: 70, md: 110 },
+              maxWidth: 110,
               objectFit: 'contain',
               background: 'none',
               mr: 2,
-              filter: `grayscale(100%) contrast(10) ${isDark ? 'invert(1)' : ''}`,
-              opacity: 0.5,
+              filter: `grayscale(100%) ${isDark ? 'invert(1)' : ''}`,
             }}
           />
         ))}
