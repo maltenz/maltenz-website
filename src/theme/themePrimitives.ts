@@ -367,42 +367,42 @@ export const colorSchemes = {
 };
 
 export const typography = {
-  fontFamily: '"Lato", sans-serif',
+  fontFamily: '"DM Sans", sans-serif',
   h1: {
     fontSize: '2.25em',
-    fontWeight: 800,
+    fontWeight: 900,
     lineHeight: 1.2,
     letterSpacing: -0.5,
   },
   h2: {
     fontSize: '2em',
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: 1.2,
   },
   h3: {
     fontSize: '1.875em',
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: 1.2,
   },
   h4: {
     fontSize: '1.5em',
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: 1.5,
   },
   h5: {
     fontSize: '1.25em',
-    fontWeight: 500,
+    fontWeight: 700,
   },
   h6: {
     fontSize: '1.125em',
-    fontWeight: 500,
+    fontWeight: 700,
   },
   subtitle1: {
     fontSize: '1.125em',
   },
   subtitle2: {
     fontSize: '1em',
-    fontWeight: 500,
+    fontWeight: 700,
   },
   body1: {
     fontSize: '1em',

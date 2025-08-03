@@ -17,7 +17,7 @@ const StyledInner = styled('div')({
 export default function Project({
   title,
   publishDate,
-  tags,
+  // tags,
   image = 'https://placehold.co/600x300/7322c3/orange',
   children,
 }: ProjectData & { children: ReactNode }) {
@@ -37,11 +37,9 @@ export default function Project({
         sx={{ display: 'flex', alignContent: 'flex-start', flexDirection: 'column', my: 16, gap: 4 }}
       >
         <Stack gap={4}>
-          <StyledInner>
-            <Typography variant="h1" as="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 6, mb: 4 }}>
-              {title}
-            </Typography>
-          </StyledInner>
+          <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 0, mb: 2, fontWeight: '700' }}>
+            {title}
+          </Typography>
 
           {image && (
             <Box
