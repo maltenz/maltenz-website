@@ -9,10 +9,14 @@ const { title = 'Malte' } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
+    
+    <meta name="astro-view-transitions-enabled" content="true" />
+    <meta name="astro-view-transitions-fallback" content="animate" />
+    
     <style is:global>
       html,
       body {
@@ -31,6 +35,29 @@ const { title = 'Malte' } = Astro.props;
           font-size: 20px; 
         }
       }
+
+      /* Custom page transition styles */
+      @view-transition {
+        navigation: auto;
+      }
+
+      ::view-transition-old(root) {
+        animation: fade-out 0.3s ease-out;
+      }
+
+      ::view-transition-new(root) {
+        animation: fade-in 0.3s ease-in;
+      }
+
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
     </style>
 
     <slot name="head" />
@@ -39,4 +66,3 @@ const { title = 'Malte' } = Astro.props;
     <slot />
   </body>
 </html>
-
