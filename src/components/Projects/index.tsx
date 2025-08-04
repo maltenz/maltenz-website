@@ -14,6 +14,45 @@ const StyledInner = styled('div')({
   margin: '0 auto',
 });
 
+const StyledMarkdownContainer = styled('div')(({ theme }) => ({
+  '& h1': {
+    ...theme.typography.h1,
+  },
+  '& h2': {
+    ...theme.typography.h2,
+  },
+  '& h3': {
+    ...theme.typography.h3,
+  },
+  '& h4': {
+    ...theme.typography.h4,
+  },
+  '& h5': {
+    ...theme.typography.h5,
+  },
+  '& h6': {
+    ...theme.typography.h6,
+  },
+  '& p': {
+    ...theme.typography.body1,
+    color: theme.palette.text.secondary,
+  },
+  '& ul': {
+    color: theme.palette.text.secondary,
+  },
+  '& li': {
+    color: theme.palette.text.secondary,
+  },
+  '& strong': {
+    color: theme.palette.text.primary,
+  },
+  '& a': {
+    color: theme.palette.primary.main,
+    textDecoration: 'underline',
+  },
+  // add more styles for other elements as needed
+}));
+
 export default function Project({
   title,
   publishDate,
@@ -63,7 +102,7 @@ export default function Project({
               </Typography>
             </Box>
 
-            {children}
+            <StyledMarkdownContainer>{children}</StyledMarkdownContainer>
           </StyledInner>
         </Stack>
       </Container>
