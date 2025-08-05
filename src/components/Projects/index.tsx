@@ -2,9 +2,8 @@ import type { ReactNode } from 'react';
 
 import { Typography, Box, Stack, Container, styled } from '@mui/material';
 
-import Theme from '../../theme/Theme';
 import type { ProjectData } from '../../types/content';
-import AppBar from '../Layouts/lib/AppBar';
+import AppWrapper from '../AppWrapper';
 import Footer from '../Layouts/lib/Footer';
 import TagList, { Tags } from '../Taglist';
 
@@ -67,9 +66,7 @@ export default function Project({
   });
 
   return (
-    <Theme>
-      <AppBar />
-
+    <AppWrapper>
       <Container
         maxWidth="lg"
         component="main"
@@ -108,6 +105,6 @@ export default function Project({
       </Container>
 
       <Footer />
-    </Theme>
+    </AppWrapper>
   );
 }

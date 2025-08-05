@@ -3,7 +3,7 @@ import { useMemo, type ReactNode } from 'react';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import { useThemeStore } from '../stores/themeStore';
+import { type ColorScheme } from '../stores/themeStore';
 import { baseline } from './customizations/baseline';
 import { dataDisplayCustomizations } from './customizations/dataDisplay';
 import { feedbackCustomizations } from './customizations/feedback';
@@ -14,11 +14,10 @@ import { colorSchemes, typography, shadows, shape } from './themePrimitives';
 
 type Props = {
   children: ReactNode;
+  colorScheme: ColorScheme;
 };
 
-export default function Theme({ children }: Props) {
-  const colorScheme = useThemeStore((state) => state.colorScheme);
-
+export default function Theme({ children, colorScheme }: Props) {
   const theme = useMemo(
     () =>
       createTheme({

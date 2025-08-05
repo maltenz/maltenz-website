@@ -15,14 +15,21 @@ export const useThemeStore = create<ThemeState>()(
       colorScheme: 'dark', // default to dark
       toggleColorScheme: () =>
         set((state) => {
+          const newScheme = state.colorScheme === 'light' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = newScheme;
+
           return {
-            colorScheme: state.colorScheme === 'light' ? 'dark' : 'light',
+            colorScheme: newScheme,
           };
         }),
       setColorScheme: (scheme: ColorScheme) =>
-        set(() => ({
-          colorScheme: scheme,
-        })),
+        set(() => {
+          document.documentElement.dataset.theme = scheme;
+
+          return {
+            colorScheme: scheme,
+          };
+        }),
     }),
     {
       name: 'theme-storage', // localStorage key

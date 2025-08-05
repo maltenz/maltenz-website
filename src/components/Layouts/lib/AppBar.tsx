@@ -73,6 +73,7 @@ function AppBar() {
               <Button
                 component="a"
                 href="/"
+                aria-label="Go home"
                 sx={{
                   minWidth: 0, // override default minWidth
                   width: 40,
