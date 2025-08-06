@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AdminWrapper from '../components/AdminWrapper';
 ---
 
 <Layout title="Content Manager">
@@ -8,4 +9,8 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- ✅ Decap CMS -->
   <script slot="head" src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.min.js" defer></script>
+
+  <AdminWrapper client:load>
+    <div id="nc-root"></div>
+  </AdminWrapper>
 </Layout>

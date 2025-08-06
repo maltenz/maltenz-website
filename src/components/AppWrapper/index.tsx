@@ -18,8 +18,6 @@ export default function AppWrapper({ children }: AppWrapperProps) {
 
   if (!isHydrated) return null;
 
-  console.log({ colorScheme });
-
   return (
     <Theme colorScheme={colorScheme}>
       <AppBar />
