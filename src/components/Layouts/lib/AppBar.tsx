@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 
-import BuildIcon from '@mui/icons-material/Build';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
-import PersonIcon from '@mui/icons-material/Person';
-import WorkIcon from '@mui/icons-material/Work';
 import { Stack, useTheme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
@@ -51,15 +46,11 @@ function NavLink({ href, children }: NavLinkProps) {
 }
 
 function AppBar() {
-  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const { colorScheme, toggleColorScheme } = useThemeStore();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
 
   const isDark = colorScheme === 'dark';
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
 
   const bgColor = {
     bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
@@ -70,27 +61,37 @@ function AppBar() {
   };
 
   return (
-    <div>
-      <MuiAppBar
-        position="fixed"
-        sx={{
-          boxShadow: 0,
-          bgcolor: 'transparent',
-          backgroundImage: 'none',
-          mt: 2,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Toolbar
-            variant="regular"
+    <MuiAppBar
+      position="fixed"
+      sx={{
+        boxShadow: 0,
+        bgcolor: 'transparent',
+        backgroundImage: 'none',
+        mt: 2,
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar
+          component={Stack}
+          gap={2}
+          variant="regular"
+          sx={(muiTheme) => ({
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            borderRadius: muiTheme.spacing(4), // theme-based large radius for pill shape
+            // maxHeight: 40,
+            height: 500,
+            paddingTop: 1.25,
+            ...bgColor,
+          })}
+        >
+          <Box
             sx={{
+              width: '100%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'space-between',
-              flexShrink: 0,
-              borderRadius: '999px',
-              // maxHeight: 40,
-              ...bgColor,
+              alignItems: 'flex-start',
             }}
           >
             <Box
@@ -147,7 +148,7 @@ function AppBar() {
 
             <Box>
               <IconButton
-                onClick={toggleDrawer(true)}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 color="primary"
                 size="small"
                 sx={{
@@ -161,111 +162,17 @@ function AppBar() {
               >
                 <MenuIcon />
               </IconButton>
-
-              <Drawer
-                anchor="right"
-                open={open}
-                onClose={toggleDrawer(false)}
-                PaperProps={{
-                  sx: {
-                    backgroundColor: 'transparent !important',
-                    backgroundImage: 'none',
-                    boxShadow: 'none',
-                  },
-                }}
-              >
-                <Box
-                  sx={{
-                    width: '50vw',
-                    p: 2,
-                    flexGrow: 1,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'end',
-                      flexGrow: 1,
-                    }}
-                  >
-                    <IconButton
-                      color="primary"
-                      onClick={toggleDrawer(false)}
-                      sx={{
-                        minHeight: '35px',
-                        minWidth: '35px',
-                      }}
-                    >
-                      <CloseRoundedIcon />
-                    </IconButton>
-                  </Box>
-
-                  <Stack gap={2} mt={2}>
-                    <Button
-                      component="a"
-                      href="/projects"
-                      variant="outlined"
-                      color="primary"
-                      fullWidth
-                      size="large"
-                      startIcon={<WorkIcon sx={{ marginRight: '5px' }} />}
-                      sx={{
-                        justifyContent: 'flex-start',
-                        fontWeight: 600,
-                        borderRadius: 999,
-                        py: '10px',
-                        textDecoration: 'none',
-                      }}
-                    >
-                      Projects
-                    </Button>
-
-                    <Button
-                      component="a"
-                      href="/services"
-                      variant="outlined"
-                      color="primary"
-                      fullWidth
-                      size="large"
-                      startIcon={<BuildIcon sx={{ marginRight: '5px' }} />}
-                      sx={{
-                        justifyContent: 'flex-start',
-                        fontWeight: 600,
-                        borderRadius: 999,
-                        py: '10px',
-                        textDecoration: 'none',
-                      }}
-                    >
-                      Services
-                    </Button>
-
-                    <Button
-                      component="a"
-                      href="/about"
-                      variant="outlined"
-                      color="primary"
-                      fullWidth
-                      size="large"
-                      startIcon={<PersonIcon sx={{ marginRight: '5px' }} />}
-                      sx={{
-                        justifyContent: 'flex-start',
-                        fontWeight: 600,
-                        borderRadius: 999,
-                        py: '10px',
-                        textDecoration: 'none',
-                      }}
-                    >
-                      About
-                    </Button>
-                  </Stack>
-                </Box>
-              </Drawer>
             </Box>
-          </Toolbar>
-        </Container>
-      </MuiAppBar>
-    </div>
+          </Box>
+
+          {mobileMenuOpen && (
+            <Box>
+              <img alt="" src="https://placehold.co/600x400/7322c3/orange" />
+            </Box>
+          )}
+        </Toolbar>
+      </Container>
+    </MuiAppBar>
   );
 }
 
