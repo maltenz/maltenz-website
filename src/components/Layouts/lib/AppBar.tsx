@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
 import BuildIcon from '@mui/icons-material/Build';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -18,6 +19,31 @@ import Toolbar from '@mui/material/Toolbar';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import { brand } from '../../../theme/themePrimitives';
+
+type NavLinkProps = {
+  href: string;
+  children: ReactNode;
+};
+
+function NavLink({ href, children }: NavLinkProps) {
+  return (
+    <Box
+      component="a"
+      href={href}
+      sx={(theme) => ({
+        fontWeight: 400,
+        textDecoration: 'none',
+        ...theme.typography.body2,
+        color: 'text.primary',
+        '&:hover': {
+          color: 'primary.main',
+        },
+      })}
+    >
+      {children}
+    </Box>
+  );
+}
 
 function AppBar() {
   const [open, setOpen] = useState(false);
@@ -93,18 +119,10 @@ function AppBar() {
                 m.
               </Button>
 
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
-                  Projects
-                </Button>
-
-                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
-                  Solutions
-                </Button>
-
-                <Button variant="text" size="small" sx={{ fontWeight: 600 }}>
-                  About
-                </Button>
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                <NavLink href="/services">Services</NavLink>
+                <NavLink href="/projects">Projects</NavLink>
+                <NavLink href="/about">About</NavLink>
               </Box>
             </Box>
 
@@ -180,6 +198,8 @@ function AppBar() {
 
                   <Stack gap={2} mt={2}>
                     <Button
+                      component="a"
+                      href="/projects"
                       variant="outlined"
                       color="primary"
                       fullWidth
@@ -190,12 +210,15 @@ function AppBar() {
                         fontWeight: 600,
                         borderRadius: 999,
                         py: '10px',
+                        textDecoration: 'none',
                       }}
                     >
                       Projects
                     </Button>
 
                     <Button
+                      component="a"
+                      href="/services"
                       variant="outlined"
                       color="primary"
                       fullWidth
@@ -206,12 +229,15 @@ function AppBar() {
                         fontWeight: 600,
                         borderRadius: 999,
                         py: '10px',
+                        textDecoration: 'none',
                       }}
                     >
-                      Solutions
+                      Services
                     </Button>
 
                     <Button
+                      component="a"
+                      href="/about"
                       variant="outlined"
                       color="primary"
                       fullWidth
@@ -222,6 +248,7 @@ function AppBar() {
                         fontWeight: 600,
                         borderRadius: 999,
                         py: '10px',
+                        textDecoration: 'none',
                       }}
                     >
                       About

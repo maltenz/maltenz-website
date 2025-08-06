@@ -99,11 +99,11 @@ export default function Footer() {
           </Typography>
 
           <Link color="text.secondary" variant="body2" href="#">
-            Projects
+            Services
           </Link>
 
           <Link color="text.secondary" variant="body2" href="#">
-            Solutions
+            Projects
           </Link>
 
           <Link color="text.secondary" variant="body2" href="#">
