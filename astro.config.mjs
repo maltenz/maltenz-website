@@ -12,6 +12,22 @@ function rewriteConfigPlugin() {
         if (req.url === '/config.yml') {
           req.url = '/admin/config.yml';
         }
+
+        /*
+         * Handle Netlify Identity authentication tokens
+         * Redirect recovery_token and invite_token to admin page
+         */
+        if (req.url === '/' && req.headers.referer) {
+          const refererUrl = new URL(req.headers.referer);
+          const { hash } = refererUrl;
+          if (hash && (hash.includes('recovery_token') || hash.includes('invite_token'))) {
+            res.writeHead(302, { Location: `/admin/${hash}` });
+            res.end();
+
+            return;
+          }
+        }
+
         next();
       });
     },
