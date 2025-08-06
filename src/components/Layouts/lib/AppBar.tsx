@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Stack, useTheme } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,6 +13,7 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
+import { gsap } from 'gsap';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import { brand } from '../../../theme/themePrimitives';
@@ -19,15 +21,17 @@ import { brand } from '../../../theme/themePrimitives';
 type NavLinkProps = {
   href: string;
   children: ReactNode;
+  sx?: SxProps<Theme>;
 };
 
-function NavLink({ href, children }: NavLinkProps) {
+function NavLink({ href, children, sx }: NavLinkProps) {
   const { colorScheme } = useThemeStore();
+  const theme = useTheme();
 
   return (
     <Link
       href={href}
-      sx={(theme) => ({
+      sx={{
         ...theme.typography.body2,
         textDecoration: 'none',
         fontWeight: 500,
@@ -38,7 +42,8 @@ function NavLink({ href, children }: NavLinkProps) {
         '&::before': {
           display: 'none',
         },
-      })}
+        ...sx,
+      }}
     >
       {children}
     </Link>
@@ -49,6 +54,7 @@ function AppBar() {
   const theme = useTheme();
   const { colorScheme, toggleColorScheme } = useThemeStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const isDark = colorScheme === 'dark';
 
@@ -59,6 +65,55 @@ function AppBar() {
     borderColor: 'divider',
     MozBorderRadiusBottomleft: 'none',
   };
+
+  useEffect(() => {
+    if (mobileMenuRef.current) {
+      if (mobileMenuOpen) {
+        // Show animation
+        gsap.fromTo(
+          mobileMenuRef.current,
+          {
+            height: 0,
+            opacity: 0,
+            overflow: 'hidden',
+          },
+          {
+            height: 'auto',
+            opacity: 1,
+            duration: 0.3,
+            ease: 'power2.out',
+          },
+        );
+      } else {
+        // Hide animation
+        gsap.to(mobileMenuRef.current, {
+          height: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.in',
+        });
+      }
+    }
+  }, [mobileMenuOpen]);
+
+  const mobileMenuSx = {
+    width: '100%',
+    // backgroundColor: 'red',
+    ...theme.typography.body1,
+    py: 2,
+    fontWeight: 400,
+    border: '1px solid',
+    borderColor: 'divider',
+    borderRadius: theme.spacing(4),
+    textAlign: 'center',
+
+    '&:focus': {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.common.white,
+    },
+
+    // fontSize: '2rem',
+  } as const;
 
   return (
     <MuiAppBar
@@ -79,10 +134,9 @@ function AppBar() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
-            borderRadius: muiTheme.spacing(4), // theme-based large radius for pill shape
-            // maxHeight: 40,
-            height: 500,
-            paddingTop: 1.25,
+            borderRadius: muiTheme.spacing(4),
+            minHeight: 'auto', // Let content determine height
+            paddingTop: 2,
             ...bgColor,
           })}
         >
@@ -165,11 +219,29 @@ function AppBar() {
             </Box>
           </Box>
 
-          {mobileMenuOpen && (
-            <Box>
-              <img alt="" src="https://placehold.co/600x400/7322c3/orange" />
+          <Box
+            ref={mobileMenuRef}
+            sx={{
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            <Box sx={{ pb: 2 }}>
+              <Stack gap={2}>
+                <NavLink sx={mobileMenuSx} href="/services">
+                  Services
+                </NavLink>
+
+                <NavLink sx={mobileMenuSx} href="/projects">
+                  Projects
+                </NavLink>
+
+                <NavLink sx={mobileMenuSx} href="/about">
+                  About
+                </NavLink>
+              </Stack>
             </Box>
-          )}
+          </Box>
         </Toolbar>
       </Container>
     </MuiAppBar>
