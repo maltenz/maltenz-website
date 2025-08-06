@@ -15,6 +15,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 
 import { useThemeStore } from '../../../stores/themeStore';
@@ -26,22 +27,26 @@ type NavLinkProps = {
 };
 
 function NavLink({ href, children }: NavLinkProps) {
+  const { colorScheme } = useThemeStore();
+
   return (
-    <Box
-      component="a"
+    <Link
       href={href}
       sx={(theme) => ({
-        fontWeight: 400,
-        textDecoration: 'none',
         ...theme.typography.body2,
+        textDecoration: 'none',
+        fontWeight: 500,
         color: 'text.primary',
         '&:hover': {
-          color: 'primary.main',
+          color: colorScheme === 'dark' ? 'primary.light' : 'primary.main',
+        },
+        '&::before': {
+          display: 'none',
         },
       })}
     >
       {children}
-    </Box>
+    </Link>
   );
 }
 
