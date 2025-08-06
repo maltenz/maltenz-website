@@ -25,6 +25,7 @@ collections:
     folder: "src/content/projects"
     create: true
     slug: "{{slug}}"
+    identifier_field: "title"
     fields:
       - {label: "Title", name: "title", widget: "text"}
       - {label: "Description", name: "description", widget: "text"}
