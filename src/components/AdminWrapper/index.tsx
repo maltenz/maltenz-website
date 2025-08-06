@@ -1,6 +1,5 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 
-import { useThemeStore } from '../../stores/themeStore';
 import Theme from '../../theme/Theme';
 
 type AdminWrapperProps = {
@@ -8,18 +7,22 @@ type AdminWrapperProps = {
 };
 
 export default function AdminWrapper({ children }: AdminWrapperProps) {
-  const { colorScheme, setColorScheme } = useThemeStore((s) => ({
-    colorScheme: s.colorScheme,
-    setColorScheme: s.setColorScheme,
-  }));
-  const [isHydrated, setIsHydrated] = useState(false);
+  const prevSchemeDarkRef = useRef<boolean>(false);
 
   useEffect(() => {
-    setIsHydrated(true);
-    setColorScheme('light');
-  }, [setColorScheme]);
+    const docThemeAttr = document.documentElement.dataset.theme;
 
-  if (!isHydrated) return null;
+    if (docThemeAttr === 'dark') {
+      prevSchemeDarkRef.current = true;
+      document.documentElement.dataset.theme = 'light';
+    }
 
-  return <Theme colorScheme={colorScheme}>{children}</Theme>;
+    return () => {
+      if (prevSchemeDarkRef) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    };
+  }, []);
+
+  return <Theme colorScheme="light">{children}</Theme>;
 }
