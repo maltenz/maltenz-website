@@ -24,15 +24,6 @@ const StyledCard = styled(Card)(({ theme }) => ({
   padding: 0,
   height: '100%',
   backgroundColor: (theme.vars || theme).palette.background.paper,
-  '&:hover': {
-    backgroundColor: 'transparent',
-    cursor: 'pointer',
-  },
-  '&:focus-visible': {
-    outline: '3px solid',
-    outlineColor: 'hsla(210, 98%, 48%, 0.5)',
-    outlineOffset: '2px',
-  },
 }));
 
 const StyledCardContent = styled(CardContent)({
@@ -41,9 +32,6 @@ const StyledCardContent = styled(CardContent)({
   gap: 4,
   padding: 16,
   flexGrow: 1,
-  '&:last-child': {
-    paddingBottom: 16,
-  },
   maxWidth: 780,
 });
 
@@ -169,10 +157,6 @@ export default function Hero({ data }: HeroProps) {
                 </Box>
 
                 <StyledCardContent>
-                  {/* <Typography gutterBottom variant="caption" component="div">
-                    {data.tag && data.tag.join(', ')}
-                  </Typography> */}
-
                   <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
 
                   <Typography variant="body1" color="text.secondary" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
