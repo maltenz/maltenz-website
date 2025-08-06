@@ -1,10 +1,14 @@
 ---
-title: "Material-UI Best Practices"
-description: "Essential tips and patterns for building beautiful, accessible interfaces with Material-UI and React."
+title: Material-UI Best Practices
+description: Essential tips and patterns for building beautiful, accessible
+  interfaces with Material-UI and React.
+tags:
+  - mui
+  - material-ui
+  - react
+  - design systems
 publishDate: 2025-07-15
-tags: ["mui", "material-ui", "react", "design systems"]
 ---
-
 Material-UI provides a comprehensive set of React components that implement Google's Material Design system. Here are some best practices for getting the most out of MUI.
 
 ## Theme Customization
@@ -23,13 +27,13 @@ const theme = createTheme({
 
 ## Component Patterns
 
-- Use the `sx` prop for one-off styling
-- Create custom components for repeated patterns
-- Leverage the theme breakpoints for responsive design
-- Always consider accessibility in your component design
+* Use the `sx` prop for one-off styling
+* Create custom components for repeated patterns
+* Leverage the theme breakpoints for responsive design
+* Always consider accessibility in your component design
 
 ## Performance Tips
 
-- Use tree shaking to only import what you need
-- Consider using `@mui/lab` for experimental components
-- Optimize bundle size with proper imports
+* Use tree shaking to only import what you need
+* Consider using `@mui/lab` for experimental components
+* Optimize bundle size with proper imports
