@@ -9,7 +9,6 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import { useThemeStore } from '../../../stores/themeStore';
-import { gray } from '../../../theme/themePrimitives';
 import Logo from '../../Logo';
 
 export default function Footer() {

@@ -10,7 +10,7 @@ type LogoProps = {
   sx?: SxProps<Theme>;
 };
 
-function Logo({ variant, sx }: LogoProps) {
+function Logo({ variant = 'brand', sx }: LogoProps) {
   const { colorScheme } = useThemeStore();
   const isDark = colorScheme === 'dark';
 
@@ -30,10 +30,23 @@ function Logo({ variant, sx }: LogoProps) {
     }
 
     // Auto theme-based selection when no variant specified
-    return isDark ? '/brand/aimi-color.svg' : '/brand/aimi-color.svg';
+    return '/brand/aimi-color.svg';
   };
 
   const getHoverSrc = () => {
+    if (variant) {
+      // For specific variants, hover to color version
+      switch (variant) {
+        case 'dark':
+          return '/brand/aimi-color.svg';
+        case 'light':
+          return '/brand/aimi-color.svg';
+        case 'brand':
+          return '/brand/aimi-color-light.svg';
+        default:
+      }
+    }
+
     // Auto theme-based hover
     return '/brand/aimi-color.svg';
   };
