@@ -45,4 +45,19 @@ export const feedbackCustomizations: Components<Theme> = {
       }),
     },
   },
+  MuiTooltip: {
+    styleOverrides: {
+      tooltip: ({ theme }) => ({
+        backgroundColor: (theme.vars || theme).palette.primary.main,
+        color: (theme.vars || theme).palette.primary.contrastText,
+        borderRadius: theme.spacing(1),
+        fontSize: theme.typography.body2.fontSize,
+        border: '1px solid',
+        borderColor: (theme.vars || theme).palette.divider,
+      }),
+      arrow: ({ theme }) => ({
+        color: (theme.vars || theme).palette.primary.main,
+      }),
+    },
+  },
 };

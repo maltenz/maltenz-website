@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
 import { alpha } from '@mui/material/styles';
 import { gsap } from 'gsap';
 import useWindowSize from 'react-use/lib/useWindowSize';
@@ -219,6 +220,24 @@ function AppBar() {
                   <NavLink href="/about">About</NavLink>
                 </Box>
               </Box>
+
+              <Tooltip title="AI Web Builder" arrow>
+                <Link
+                  href="/"
+                  sx={{
+                    ...theme.typography.body1,
+                    fontFamily: '"Pacifico", cursive',
+                    mr: 2,
+                    textDecoration: 'none',
+                    color: 'text.primary',
+                    '&:hover': {
+                      color: isDark ? 'primary.light' : 'primary.main',
+                    },
+                  }}
+                >
+                  Aime
+                </Link>
+              </Tooltip>
 
               <IconButton
                 onClick={toggleColorScheme}
