@@ -225,7 +225,7 @@ function AppBar() {
                 <Link
                   href="/"
                   sx={{
-                    ...theme.typography.body1,
+                    ...theme.typography.h6,
                     fontFamily: '"Pacifico", cursive',
                     mr: 2,
                     textDecoration: 'none',
