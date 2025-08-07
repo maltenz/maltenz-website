@@ -132,6 +132,13 @@ function AppBar() {
 
   const menuIconActiveColor = isDark ? 'primary.light' : 'primary.main';
 
+  const iconSx = {
+    minHeight: '35px',
+    minWidth: '35px',
+    borderRadius: '50%',
+    display: 'flex',
+  };
+
   return (
     <>
       <Backdrop
@@ -159,9 +166,11 @@ function AppBar() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
-              borderRadius: muiTheme.spacing(4),
+              borderRadius: muiTheme.spacing(2),
               paddingTop: 1.2,
               paddingBottom: 1.2,
+              paddingLeft: `${muiTheme.spacing(1.2)} !important`,
+              paddingRight: `${muiTheme.spacing(1.2)} !important`,
               ...bgColor,
             })}
           >
@@ -204,7 +213,7 @@ function AppBar() {
                   m.
                 </Button>
 
-                <Box sx={{ mt: 0.6, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
                   <NavLink href="/services">Services</NavLink>
                   <NavLink href="/projects">Projects</NavLink>
                   <NavLink href="/about">About</NavLink>
@@ -216,9 +225,7 @@ function AppBar() {
                 size="small"
                 color="primary"
                 sx={{
-                  minHeight: '35px',
-                  minWidth: '35px',
-                  mr: 1,
+                  ...iconSx,
                   display: 'flex',
                 }}
               >
@@ -231,8 +238,8 @@ function AppBar() {
                   color="primary"
                   size="small"
                   sx={{
-                    minHeight: '35px',
-                    minWidth: '35px',
+                    ...iconSx,
+                    ml: 1,
                     display: {
                       xs: 'flex',
                       md: 'none',

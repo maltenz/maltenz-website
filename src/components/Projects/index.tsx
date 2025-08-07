@@ -84,7 +84,7 @@ export default function Project({
               sx={{
                 width: '100%',
                 objectFit: 'cover',
-                borderRadius: 2,
+                borderRadius: 1,
                 mb: 2,
               }}
             />

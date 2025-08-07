@@ -130,7 +130,7 @@ export default function Hero({ data }: HeroProps) {
               </Typography>
 
               <StyledCard variant="outlined">
-                <Box
+                {/* <Box
                   sx={{
                     position: 'relative',
                     width: '100%',
@@ -153,7 +153,9 @@ export default function Hero({ data }: HeroProps) {
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     allowFullScreen
                   />
-                </Box>
+                </Box> */}
+
+                <Box component="img" src="https://placehold.co/600x300/7322c3/orange" />
 
                 <StyledCardContent>
                   <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />

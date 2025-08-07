@@ -28,7 +28,7 @@ export default function Latest({ data }: LatestProps) {
               sx={{
                 width: '100%',
                 objectFit: 'cover',
-                borderRadius: 2,
+                borderRadius: 1,
                 mb: 2,
               }}
             />

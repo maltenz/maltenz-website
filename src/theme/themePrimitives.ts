@@ -270,7 +270,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
       },
     },
     shape: {
-      borderRadius: 8,
+      borderRadius: 16,
     },
     shadows: customShadows,
   };
@@ -420,7 +420,7 @@ export const typography = {
 };
 
 export const shape = {
-  borderRadius: 8,
+  borderRadius: 16,
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

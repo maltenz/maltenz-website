@@ -68,6 +68,7 @@ export const surfacesCustomizations: Components<Theme> = {
           borderRadius: (theme.vars || theme).shape.borderRadius,
           border: `1px solid ${(theme.vars || theme).palette.divider}`,
           boxShadow: 'none',
+
           ...theme.applyStyles('dark', {
             backgroundColor: gray[800],
           }),
