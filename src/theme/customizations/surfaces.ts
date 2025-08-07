@@ -61,7 +61,7 @@ export const surfacesCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.3)',
-        backdropFilter: 'blur(8px)',
+        // backdropFilter: 'blur(8px)',
       }),
     },
   },

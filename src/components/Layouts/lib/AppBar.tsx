@@ -7,12 +7,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Stack, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
+import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
+import { alpha } from '@mui/material/styles';
 import { gsap } from 'gsap';
 
 import { useThemeStore } from '../../../stores/themeStore';
@@ -53,13 +55,13 @@ function NavLink({ href, children, sx }: NavLinkProps) {
 function AppBar() {
   const theme = useTheme();
   const { colorScheme, toggleColorScheme } = useThemeStore();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const isDark = colorScheme === 'dark';
 
   const bgColor = {
-    bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+    bgcolor: alpha(theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.common.black, 0.75),
     backdropFilter: 'blur(24px)',
     border: '1px solid',
     borderColor: 'divider',
@@ -98,7 +100,6 @@ function AppBar() {
 
   const mobileMenuSx = {
     width: '100%',
-    // backgroundColor: 'red',
     ...theme.typography.body1,
     py: 2,
     fontWeight: 400,
@@ -106,8 +107,13 @@ function AppBar() {
     borderColor: 'divider',
     borderRadius: theme.spacing(4),
     textAlign: 'center',
+    backgroundColor: 'action.hover',
 
-    '&:focus': {
+    '&:hover': {
+      backgroundColor: 'action.selected',
+    },
+
+    '&:active': {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.common.white,
     },
@@ -115,136 +121,149 @@ function AppBar() {
     // fontSize: '2rem',
   } as const;
 
+  const menuIconActiveColor = isDark ? 'primary.light' : 'primary.main';
+
   return (
-    <MuiAppBar
-      position="fixed"
-      sx={{
-        boxShadow: 0,
-        bgcolor: 'transparent',
-        backgroundImage: 'none',
-        mt: 2,
-      }}
-    >
-      <Container maxWidth="lg">
-        <Toolbar
-          component={Stack}
-          gap={2}
-          variant="regular"
-          sx={(muiTheme) => ({
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            borderRadius: muiTheme.spacing(4),
-            minHeight: 'auto', // Let content determine height
-            paddingTop: 2,
-            ...bgColor,
-          })}
-        >
-          <Box
-            sx={{
-              width: '100%',
+    <>
+      <Backdrop
+        open={mobileMenuOpen}
+        onClick={() => setMobileMenuOpen(false)}
+        sx={{
+          zIndex: (muiTheme) => muiTheme.zIndex.appBar - 1,
+        }}
+      />
+
+      <MuiAppBar
+        position="fixed"
+        sx={{
+          boxShadow: 0,
+          bgcolor: 'transparent',
+          backgroundImage: 'none',
+          mt: 2,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar
+            component={Stack}
+            variant="regular"
+            sx={(muiTheme) => ({
               display: 'flex',
-              justifyContent: 'space-between',
+              flexDirection: 'column',
               alignItems: 'flex-start',
-            }}
+              borderRadius: muiTheme.spacing(4),
+              paddingTop: 1.2,
+              paddingBottom: 1.2,
+
+              ...bgColor,
+            })}
           >
             <Box
               sx={{
-                flexGrow: 1,
+                width: '100%',
                 display: 'flex',
-                alignItems: 'center',
-                px: 0,
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
               }}
             >
-              <Button
-                component="a"
-                href="/"
-                aria-label="Go home"
+              <Box
                 sx={{
-                  minWidth: 0, // override default minWidth
-                  width: 40,
-                  height: 40,
-                  padding: 0,
-                  borderRadius: '40px 40px 40px 10px', // optional: make it round
-                  fontSize: 20,
-                  backgroundColor: isDark ? brand[400] : brand[500],
-                  '&:hover': { backgroundColor: isDark ? brand[300] : brand[400] },
-                  color: 'primary.contrastText',
-                  fontWeight: 800,
-                  marginRight: '20px',
-                  border: '1px solid',
-                  borderColor: 'divider',
+                  flexGrow: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  px: 0,
                 }}
               >
-                m.
-              </Button>
+                <Button
+                  component="a"
+                  href="/"
+                  aria-label="Go home"
+                  sx={{
+                    minWidth: 0, // override default minWidth
+                    width: 40,
+                    height: 40,
+                    padding: 0,
+                    borderRadius: '40px 40px 40px 10px', // optional: make it round
+                    fontSize: 20,
+                    backgroundColor: isDark ? brand[400] : brand[500],
+                    '&:hover': { backgroundColor: isDark ? brand[300] : brand[400] },
+                    color: 'primary.contrastText',
+                    fontWeight: 800,
+                    marginRight: '20px',
+                    border: '1px solid',
+                    borderColor: 'divider',
+                  }}
+                >
+                  m.
+                </Button>
 
-              <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                <NavLink href="/services">Services</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/about">About</NavLink>
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                  <NavLink href="/services">Services</NavLink>
+                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink href="/about">About</NavLink>
+                </Box>
               </Box>
-            </Box>
 
-            <IconButton
-              onClick={toggleColorScheme}
-              size="small"
-              color="primary"
-              sx={{
-                minHeight: '35px',
-                minWidth: '35px',
-                mr: 1,
-                display: 'flex',
-              }}
-            >
-              {isDark ? <LightModeIcon /> : <DarkModeIcon />}
-            </IconButton>
-
-            <Box>
               <IconButton
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                color="primary"
+                onClick={toggleColorScheme}
                 size="small"
+                color="primary"
                 sx={{
                   minHeight: '35px',
                   minWidth: '35px',
-                  display: {
-                    xs: 'flex',
-                    md: 'none',
-                  },
+                  mr: 1,
+                  display: 'flex',
                 }}
               >
-                <MenuIcon />
+                {isDark ? <LightModeIcon /> : <DarkModeIcon />}
               </IconButton>
+
+              <Box>
+                <IconButton
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  color="primary"
+                  size="small"
+                  sx={{
+                    minHeight: '35px',
+                    minWidth: '35px',
+                    display: {
+                      xs: 'flex',
+                      md: 'none',
+                    },
+                    color: mobileMenuOpen ? menuIconActiveColor : 'text.primary',
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Box>
             </Box>
-          </Box>
 
-          <Box
-            ref={mobileMenuRef}
-            sx={{
-              width: '100%',
-              overflow: 'hidden',
-            }}
-          >
-            <Box sx={{ pb: 2 }}>
-              <Stack gap={2}>
-                <NavLink sx={mobileMenuSx} href="/services">
-                  Services
-                </NavLink>
+            <Box
+              ref={mobileMenuRef}
+              sx={{
+                width: '100%',
+                overflow: 'hidden',
+              }}
+            >
+              <Box sx={{ py: 4 }}>
+                <Stack gap={2}>
+                  <NavLink sx={mobileMenuSx} href="/services">
+                    Services
+                  </NavLink>
 
-                <NavLink sx={mobileMenuSx} href="/projects">
-                  Projects
-                </NavLink>
+                  <NavLink sx={mobileMenuSx} href="/projects">
+                    Projects
+                  </NavLink>
 
-                <NavLink sx={mobileMenuSx} href="/about">
-                  About
-                </NavLink>
-              </Stack>
+                  <NavLink sx={mobileMenuSx} href="/about">
+                    About
+                  </NavLink>
+                </Stack>
+              </Box>
             </Box>
-          </Box>
-        </Toolbar>
-      </Container>
-    </MuiAppBar>
+          </Toolbar>
+        </Container>
+      </MuiAppBar>
+    </>
   );
 }
 
