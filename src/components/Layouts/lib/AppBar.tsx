@@ -242,6 +242,7 @@ function AppBar() {
               sx={{
                 width: '100%',
                 overflow: 'hidden',
+                height: 0,
               }}
             >
               <Box sx={{ py: 4 }}>
