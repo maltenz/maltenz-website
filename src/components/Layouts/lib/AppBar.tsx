@@ -162,7 +162,7 @@ function AppBar() {
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'flex-start',
+                alignItems: 'center',
               }}
             >
               <Box
@@ -196,7 +196,7 @@ function AppBar() {
                   m.
                 </Button>
 
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                <Box sx={{ mt: 0.6, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
                   <NavLink href="/services">Services</NavLink>
                   <NavLink href="/projects">Projects</NavLink>
                   <NavLink href="/about">About</NavLink>
