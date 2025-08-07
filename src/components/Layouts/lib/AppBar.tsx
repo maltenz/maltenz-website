@@ -16,6 +16,7 @@ import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import { alpha } from '@mui/material/styles';
 import { gsap } from 'gsap';
+import useWindowSize from 'react-use/lib/useWindowSize';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import { brand } from '../../../theme/themePrimitives';
@@ -57,6 +58,7 @@ function AppBar() {
   const { colorScheme, toggleColorScheme } = useThemeStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const { width } = useWindowSize();
 
   const isDark = colorScheme === 'dark';
 
@@ -97,6 +99,13 @@ function AppBar() {
       }
     }
   }, [mobileMenuOpen]);
+
+  // Close mobile menu when window width exceeds md breakpoint
+  useEffect(() => {
+    if (width >= theme.breakpoints.values.md && mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [width, mobileMenuOpen, theme.breakpoints.values.md]);
 
   const mobileMenuSx = {
     width: '100%',

@@ -27,6 +27,7 @@
     "markdown-to-jsx": "^7.7.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-use": "^17.6.0",
     "three": "^0.178.0",
     "zustand": "^5.0.6"
   },

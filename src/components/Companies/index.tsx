@@ -19,7 +19,7 @@ export default function Companies() {
   const isDark = colorScheme === 'dark';
 
   return (
-    <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
+    <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12 }}>
           <Typography variant="h4" mb={2} sx={{ fontWeight: '400' }}>

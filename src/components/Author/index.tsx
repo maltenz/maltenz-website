@@ -1,6 +1,11 @@
 import { Avatar, AvatarGroup, Box, Typography } from '@mui/material';
 
-const authors = [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }];
+type AuthorType = {
+  name: string;
+  avatar: string;
+};
+
+const authors: AuthorType[] = [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }];
 
 export default function Author() {
   return (
