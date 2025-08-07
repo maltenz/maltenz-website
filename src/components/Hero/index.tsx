@@ -26,14 +26,13 @@ const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: (theme.vars || theme).palette.background.paper,
 }));
 
-const StyledCardContent = styled(CardContent)({
+const StyledCardContent = styled(CardContent)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  gap: 4,
-  padding: 16,
-  flexGrow: 1,
+  padding: theme.spacing(2),
+  // flexGrow: 1,
   maxWidth: 780,
-});
+}));
 
 type HeroProps = {
   data: HeroData;
@@ -125,7 +124,7 @@ export default function Hero({ data }: HeroProps) {
           </div>
 
           <Grid container spacing={2} columns={12}>
-            <Grid size={{ xs: 12, md: 12 }}>
+            <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
               <Typography variant="h4" mb={2} sx={{ fontWeight: '400' }}>
                 Demo
               </Typography>
@@ -157,9 +156,9 @@ export default function Hero({ data }: HeroProps) {
                 </Box>
 
                 <StyledCardContent>
-                  <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
+                  <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
-                  <Typography variant="body1" color="text.secondary" gutterBottom sx={{ whiteSpace: 'pre-line' }}>
+                  <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
                     {data.description}
                   </Typography>
                 </StyledCardContent>
@@ -168,10 +167,9 @@ export default function Hero({ data }: HeroProps) {
                   sx={{
                     display: 'flex',
                     flexDirection: 'row',
-                    gap: 2,
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '16px',
+                    padding: 2,
                   }}
                 >
                   <Author />

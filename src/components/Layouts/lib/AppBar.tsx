@@ -162,7 +162,6 @@ function AppBar() {
               borderRadius: muiTheme.spacing(4),
               paddingTop: 1.2,
               paddingBottom: 1.2,
-
               ...bgColor,
             })}
           >
