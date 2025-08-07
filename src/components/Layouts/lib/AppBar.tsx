@@ -9,7 +9,6 @@ import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
@@ -20,7 +19,7 @@ import { gsap } from 'gsap';
 import useWindowSize from 'react-use/lib/useWindowSize';
 
 import { useThemeStore } from '../../../stores/themeStore';
-import { brand } from '../../../theme/themePrimitives';
+import Logo from '../../Logo';
 
 type NavLinkProps = {
   href: string;
@@ -191,28 +190,19 @@ function AppBar() {
                   px: 0,
                 }}
               >
-                <Button
-                  component="a"
+                <Link
                   href="/"
                   aria-label="Go home"
                   sx={{
-                    minWidth: 0, // override default minWidth
-                    width: 40,
-                    height: 40,
-                    padding: 0,
-                    borderRadius: '40px 40px 40px 10px', // optional: make it round
-                    fontSize: 20,
-                    backgroundColor: isDark ? brand[400] : brand[500],
-                    '&:hover': { backgroundColor: isDark ? brand[300] : brand[400] },
-                    color: 'primary.contrastText',
-                    fontWeight: 800,
-                    marginRight: '20px',
-                    border: '1px solid',
-                    borderColor: 'divider',
+                    display: 'flex',
+                    mr: 2,
+                    '&::before': {
+                      display: 'none',
+                    },
                   }}
                 >
-                  m.
-                </Button>
+                  <Logo />
+                </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
                   <NavLink href="/services">Services</NavLink>
@@ -235,7 +225,7 @@ function AppBar() {
                     },
                   }}
                 >
-                  Aime
+                  Aimi
                 </Link>
               </Tooltip>
 
