@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import type { ReactNode } from 'react';
+
 import GithubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import type { SxProps, Theme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -10,6 +13,33 @@ import Typography from '@mui/material/Typography';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import Logo from '../../Logo';
+
+type FooterLinkProps = {
+  href: string;
+  children: ReactNode;
+  sx?: SxProps<Theme>;
+};
+
+function FooterLink({ href, children, sx }: FooterLinkProps) {
+  return (
+    <Link
+      color="text.secondary"
+      variant="body2"
+      href={href}
+      underline="none"
+      py={1}
+      sx={{
+        flex: '1',
+        '&:before': {
+          display: 'none',
+        },
+        ...sx,
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function Footer() {
   const { colorScheme } = useThemeStore();
@@ -23,7 +53,6 @@ export default function Footer() {
         alignItems: 'center',
         gap: { xs: 4, sm: 8 },
         py: { xs: 8, sm: 10 },
-        textAlign: { sm: 'center', md: 'left' },
       }}
     >
       <Box
@@ -51,8 +80,9 @@ export default function Footer() {
               Newsletter
             </Typography>
 
-            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-              Subscribe to our newsletter for updates and promotions.
+            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, maxWidth: 300 }}>
+              Subscribe to our newsletter for
+              <wbr /> updates and promotions.
             </Typography>
 
             <Stack direction="row" spacing={1} useFlexGap>
@@ -132,6 +162,10 @@ export default function Footer() {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
+          flexDirection: {
+            xs: 'column',
+            sm: 'row',
+          },
           alignItems: 'center',
           pt: { xs: 4, sm: 8 },
           width: '100%',
@@ -139,51 +173,15 @@ export default function Footer() {
           borderColor: 'divider',
         }}
       >
-        <Link
-          color="text.secondary"
-          variant="body2"
-          href="#"
-          underline="none"
-          sx={{
-            flex: '1',
-            '&:before': {
-              display: 'none',
-            },
-          }}
-        >
-          Privacy Policy
-        </Link>
+        <FooterLink href="#">Privacy Policy</FooterLink>
 
-        <Link
-          color="text.secondary"
-          variant="body2"
-          href="#"
-          underline="none"
-          sx={{
-            flex: '1',
-            textAlign: 'center',
-            '&:before': {
-              display: 'none',
-            },
-          }}
-        >
+        <FooterLink href="#" sx={{ textAlign: 'center' }}>
           Terms of Service
-        </Link>
+        </FooterLink>
 
-        <Typography
-          variant="body2"
-          sx={{
-            flex: '1',
-            textAlign: 'right',
-            color: 'text.secondary',
-            mt: 1,
-            '&:before': {
-              display: 'none',
-            },
-          }}
-        >
+        <FooterLink href="#" sx={{ textAlign: 'right' }}>
           {`Copyright © ${new Date().getFullYear()}`}
-        </Typography>
+        </FooterLink>
       </Box>
     </Container>
   );

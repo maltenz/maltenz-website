@@ -1,8 +1,6 @@
 import { Box } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 
-import { useThemeStore } from '../../stores/themeStore';
-
 type LogoVariant = 'dark' | 'light' | 'brand';
 
 type LogoProps = {
@@ -11,9 +9,6 @@ type LogoProps = {
 };
 
 function Logo({ variant = 'brand', sx }: LogoProps) {
-  const { colorScheme } = useThemeStore();
-  const isDark = colorScheme === 'dark';
-
   const getLogoSrc = () => {
     if (variant) {
       // Use specific variant
