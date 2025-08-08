@@ -1,18 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import type { ReactNode } from 'react';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import GithubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import type { SxProps, Theme } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
+import { type SxProps, type Theme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { FormProvider, useForm } from 'react-hook-form';
+import * as Yup from 'yup';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import Logo from '../../Logo';
+import RHFTextField from '../../RhfTextField';
+
+const LoginSchema = Yup.object().shape({
+  name: Yup.string().required('Name is required'),
+  email: Yup.string().required('Email is required').email('Email must be a valid email address'),
+});
+
+const defaultValues = {
+  name: '',
+  email: '',
+};
 
 type FooterLinkProps = {
   href: string;
@@ -43,7 +58,57 @@ function FooterLink({ href, children, sx }: FooterLinkProps) {
 
 export default function Footer() {
   const { colorScheme } = useThemeStore();
+
+  const methods = useForm({
+    resolver: yupResolver(LoginSchema),
+    defaultValues,
+  });
+
+  const {
+    reset,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = methods;
+
   const isDark = colorScheme === 'dark';
+
+  const onSubmit = handleSubmit(async () => {
+    try {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+      });
+    } catch (error) {
+      reset();
+      if (error instanceof Error) {
+        /* empty */
+      } else {
+        /* empty */
+      }
+    }
+  });
+
+  const renderForm = (
+    <FormProvider {...methods}>
+      <form onSubmit={onSubmit}>
+        <Stack spacing={2.5}>
+          <RHFTextField name="name" label="Name" />
+          <RHFTextField name="email" label="Email" />
+
+          <LoadingButton
+            fullWidth
+            color="inherit"
+            size="large"
+            type="submit"
+            variant="contained"
+            loading={isSubmitting}
+            sx={{ mb: '20px', fontSize: '17px' }}
+          >
+            Subscribe
+          </LoadingButton>
+        </Stack>
+      </form>
+    </FormProvider>
+  );
 
   return (
     <Container
@@ -71,19 +136,29 @@ export default function Footer() {
             minWidth: { xs: '100%', sm: '60%' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-            <Box sx={{ mb: 1 }}>
-              <Logo variant={isDark ? 'light' : 'dark'} />
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 2,
+            }}
+          >
+            <Box>{renderForm}</Box>
+
+            <Box>
+              <Box sx={{ mb: 1 }}>
+                <Logo variant={isDark ? 'light' : 'dark'} />
+              </Box>
+
+              <Typography variant="body2" gutterBottom sx={{ fontWeight: 600 }}>
+                Newsletter
+              </Typography>
+
+              <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, maxWidth: 300 }}>
+                Subscribe to our newsletter for
+                <wbr /> updates and promotions.
+              </Typography>
             </Box>
-
-            <Typography variant="body2" gutterBottom sx={{ fontWeight: 600 }}>
-              Newsletter
-            </Typography>
-
-            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, maxWidth: 300 }}>
-              Subscribe to our newsletter for
-              <wbr /> updates and promotions.
-            </Typography>
 
             <Stack direction="row" spacing={1} useFlexGap>
               <IconButton
