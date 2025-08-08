@@ -44,7 +44,8 @@ export const inputsCustomizations: Components<Theme> = {
             },
             style: {
               height: '2.25rem',
-              padding: '8px 12px',
+              paddingRight: `2rem`,
+              paddingLeft: `2rem`,
             },
           },
           {
@@ -53,6 +54,8 @@ export const inputsCustomizations: Components<Theme> = {
             },
             style: {
               height: '2.5rem', // 40px
+              paddingRight: `2rem`,
+              paddingLeft: `2rem`,
             },
           },
           {
@@ -367,9 +370,10 @@ export const inputsCustomizations: Components<Theme> = {
   },
   MuiInputBase: {
     styleOverrides: {
-      root: {
+      root: ({ theme }) => ({
         border: 'none',
-      },
+        ...theme.typography.body2,
+      }),
       input: {
         '&::placeholder': {
           opacity: 0.7,
@@ -390,6 +394,7 @@ export const inputsCustomizations: Components<Theme> = {
         border: `1px solid ${(theme.vars || theme).palette.divider}`,
         backgroundColor: (theme.vars || theme).palette.background.default,
         transition: 'border 120ms ease-in',
+        ...theme.typography.body2, // Apply body2 typography to all outlined inputs
         '&:hover': {
           borderColor: gray[400],
         },

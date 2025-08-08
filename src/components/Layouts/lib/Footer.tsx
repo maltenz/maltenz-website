@@ -102,7 +102,6 @@ export default function Footer() {
             loading={isSubmitting}
             sx={{
               alignSelf: 'flex-start',
-              minWidth: 'auto',
             }}
           >
             Subscribe
@@ -135,6 +134,10 @@ export default function Footer() {
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
+            mb: {
+              xs: 4,
+              md: 0,
+            },
           }}
         >
           <Box
