@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -7,11 +7,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import { OrbitControls, useGLTF, Center, Environment, useAnimations } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import { useGLTF, Center, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
 
-import { useThemeStore } from '../../stores/themeStore';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
 import TagList, { Tags } from '../Taglist';
@@ -93,11 +91,9 @@ export default function Hero({ data }: HeroProps) {
     return 'No date available';
   };
 
-  const colorScheme = useThemeStore((state) => state.colorScheme);
-
   return (
     <>
-      <Box sx={{ width: '100%', height: '100%', position: 'absolute', bottom: 0, zIndex: -1 }}>
+      {/* <Box sx={{ width: '100%', height: '100%', position: 'absolute', bottom: 0, zIndex: -1 }}>
         <Canvas
           camera={{ position: [25.57389367777905, 14.115426737355802, 20.892499726765436], fov: 50 }}
           style={{ width: '100%', height: '100%' }}
@@ -113,7 +109,18 @@ export default function Hero({ data }: HeroProps) {
 
           <OrbitControls enableZoom={false} enablePan enableRotate />
         </Canvas>
-      </Box>
+
+        <Box
+          component="img"
+          src="/brand/background.png"
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.2,
+          }}
+        />
+      </Box> */}
 
       <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
