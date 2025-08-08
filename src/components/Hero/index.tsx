@@ -155,7 +155,7 @@ export default function Hero({ data }: HeroProps) {
                   />
                 </Box> */}
 
-                <Box component="img" src="https://placehold.co/600x300/7322c3/orange" />
+                <Box component="img" src="/brand/build-your-dream-mix-min.png" sx={{ borderRadius: 1 }} />
 
                 <StyledCardContent>
                   <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />

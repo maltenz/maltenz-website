@@ -1,8 +1,8 @@
 ---
 title: |-
-  Hi there 👋 
-  I’m a User Interface Developer, 
-  come check out my work!
+  Hi there 👋
+  I craft interfaces —
+  this is Aimi, my AI self.
 description: >-
   Taking a modern approach to Quiz Trivia.
 
