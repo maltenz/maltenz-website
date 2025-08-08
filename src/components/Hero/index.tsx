@@ -126,7 +126,25 @@ export default function Hero({ data }: HeroProps) {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div>
             <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 0, mb: 4 }}>
-              {data.title}
+              {data.title
+                .replace('Aimi', '|AIMI|')
+                .split('|')
+                .map((part) => {
+                  if (part === 'AIMI') {
+                    return (
+                      <Box
+                        key="aimi-styled"
+                        component="span"
+                        sx={{
+                          fontFamily: '"Pacifico", cursive',
+                        }}
+                      >
+                        Aimi
+                      </Box>
+                    );
+                  }
+                  return part;
+                })}
             </Typography>
           </div>
 
