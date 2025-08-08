@@ -91,17 +91,19 @@ export default function Footer() {
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
         <Stack spacing={2.5}>
-          <RHFTextField name="name" label="Name" />
-          <RHFTextField name="email" label="Email" />
+          <RHFTextField name="name" placeholder="Name" />
+          <RHFTextField name="email" placeholder="Email" />
 
           <LoadingButton
-            fullWidth
             color="inherit"
-            size="large"
+            variant="outlined"
+            size="small"
             type="submit"
-            variant="contained"
             loading={isSubmitting}
-            sx={{ mb: '20px', fontSize: '17px' }}
+            sx={{
+              alignSelf: 'flex-start',
+              minWidth: 'auto',
+            }}
           >
             Subscribe
           </LoadingButton>
@@ -123,7 +125,7 @@ export default function Footer() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
+          flexDirection: { xs: 'column', md: 'row' },
           width: '100%',
           justifyContent: 'space-between',
         }}
@@ -133,19 +135,21 @@ export default function Footer() {
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
-            minWidth: { xs: '100%', sm: '60%' },
           }}
         >
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 2,
+              gridTemplateColumns: {
+                xs: '1fr 1fr',
+                sm: '3fr 5fr',
+              },
+              gap: 4,
             }}
           >
-            <Box>{renderForm}</Box>
+            {renderForm}
 
-            <Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ mb: 1 }}>
                 <Logo variant={isDark ? 'light' : 'dark'} />
               </Box>
@@ -159,78 +163,68 @@ export default function Footer() {
                 <wbr /> updates and promotions.
               </Typography>
             </Box>
-
-            <Stack direction="row" spacing={1} useFlexGap>
-              <IconButton
-                color="inherit"
-                size="small"
-                href="https://github.com/maltenz"
-                aria-label="GitHub"
-                sx={{ alignSelf: 'center' }}
-              >
-                <GithubIcon />
-              </IconButton>
-
-              <IconButton
-                color="inherit"
-                size="small"
-                href="https://www.linkedin.com/in/malte-boeing-858990170/"
-                aria-label="LinkedIn"
-                sx={{ alignSelf: 'center' }}
-              >
-                <LinkedInIcon />
-              </IconButton>
-            </Stack>
           </Box>
         </Box>
 
-        <Box
+        <Stack
+          display="flex"
+          flexDirection="row"
+          gap={4}
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
+            mt: {
+              xs: 4,
+              md: 0,
+            },
           }}
         >
-          <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-            Links
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+              Links
+            </Typography>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            Services
-          </Link>
+            <Link color="text.secondary" variant="body2" href="#">
+              Services
+            </Link>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            Projects
-          </Link>
+            <Link color="text.secondary" variant="body2" href="#">
+              Projects
+            </Link>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            About
-          </Link>
-        </Box>
+            <Link color="text.secondary" variant="body2" href="#">
+              About
+            </Link>
+          </Box>
 
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-            Legal
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+              Legal
+            </Typography>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            Terms
-          </Link>
+            <Link color="text.secondary" variant="body2" href="#">
+              Terms
+            </Link>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            Privacy
-          </Link>
+            <Link color="text.secondary" variant="body2" href="#">
+              Privacy
+            </Link>
 
-          <Link color="text.secondary" variant="body2" href="#">
-            Contact
-          </Link>
-        </Box>
+            <Link color="text.secondary" variant="body2" href="#">
+              Contact
+            </Link>
+          </Box>
+        </Stack>
       </Box>
 
       <Box
