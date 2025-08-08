@@ -169,7 +169,7 @@ export default function Footer() {
         <Stack
           display="flex"
           flexDirection="row"
-          gap={4}
+          gap={8}
           sx={{
             mt: {
               xs: 4,
@@ -185,19 +185,19 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Links
+              Services
             </Typography>
 
             <Link color="text.secondary" variant="body2" href="#">
-              Services
+              Websites
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
-              Projects
+              Apps
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
-              About
+              AI
             </Link>
           </Box>
 
@@ -209,15 +209,26 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Legal
+              Links
             </Typography>
 
-            <Link color="text.secondary" variant="body2" href="#">
-              Terms
+            <Link
+              color="text.secondary"
+              variant="body2"
+              href="#"
+              sx={{
+                fontFamily: '"Pacifico", cursive',
+              }}
+            >
+              Aimi
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
-              Privacy
+              Projects
+            </Link>
+
+            <Link color="text.secondary" variant="body2" href="#">
+              About
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">

@@ -211,7 +211,16 @@ function AppBar() {
                 </Box>
               </Box>
 
-              <Tooltip title="AI Web Builder" arrow>
+              <Tooltip
+                title={
+                  <Box sx={{ textAlign: 'center', lineHeight: 1.25 }}>
+                    AI Website
+                    <br />
+                    Builder
+                  </Box>
+                }
+                arrow
+              >
                 <Link
                   href="/"
                   sx={{
