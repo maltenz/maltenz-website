@@ -1,6 +1,9 @@
 ---
 title: Dali – Website Coming Soon
-description: Dali’s bold, vibrant style has grown into a movement — brightening spaces across New Zealand and bringing the spirit of music and creativity to life.
+description: Packed with personality and bold design, Dali’s upcoming website
+  will feel unmistakably like him — reflecting his style, energy, and character
+  in every detail so visitors instantly know they’re in his world.
+image: /uploads/dali.png
 tags:
   - dali
   - website coming soon
