@@ -29,7 +29,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "text"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Image", name: "image", widget: "image", required: true}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}

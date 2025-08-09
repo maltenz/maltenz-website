@@ -1,10 +1,10 @@
 ---
 title: |-
-  Aimii Websites
-  Your friendly AI co-designer for stylish, high-impact, lightning-fast websites.
+  Hi there 👋
+  I craft interfaces —
+  this is Aimii, my AI self.
 description: >-
-  Aimii makes it simple to get started — saving you time and money.
-  From bold portfolios to sleek business sites, Aimii delivers great quality, snazzy, and super fast results — effortlessly.
+  Aimii is your smart, ready-to-help design partner. She knows how to create great quality, snazzy, super fast websites — saving you time and money with ease.
 vimeo: https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1
 tag:
   - AI

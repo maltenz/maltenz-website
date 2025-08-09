@@ -23,7 +23,7 @@ export default function Latest({ data }: LatestProps) {
           <Grid key={post.slug} size={{ xs: 12, sm: 6 }}>
             <Box
               component="img"
-              src={post.data.image || '/brand/dali.png'}
+              src={post.data.image || 'https://placehold.co/600x400/7322c3/orange'}
               alt={post.data.title}
               sx={{
                 width: '100%',

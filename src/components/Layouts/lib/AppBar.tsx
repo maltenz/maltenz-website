@@ -234,7 +234,7 @@ function AppBar() {
                     },
                   }}
                 >
-                  Aimi
+                  Aimii
                 </Link>
               </Tooltip>
 

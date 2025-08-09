@@ -48,7 +48,7 @@ export default function Hero({ data }: HeroProps) {
         <div>
           <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 0, mb: 0 }}>
             {data.title
-              .replace('Aimi,', '|AIMI|')
+              .replace('Aimii,', '|AIMI|')
               .split('|')
               .map((part) => {
                 if (part === 'AIMI') {
@@ -60,7 +60,7 @@ export default function Hero({ data }: HeroProps) {
                         fontFamily: '"Pacifico", cursive',
                       }}
                     >
-                      Aimi,
+                      Aimii,
                     </Box>
                   );
                 }
@@ -81,13 +81,17 @@ export default function Hero({ data }: HeroProps) {
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontFamily: '"Pacifico", cursive',
-                  }}
-                >
-                  Aimii
+                <Typography variant="h4">
+                  Get started with{' '}
+
+                  <Typography
+                    component="span"
+                    sx={{
+                      fontFamily: '"Pacifico", cursive',
+                    }}
+                  >
+                    Aimii
+                  </Typography>
                 </Typography>
 
                 <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>

@@ -223,7 +223,7 @@ export default function Footer() {
                 fontFamily: '"Pacifico", cursive',
               }}
             >
-              Aimi
+              Aimii
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
