@@ -1,5 +1,5 @@
 ---
-title: Why I started Aimii
+title: Why I founded Aimii
 description: Essential tips and patterns for building beautiful, accessible
   interfaces with Material-UI and React.
 image: /uploads/founding-aimii.png
