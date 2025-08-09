@@ -81,6 +81,15 @@ export default function Hero({ data }: HeroProps) {
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontFamily: '"Pacifico", cursive',
+                  }}
+                >
+                  Aimii
+                </Typography>
+
                 <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
                   {data.description}
                 </Typography>

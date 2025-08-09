@@ -1,31 +1,36 @@
 ---
-title: Apps with Astro and React
-description: Learn how to combine the power of Astro's static site generation
-  with React's interactivity to create fast, modern web applications.
+title: Dali – Website Coming Soon
+description: Packed with personality and bold design, Dali’s upcoming website will feel unmistakably like him — reflecting his style, energy, and character in every detail so visitors instantly know they’re in his world.
 tags:
-  - astro
-  - react
-  - web development
-  - typescript
-publishDate: 2025-07-20
+  - dali
+  - website coming soon
+  - design
+  - launch
+publishDate: 2025-08-09
 ---
 
-## Why Astro?
+## Why Dali?
 
-Astro is revolutionizing how we build websites by combining the best of static site generation with the flexibility of modern frameworks like React.
+Dali isn’t just a website — it’s an experience.  
+With bold geometric patterns, funky sunglasses, and a Bob Marley–esque smile, Dali’s style is all about energy, colour, and confidence.
 
-* **Zero JS by default** - Only ship JavaScript when you need it
-* **Framework agnostic** - Use React, Vue, Svelte, or plain HTML
-* **Excellent performance** - Built-in optimizations and lazy loading
-* **Developer experience** - TypeScript support, hot reloading, and more
+* **Bold visuals** – Stand-out 3D cartoon style with personality  
+* **High performance** – Snappy, optimised for speed and SEO  
+* **Memorable design** – Unique branding that sticks in people’s minds  
+* **Effortless vibe** – A site that feels alive, fun, and totally “Dali”  
 
-## Getting Started
+## Packed with Personality and Bold Design
 
-The setup process is straightforward:
+Packed with personality and bold design, the website will feel unmistakably like him — reflecting his style, energy, and character
 
-1. Create a new Astro project
-2. Add your preferred UI framework
-3. Build your components
-4. Deploy to your favorite platform
+## What’s Coming
 
-This approach gives you the performance benefits of static sites with the interactivity of modern web apps.
+The new Dali site will capture the essence of the man himself:  
+fun, vibrant, and unapologetically bold. Expect:
+
+1. Eye-catching hero graphics  
+2. Smooth, super-fast navigation  
+3. A mix of art, stories, and updates from Dali  
+4. A design that works perfectly on any device  
+
+The countdown has begun — Dali’s world is about to go live, and it’s going to turn heads.
