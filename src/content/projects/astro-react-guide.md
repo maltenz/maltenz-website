@@ -3,7 +3,7 @@ title: Dali – Website Coming Soon
 description: Packed with personality and bold design, Dali’s upcoming website
   will feel unmistakably like him — reflecting his style, energy, and character
   in every detail so visitors instantly know they’re in his world.
-image: /uploads/malte-quit.png
+image: /uploads/dali.png
 tags:
   - dali
   - website coming soon
