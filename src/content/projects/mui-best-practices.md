@@ -2,6 +2,7 @@
 title: Material-UI Best Practices
 description: Essential tips and patterns for building beautiful, accessible
   interfaces with Material-UI and React.
+image: /uploads/malte-quit.png
 tags:
   - mui
   - material-ui
