@@ -43,7 +43,7 @@ export const inputsCustomizations: Components<Theme> = {
               size: 'small',
             },
             style: {
-              height: '2.25rem',
+              height: '2.5rem',
               paddingRight: `2rem`,
               paddingLeft: `2rem`,
             },
@@ -53,7 +53,7 @@ export const inputsCustomizations: Components<Theme> = {
               size: 'medium',
             },
             style: {
-              height: '2.5rem', // 40px
+              height: '2.5rem',
               paddingRight: `2rem`,
               paddingLeft: `2rem`,
             },
@@ -388,7 +388,7 @@ export const inputsCustomizations: Components<Theme> = {
         padding: 0,
       },
       root: ({ theme }) => ({
-        padding: '8px 12px',
+        padding: `${theme.spacing(1.5)} ${theme.spacing(2)}`,
         color: (theme.vars || theme).palette.text.primary,
         borderRadius: (theme.vars || theme).shape.borderRadius,
         border: `1px solid ${(theme.vars || theme).palette.divider}`,
