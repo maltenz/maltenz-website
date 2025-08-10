@@ -45,7 +45,7 @@ export default function Hero({ data }: HeroProps) {
   return (
     <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-        <div>
+        {/* <div>
           <Typography variant="h1" gutterBottom sx={{ whiteSpace: 'pre-line', mt: 0, mb: 0 }}>
             {data.title
               .replace('Aimii,', '|AIMI|')
@@ -66,8 +66,14 @@ export default function Hero({ data }: HeroProps) {
                 }
                 return part;
               })}
-          </Typography>
-        </div>
+          </Typography>``
+        </div> */}
+
+        <Box component="img" src="/brand/aimii-type-yellow.svg" sx={{ width: 300, margin: '0 auto' }} />
+
+        <Typography variant="h5" sx={{ fontWeight: '400', textAlign: 'center', mt: -2, color: 'text.secondary' }}>
+          Express Yourself
+        </Typography>
 
         <Grid container spacing={2} columns={12}>
           <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
