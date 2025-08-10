@@ -201,7 +201,7 @@ function AppBar() {
                     },
                   }}
                 >
-                  <Logo />
+                  <Logo variant="purple" sx={{ ml: 0.5 }} />
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
