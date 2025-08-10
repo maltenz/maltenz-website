@@ -76,7 +76,7 @@ export default function Hero({ data }: HeroProps) {
             </Typography>
 
             <StyledCard variant="outlined">
-              <Box component="img" src="/brand/build-your-dream-mix-min.png" sx={{ borderRadius: 1 }} />
+              <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1 }} />
 
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
