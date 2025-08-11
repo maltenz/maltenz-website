@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 
-type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple';
+type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple' | 'dark' | 'light';
 
 type LogoProps = {
   variant?: LogoVariant;
@@ -30,6 +30,16 @@ function Logo({ variant = 'purple', sx }: LogoProps) {
         return {
           background: '#260449',
           text: '#FFD700',
+        };
+      case 'dark':
+        return {
+          background: '#000',
+          text: '#fff',
+        };
+      case 'light':
+        return {
+          background: '#fff',
+          text: '#000',
         };
       default:
         return {

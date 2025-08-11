@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3072px" height="3072px" viewBox="0 0 3072 3072" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Emblems</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Emblems" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F75643" x="0" y="0" width="3072" height="3072"></rect>
+        <rect id="Rectangle" fill="#7B3BB9" x="0" y="0" width="1536" height="1606"></rect>
+        <rect id="Rectangle-Copy" fill="#F3B426" x="1536" y="0" width="1536" height="1606"></rect>
+        <g id="Group" transform="translate(0.000000, 1606.000000)">
+            <rect id="Rectangle-Copy-2" fill="#F75643" x="0" y="0" width="1536" height="1466"></rect>
+            <rect id="Rectangle-Copy-3" fill="#260449" x="1536" y="0" width="1536" height="1466"></rect>
+        </g>
+        <g id="Group-5" transform="translate(424.000000, 466.000000)" fill="#260449">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
+        </g>
+        <g id="Group-5" transform="translate(1960.000000, 466.000000)" fill="#F75643">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
+        </g>
+        <g id="Group-5" transform="translate(424.000000, 2002.000000)" fill="#F3B426">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
+        </g>
+        <g id="Group-5" transform="translate(1960.000000, 2002.000000)" fill="#7B3BB9">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>
