@@ -5,7 +5,7 @@ type AuthorType = {
   avatar: string;
 };
 
-const authors: AuthorType[] = [{ name: 'Malte Boeing', avatar: '/author/malte-boeing.jpeg' }];
+const authors: AuthorType[] = [{ name: 'Malt Biscuit', avatar: '/author/malte-boeing.jpeg' }];
 
 export default function Author() {
   return (

@@ -201,12 +201,12 @@ function AppBar() {
                     },
                   }}
                 >
-                  <Logo variant="yellow" sx={{ ml: 0.5 }} />
+                  <Logo variant="yellow" sx={{ ml: 0.5, mr: 1 }} />
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                  <NavLink href="/services">Services</NavLink>
-                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink href="/latest">Latest</NavLink>
+                  <NavLink href="/merch">Merch</NavLink>
                   <NavLink href="/about">About</NavLink>
                 </Box>
               </Box>
@@ -214,7 +214,7 @@ function AppBar() {
               <Tooltip
                 title={
                   <Box sx={{ textAlign: 'center', lineHeight: 1.25 }}>
-                    AI Website
+                    Website
                     <br />
                     Builder
                   </Box>
@@ -280,12 +280,16 @@ function AppBar() {
             >
               <Box sx={{ py: 4 }}>
                 <Stack gap={2}>
-                  <NavLink sx={mobileMenuSx} href="/services">
-                    Services
+                  <NavLink href="/latest">Latest</NavLink>
+                  <NavLink href="/merch">Merch</NavLink>
+                  <NavLink href="/about">About</NavLink>
+
+                  <NavLink sx={mobileMenuSx} href="/latest">
+                    Latest
                   </NavLink>
 
-                  <NavLink sx={mobileMenuSx} href="/projects">
-                    Projects
+                  <NavLink sx={mobileMenuSx} href="/merch">
+                    Merch
                   </NavLink>
 
                   <NavLink sx={mobileMenuSx} href="/about">

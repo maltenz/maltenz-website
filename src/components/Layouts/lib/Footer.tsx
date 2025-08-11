@@ -192,15 +192,15 @@ export default function Footer() {
             </Typography>
 
             <Link color="text.secondary" variant="body2" href="#">
-              Websites
+              Merch
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
-              Apps
+              Websites & Apps
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
-              AI
+              Branding
             </Link>
           </Box>
 
@@ -224,10 +224,6 @@ export default function Footer() {
               }}
             >
               Aimii
-            </Link>
-
-            <Link color="text.secondary" variant="body2" href="#">
-              Projects
             </Link>
 
             <Link color="text.secondary" variant="body2" href="#">
