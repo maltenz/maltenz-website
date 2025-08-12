@@ -1,5 +1,5 @@
 ---
-import { bodyScheme, colorSchemes, purple, yellow, orangeVariant, darkPurple } from '../theme/themePrimitives';
+import { bodyScheme, colorSchemes, purpleVariant, yellowVariant, orangeVariant, darkPurpleVariant } from '../theme/themePrimitives';
 
 const { title = 'Malte' } = Astro.props;
 ---
@@ -24,13 +24,13 @@ const { title = 'Malte' } = Astro.props;
       lightBg: bodyScheme.light.default,
       darkText: colorSchemes.dark.palette.text.primary,
       lightText: colorSchemes.light.palette.text.primary,
-      purpleBg: purple[500],
+      purpleBg: purpleVariant[500],
       purpleText: colorSchemes.light.palette.text.primary,
-      yellowBg: yellow[500],
+      yellowBg: yellowVariant[500],
       yellowText: colorSchemes.dark.palette.text.primary,
       orangeBg: orangeVariant[500],
       orangeText: colorSchemes.light.palette.text.primary,
-      darkPurpleBg: darkPurple[500],
+      darkPurpleBg: darkPurpleVariant[500],
       darkPurpleText: colorSchemes.light.palette.text.primary
     }}>
       html[data-theme='dark'] body {

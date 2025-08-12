@@ -69,7 +69,7 @@ export const brand: ColorRange = {
 };
 
 // Purple variant colors
-export const purple: ColorRange = {
+export const purpleVariant: ColorRange = {
   50: '#f3e8ff',
   100: '#e9d5ff',
   200: '#d8b4fe',
@@ -96,7 +96,7 @@ export const orangeRed: ColorRange = {
 };
 
 // Yellow variant colors
-export const yellow: ColorRange = {
+export const yellowVariant: ColorRange = {
   50: '#fffcf0',
   100: '#fef7d9',
   200: '#fdeeb3',
@@ -124,7 +124,7 @@ export const orangeVariant: ColorRange = {
 };
 
 // Dark purple variant colors
-export const darkPurple: ColorRange = {
+export const darkPurpleVariant: ColorRange = {
   50: '#faf5ff',
   100: '#f3e8ff',
   200: '#e9d5ff',
@@ -438,9 +438,9 @@ export const colorSchemes = {
   purple: {
     palette: {
       primary: {
-        light: purple[300],
-        main: purple[500], // #7B3BB9
-        dark: purple[700],
+        light: purpleVariant[300],
+        main: purpleVariant[500], // #7B3BB9
+        dark: purpleVariant[700],
         contrastText: '#FFFFFF',
       },
       secondary: {
@@ -450,9 +450,9 @@ export const colorSchemes = {
         contrastText: '#FFFFFF',
       },
       info: {
-        light: purple[100],
-        main: purple[300],
-        dark: purple[600],
+        light: purpleVariant[100],
+        main: purpleVariant[300],
+        dark: purpleVariant[600],
         contrastText: gray[50],
       },
       warning: {
@@ -489,21 +489,21 @@ export const colorSchemes = {
   yellow: {
     palette: {
       primary: {
-        light: yellow[300],
-        main: yellow[500], // #FFD700
-        dark: yellow[700],
+        light: yellowVariant[300],
+        main: yellowVariant[500], // #FFD700
+        dark: yellowVariant[700],
         contrastText: '#000000',
       },
       secondary: {
-        light: purple[300],
-        main: purple[500], // #7B3BB9
-        dark: purple[700],
+        light: purpleVariant[300],
+        main: purpleVariant[500], // #7B3BB9
+        dark: purpleVariant[700],
         contrastText: '#FFFFFF',
       },
       info: {
-        light: yellow[100],
-        main: yellow[300],
-        dark: yellow[600],
+        light: yellowVariant[100],
+        main: yellowVariant[300],
+        dark: yellowVariant[600],
         contrastText: gray[800],
       },
       warning: {
@@ -546,9 +546,9 @@ export const colorSchemes = {
         contrastText: '#FFFFFF',
       },
       secondary: {
-        light: purple[300],
-        main: purple[500], // #7B3BB9
-        dark: purple[700],
+        light: purpleVariant[300],
+        main: purpleVariant[500], // #7B3BB9
+        dark: purpleVariant[700],
         contrastText: '#FFFFFF',
       },
       info: {
@@ -591,21 +591,21 @@ export const colorSchemes = {
   'dark-purple': {
     palette: {
       primary: {
-        light: darkPurple[300],
-        main: darkPurple[500], // #260449
-        dark: darkPurple[700],
+        light: darkPurpleVariant[300],
+        main: darkPurpleVariant[500], // #260449
+        dark: darkPurpleVariant[700],
         contrastText: '#FFFFFF',
       },
       secondary: {
-        light: yellow[300],
-        main: yellow[500], // #FFD700
-        dark: yellow[700],
+        light: yellowVariant[300],
+        main: yellowVariant[500], // #FFD700
+        dark: yellowVariant[700],
         contrastText: '#000000',
       },
       info: {
-        light: darkPurple[100],
-        main: darkPurple[300],
-        dark: darkPurple[600],
+        light: darkPurpleVariant[100],
+        main: darkPurpleVariant[300],
+        dark: darkPurpleVariant[600],
         contrastText: gray[50],
       },
       warning: {
