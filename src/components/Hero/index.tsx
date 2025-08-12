@@ -227,12 +227,12 @@ export default function Hero({ data }: HeroProps) {
                     height="24"
                     viewBox="0 0 24 24"
                     sx={{
-                      marginLeft: '2px', // Slight offset to center visually
-                      filter: `drop-shadow(0 2px 4px ${alpha(theme.palette.common.black, 0.3)})`,
+                      marginBottom: '5px',
+                      marginLeft: '5px', // Slight offset to center visually
                     }}
                   >
                     <path
-                      d="M9.5 7.5a1 1 0 0 0-1.5.87v7.26a1 1 0 0 0 1.5.87l6.5-3.63a1 1 0 0 0 0-1.74L9.5 7.5z"
+                      d="M9.5 7.5a2 2 0 0 0-3 1.74v7.52a2 2 0 0 0 3 1.74l6.5-3.76a2 2 0 0 0 0-3.48L9.5 7.5z"
                       fill={theme.palette.primary.contrastText}
                     />
                   </Box>
