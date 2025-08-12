@@ -25,42 +25,42 @@ const { title = 'Malte' } = Astro.props;
       darkText: colorSchemes.dark.palette.text.primary,
       lightText: colorSchemes.light.palette.text.primary,
       purpleBg: purpleVariant[500],
-      purpleText: colorSchemes.light.palette.text.primary,
+      purpleText: darkPurpleVariant[900],
       yellowBg: yellowVariant[500],
-      yellowText: colorSchemes.dark.palette.text.primary,
+      yellowText: darkPurpleVariant[500],
       orangeBg: orangeVariant[500],
-      orangeText: colorSchemes.light.palette.text.primary,
+      orangeText: yellowVariant[100],
       darkPurpleBg: darkPurpleVariant[500],
-      darkPurpleText: colorSchemes.light.palette.text.primary
+      darkPurpleText: yellowVariant[100]
     }}>
       html[data-theme='dark'] body {
         background-color: var(--darkBg) !important;
-        color: var(--darkText);
+        color: var(--darkText) !important;
       }
 
       html[data-theme='light'] body {
         background-color: var(--lightBg) !important;
-        color: var(--lightText);
+        color: var(--lightText) !important;
       }
 
       html[data-theme='purple'] body {
         background-color: var(--purpleBg) !important;
-        color: var(--purpleText);
+        color: var(--purpleText) !important;
       }
 
       html[data-theme='yellow'] body {
         background-color: var(--yellowBg) !important;
-        color: var(--yellowText);
+        color: var(--yellowText) !important;
       }
 
       html[data-theme='orange'] body {
         background-color: var(--orangeBg) !important;
-        color: var(--orangeText);
+        color: var(--orangeText) !important;
       }
 
       html[data-theme='dark-purple'] body {
         background-color: var(--darkPurpleBg) !important;
-        color: var(--darkPurpleText);
+        color: var(--darkPurpleText) !important;
       }
       html,
       body {

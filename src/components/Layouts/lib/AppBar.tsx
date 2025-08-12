@@ -87,6 +87,25 @@ function AppBar() {
 
   const themeDisplay = getThemeDisplay(colorScheme);
 
+  // Function to get Logo variant that contrasts well with AppBar background
+  const getLogoVariant = () => {
+    switch (colorScheme) {
+      case 'purple':
+        return 'dark-purple'; // Yellow contrasts well with purple background
+      case 'yellow':
+        return 'orange'; // Dark purple contrasts well with yellow background
+      case 'orange':
+        return 'yellow'; // Dark purple contrasts well with orange background
+      case 'dark-purple':
+        return 'purple'; // Yellow contrasts well with dark purple background
+      case 'dark':
+        return 'orange'; // Light logo on dark background
+      case 'light':
+      default:
+        return 'purple'; // Dark logo on light background
+    }
+  };
+
   const getThemeBackgroundColor = () => {
     switch (colorScheme) {
       case 'purple':
@@ -241,7 +260,7 @@ function AppBar() {
                     },
                   }}
                 >
-                  <Logo variant={colorScheme === 'light' ? 'dark-purple' : colorScheme} sx={{ ml: 0.5, mr: 1 }} />
+                  <Logo variant={getLogoVariant()} sx={{ ml: 0.5, mr: 1 }} />
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>

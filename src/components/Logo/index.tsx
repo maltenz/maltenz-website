@@ -1,5 +1,7 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
+
+import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant } from '../../theme/themePrimitives';
 
 type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple' | 'dark' | 'light';
 
@@ -9,44 +11,42 @@ type LogoProps = {
 };
 
 function Logo({ variant = 'purple', sx }: LogoProps) {
-  const theme = useTheme();
-
   const getColors = () => {
     switch (variant) {
       case 'purple':
         return {
-          background: theme.palette.primary.main,
-          text: theme.palette.secondary.main,
+          background: purpleVariant[500],
+          text: orangeVariant[500],
         };
       case 'yellow':
         return {
-          background: theme.palette.primary.main,
-          text: theme.palette.secondary.main,
+          background: yellowVariant[500],
+          text: purpleVariant[500],
         };
       case 'orange':
         return {
-          background: theme.palette.primary.main,
-          text: theme.palette.secondary.main,
+          background: orangeVariant[500],
+          text: purpleVariant[500],
         };
       case 'dark-purple':
         return {
-          background: theme.palette.primary.main,
-          text: theme.palette.secondary.main,
+          background: darkPurpleVariant[500],
+          text: yellowVariant[500],
         };
       case 'dark':
         return {
-          background: theme.palette.common.black,
-          text: theme.palette.common.white,
+          background: orangeVariant[500],
+          text: orangeVariant[500],
         };
       case 'light':
         return {
-          background: theme.palette.common.white,
-          text: theme.palette.common.black,
+          background: orangeVariant[500],
+          text: orangeVariant[500],
         };
       default:
         return {
-          background: theme.palette.primary.main,
-          text: theme.palette.secondary.main,
+          background: orangeVariant[500],
+          text: orangeVariant[500],
         };
     }
   };

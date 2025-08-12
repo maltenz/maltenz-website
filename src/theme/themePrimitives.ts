@@ -112,16 +112,16 @@ export const orangeVariant: ColorRange = {
 
 // Dark purple variant colors
 export const darkPurpleVariant: ColorRange = {
-  50: '#faf5ff',
-  100: '#f3e8ff',
-  200: '#e9d5ff',
-  300: '#d8b4fe',
-  400: '#c084fc',
-  500: '#260449', // Primary background for dark-purple
-  600: '#9333ea',
-  700: '#7c3aed',
-  800: '#6b21b6',
-  900: '#581c87',
+  50: '#f4f2f6',
+  100: '#e9e6ed',
+  200: '#d4cddb',
+  300: '#beb4c8',
+  400: '#a89bb6',
+  500: '#260449', // primary
+  600: '#220442',
+  700: '#1e033a',
+  800: '#1b0333',
+  900: '#17022c',
 };
 
 export const gray = {
