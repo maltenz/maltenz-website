@@ -411,7 +411,7 @@ export const colorSchemes = {
       divider: alpha(gray[300], 0.4),
       background: bodyScheme.light,
       text: {
-        primary: gray[800],
+        primary: darkPurpleVariant[900],
         secondary: orangeVariant[200], // Complementary warm orange for purple theme
         warning: orange[400],
       },
@@ -462,7 +462,7 @@ export const colorSchemes = {
       divider: alpha(gray[300], 0.4),
       background: bodyScheme.light,
       text: {
-        primary: gray[800],
+        primary: darkPurpleVariant[500],
         secondary: purpleVariant[900], // Complementary purple for yellow theme
         warning: orange[400],
       },
@@ -513,7 +513,7 @@ export const colorSchemes = {
       divider: alpha(gray[300], 0.4),
       background: bodyScheme.light,
       text: {
-        primary: gray[800],
+        primary: '#FFFFFF',
         secondary: purpleVariant[100], // Complementary purple for orange theme
         warning: orange[400],
       },
@@ -564,7 +564,7 @@ export const colorSchemes = {
       divider: alpha(gray[300], 0.4),
       background: bodyScheme.light,
       text: {
-        primary: gray[800],
+        primary: '#FFFFFF',
         secondary: yellowVariant[200], // Complementary yellow for dark-purple theme
         warning: orange[400],
       },

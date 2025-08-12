@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
-import PaletteIcon from '@mui/icons-material/Palette';
 import { Stack, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
@@ -64,28 +61,6 @@ function AppBar() {
   const { width } = useWindowSize();
 
   const isDark = colorScheme === 'dark';
-
-  // Function to get icon and tooltip for current theme
-  const getThemeDisplay = (currentScheme: ColorScheme) => {
-    switch (currentScheme) {
-      case 'light':
-        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
-      case 'dark':
-        return { icon: <DarkModeIcon />, tooltip: 'Dark Mode' };
-      case 'purple':
-        return { icon: <PaletteIcon sx={{ color: '#7B3BB9' }} />, tooltip: 'Purple Theme' };
-      case 'yellow':
-        return { icon: <PaletteIcon sx={{ color: '#FFD700' }} />, tooltip: 'Yellow Theme' };
-      case 'orange':
-        return { icon: <PaletteIcon sx={{ color: '#FF6B35' }} />, tooltip: 'Orange Theme' };
-      case 'dark-purple':
-        return { icon: <PaletteIcon sx={{ color: '#260449' }} />, tooltip: 'Dark Purple Theme' };
-      default:
-        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
-    }
-  };
-
-  const themeDisplay = getThemeDisplay(colorScheme);
 
   // Function to get Logo variant that contrasts well with AppBar background
   const getLogoVariant = () => {
@@ -297,19 +272,15 @@ function AppBar() {
                 </Link>
               </Tooltip>
 
-              <Tooltip title={themeDisplay.tooltip} arrow>
-                <IconButton
-                  onClick={cycleColorScheme}
-                  size="small"
-                  color="primary"
-                  sx={{
-                    ...iconSx,
-                    display: 'flex',
-                  }}
-                >
-                  {themeDisplay.icon}
-                </IconButton>
-              </Tooltip>
+              <IconButton
+                onClick={cycleColorScheme}
+                size="small"
+                color="primary"
+                sx={{
+                  ...iconSx,
+                  display: 'flex',
+                }}
+              />
 
               <Box>
                 <IconButton
