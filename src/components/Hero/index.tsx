@@ -177,6 +177,24 @@ export default function Hero({ data }: HeroProps) {
               <Box sx={{ position: 'relative' }}>
                 <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1, width: '100%' }} />
 
+                {/* Episode Info positioned under play button */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: '80%', // Position below the play button
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    textAlign: 'center',
+                    color: 'white',
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
+                    Episode 1
+                  </Typography>
+
+                  <Typography variant="h3">Save the house</Typography>
+                </Box>
+
                 {/* Video Play Button with Liquid Glass Effect */}
                 <Box
                   sx={{
@@ -238,8 +256,6 @@ export default function Hero({ data }: HeroProps) {
                   </Box>
                 </Box>
               </Box>
-
-              {/* HERE */}
 
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
