@@ -72,7 +72,7 @@ export default function Hero({ data }: HeroProps) {
       case 'light':
       default:
         return {
-          start: theme.palette.primary.main,
+          start: darkPurpleVariant[500],
           mid: orangeVariant[500],
           end: theme.palette.secondary.main,
         };
