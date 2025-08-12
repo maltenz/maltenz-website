@@ -412,7 +412,7 @@ export const colorSchemes = {
       background: bodyScheme.light,
       text: {
         primary: gray[800],
-        secondary: gray[600],
+        secondary: orangeVariant[200], // Complementary warm orange for purple theme
         warning: orange[400],
       },
       action: {
@@ -463,7 +463,7 @@ export const colorSchemes = {
       background: bodyScheme.light,
       text: {
         primary: gray[800],
-        secondary: gray[600],
+        secondary: purpleVariant[900], // Complementary purple for yellow theme
         warning: orange[400],
       },
       action: {
@@ -514,7 +514,7 @@ export const colorSchemes = {
       background: bodyScheme.light,
       text: {
         primary: gray[800],
-        secondary: gray[600],
+        secondary: purpleVariant[100], // Complementary purple for orange theme
         warning: orange[400],
       },
       action: {
@@ -565,7 +565,7 @@ export const colorSchemes = {
       background: bodyScheme.light,
       text: {
         primary: gray[800],
-        secondary: gray[600],
+        secondary: yellowVariant[200], // Complementary yellow for dark-purple theme
         warning: orange[400],
       },
       action: {
