@@ -408,7 +408,7 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
-      divider: alpha(gray[300], 0.4),
+      divider: alpha(purpleVariant[200], 0.4),
       background: bodyScheme.light,
       text: {
         primary: darkPurpleVariant[900],
@@ -459,7 +459,7 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
-      divider: alpha(gray[300], 0.4),
+      divider: alpha(yellowVariant[100], 0.4),
       background: bodyScheme.light,
       text: {
         primary: darkPurpleVariant[500],
@@ -510,7 +510,7 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
-      divider: alpha(gray[300], 0.4),
+      divider: alpha(orangeVariant[200], 0.4),
       background: bodyScheme.light,
       text: {
         primary: '#FFFFFF',
@@ -561,7 +561,7 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
-      divider: alpha(gray[300], 0.4),
+      divider: alpha(darkPurpleVariant[400], 0.4),
       background: bodyScheme.light,
       text: {
         primary: '#FFFFFF',

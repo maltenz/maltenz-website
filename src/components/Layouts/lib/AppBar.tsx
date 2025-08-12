@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import PaletteIcon from '@mui/icons-material/Palette';
 import { Stack, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
@@ -61,6 +64,28 @@ function AppBar() {
   const { width } = useWindowSize();
 
   const isDark = colorScheme === 'dark';
+
+  // Function to get icon and tooltip for current theme
+  const getThemeDisplay = (currentScheme: ColorScheme) => {
+    switch (currentScheme) {
+      case 'light':
+        return { icon: <LightModeIcon sx={{ color: darkPurpleVariant[500] }} /> };
+      case 'dark':
+        return { icon: <DarkModeIcon sx={{ color: purpleVariant[500] }} /> };
+      case 'purple':
+        return { icon: <PaletteIcon sx={{ color: yellowVariant[500] }} /> };
+      case 'yellow':
+        return { icon: <PaletteIcon sx={{ color: orangeVariant[500] }} /> };
+      case 'orange':
+        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+      case 'dark-purple':
+        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+      default:
+        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
+    }
+  };
+
+  const themeDisplay = getThemeDisplay(colorScheme);
 
   // Function to get Logo variant that contrasts well with AppBar background
   const getLogoVariant = () => {
@@ -280,7 +305,9 @@ function AppBar() {
                   ...iconSx,
                   display: 'flex',
                 }}
-              />
+              >
+                {themeDisplay.icon}
+              </IconButton>
 
               <Box>
                 <IconButton
