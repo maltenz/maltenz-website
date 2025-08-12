@@ -174,7 +174,72 @@ export default function Hero({ data }: HeroProps) {
             </Typography>
 
             <StyledCard variant="outlined">
-              <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1 }} />
+              <Box sx={{ position: 'relative' }}>
+                <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1, width: '100%' }} />
+
+                {/* Video Play Button with Liquid Glass Effect */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: '66.67%', // 2/3 down vertically
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 120, // Scaled up by 50% from 80px
+                    height: 120, // Scaled up by 50% from 80px
+                    borderRadius: '50%',
+                    background: `linear-gradient(135deg, 
+                      ${alpha(theme.palette.primary.main, 0.9)} 0%, 
+                      ${alpha(theme.palette.primary.light, 0.8)} 50%, 
+                      ${alpha(theme.palette.primary.main, 0.9)} 100%)`,
+                    backdropFilter: 'blur(20px)',
+                    border: `1px solid ${alpha(theme.palette.common.white, 0.2)}`,
+                    boxShadow: `
+                      0 8px 32px ${alpha(theme.palette.primary.main, 0.3)},
+                      inset 0 1px 0 ${alpha(theme.palette.common.white, 0.4)},
+                      inset 0 -1px 0 ${alpha(theme.palette.common.black, 0.1)}
+                    `,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    '&:hover': {
+                      transform: 'translate(-50%, -50%) scale(1.5)',
+                      background: `linear-gradient(135deg, 
+                        ${alpha(theme.palette.primary.main, 1)} 0%, 
+                        ${alpha(theme.palette.primary.light, 0.9)} 50%, 
+                        ${alpha(theme.palette.primary.main, 1)} 100%)`,
+                      boxShadow: `
+                        0 12px 40px ${alpha(theme.palette.primary.main, 0.4)},
+                        inset 0 1px 0 ${alpha(theme.palette.common.white, 0.5)},
+                        inset 0 -1px 0 ${alpha(theme.palette.common.black, 0.1)}
+                      `,
+                    },
+                    '&:active': {
+                      transform: 'translate(-50%, -50%) scale(0.95)',
+                    },
+                  }}
+                >
+                  {/* Play Triangle Icon */}
+                  <Box
+                    component="svg"
+                    width="20"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    sx={{
+                      marginLeft: '2px', // Slight offset to center visually
+                      filter: `drop-shadow(0 2px 4px ${alpha(theme.palette.common.black, 0.3)})`,
+                    }}
+                  >
+                    <path
+                      d="M9.5 7.5a1 1 0 0 0-1.5.87v7.26a1 1 0 0 0 1.5.87l6.5-3.63a1 1 0 0 0 0-1.74L9.5 7.5z"
+                      fill={theme.palette.primary.contrastText}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+
+              {/* HERE */}
 
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
