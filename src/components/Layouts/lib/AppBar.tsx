@@ -21,6 +21,7 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 
 import { useThemeStore } from '../../../stores/themeStore';
 import type { ColorScheme } from '../../../stores/themeStore';
+import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant } from '../../../theme/themePrimitives';
 import Logo from '../../Logo';
 
 type NavLinkProps = {
@@ -86,8 +87,26 @@ function AppBar() {
 
   const themeDisplay = getThemeDisplay(colorScheme);
 
+  const getThemeBackgroundColor = () => {
+    switch (colorScheme) {
+      case 'purple':
+        return alpha(purpleVariant[400], 0.5);
+      case 'yellow':
+        return alpha(yellowVariant[400], 0.5);
+      case 'orange':
+        return alpha(orangeVariant[400], 0.5);
+      case 'dark-purple':
+        return alpha(darkPurpleVariant[600], 0.5);
+      case 'dark':
+        return alpha(theme.palette.common.black, 0.5);
+      case 'light':
+      default:
+        return alpha(theme.palette.common.white, 0.5);
+    }
+  };
+
   const bgColor = {
-    bgcolor: alpha(theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.common.black, 0.75),
+    bgcolor: getThemeBackgroundColor(),
     backdropFilter: 'blur(24px)',
     border: '1px solid',
     borderColor: 'divider',
