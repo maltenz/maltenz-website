@@ -99,10 +99,10 @@ function AppBar() {
       case 'dark-purple':
         return 'purple'; // Yellow contrasts well with dark purple background
       case 'dark':
-        return 'orange'; // Light logo on dark background
+        return 'yellow'; // Light logo on dark background
       case 'light':
       default:
-        return 'purple'; // Dark logo on light background
+        return 'dark-purple'; // Dark logo on light background
     }
   };
 
