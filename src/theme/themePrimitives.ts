@@ -97,30 +97,30 @@ export const orangeRed: ColorRange = {
 
 // Yellow variant colors
 export const yellow: ColorRange = {
-  50: '#fffbeb',
-  100: '#fef3c7',
-  200: '#fde68a',
-  300: '#fcd34d',
-  400: '#fbbf24',
-  500: '#FFD700', // Primary background for yellow
-  600: '#d97706',
-  700: '#b45309',
-  800: '#92400e',
-  900: '#78350f',
+  50: '#fffcf0',
+  100: '#fef7d9',
+  200: '#fdeeb3',
+  300: '#fce082',
+  400: '#facc15',
+  500: '#F3B426', // Primary background for yellow
+  600: '#d4980b',
+  700: '#b17509',
+  800: '#8f5f0e',
+  900: '#764e0f',
 };
 
 // Orange variant colors
 export const orangeVariant: ColorRange = {
-  50: '#fff7ed',
-  100: '#ffedd5',
-  200: '#fed7aa',
-  300: '#fdba74',
-  400: '#fb923c',
-  500: '#FF6B35', // Primary background for orange
-  600: '#ea580c',
-  700: '#c2410c',
-  800: '#9a3412',
-  900: '#7c2d12',
+  50: '#fef5f2',
+  100: '#fee5e2',
+  200: '#feccca',
+  300: '#fca8a5',
+  400: '#f87571',
+  500: '#F75643', // Primary background for orange
+  600: '#e03d28',
+  700: '#bc2a1c',
+  800: '#9c251b',
+  900: '#81241e',
 };
 
 // Dark purple variant colors
