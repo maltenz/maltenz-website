@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 
 import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant } from '../../theme/themePrimitives';
@@ -11,6 +11,8 @@ type LogoProps = {
 };
 
 function Logo({ variant = 'purple', sx }: LogoProps) {
+  const theme = useTheme();
+
   const getColors = () => {
     switch (variant) {
       case 'purple':
@@ -58,7 +60,7 @@ function Logo({ variant = 'purple', sx }: LogoProps) {
       component="svg"
       width="40px"
       height="40px"
-      viewBox="0 0 40 40"
+      viewBox="-1 -1 42 42"
       xmlns="http://www.w3.org/2000/svg"
       sx={{
         ...sx,
@@ -66,7 +68,13 @@ function Logo({ variant = 'purple', sx }: LogoProps) {
     >
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g fill={colors.background}>
-          <path d="M0.00579885055,20.37 C0.00194026805,20.2088011 0,20.0471272 0,19.885 C0,8.90281775 8.90281775,0 19.885,0 C30.8671822,0 39.77,8.90281775 39.77,19.885 C39.77,30.7050551 31.128102,39.5066868 20.37,39.7642011 L20.37,39.77 L10,39.77 C4.4771525,39.77 2.11453371e-15,35.2928475 1.77635684e-15,29.77 L0,20.37 L0.00579885055,20.37 Z" />
+          <path
+            d="M0.00579885055,20.37 C0.00194026805,20.2088011 0,20.0471272 0,19.885 C0,8.90281775 8.90281775,0 19.885,0 C30.8671822,0 39.77,8.90281775 39.77,19.885 C39.77,30.7050551 31.128102,39.5066868 20.37,39.7642011 L20.37,39.77 L10,39.77 C4.4771525,39.77 2.11453371e-15,35.2928475 1.77635684e-15,29.77 L0,20.37 L0.00579885055,20.37 Z"
+            fill={colors.background}
+            stroke={theme.palette.divider} // theme divider color
+            strokeWidth="1" // thickness
+            strokeLinejoin="round" // optional for smoother corners
+          />
         </g>
 
         <path

@@ -71,17 +71,17 @@ function AppBar() {
       case 'light':
         return { icon: <LightModeIcon sx={{ color: darkPurpleVariant[500] }} /> };
       case 'dark':
-        return { icon: <DarkModeIcon sx={{ color: purpleVariant[500] }} /> };
+        return { icon: <DarkModeIcon sx={{ color: '#fff' }} /> };
       case 'purple':
-        return { icon: <PaletteIcon sx={{ color: yellowVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
       case 'yellow':
-        return { icon: <PaletteIcon sx={{ color: orangeVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
       case 'orange':
         return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
       case 'dark-purple':
         return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
       default:
-        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
+        return { icon: <LightModeIcon /> };
     }
   };
 

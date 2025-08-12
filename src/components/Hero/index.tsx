@@ -187,7 +187,7 @@ export default function Hero({ data }: HeroProps) {
                       fontFamily: '"Pacifico", cursive',
                     }}
                   >
-                    Aimid
+                    Aimii
                   </Typography>
                 </Typography>
 
