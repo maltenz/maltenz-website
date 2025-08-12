@@ -82,19 +82,6 @@ export const purpleVariant: ColorRange = {
   900: '#4c1d95',
 };
 
-export const orangeRed: ColorRange = {
-  50: '#fef2f2',
-  100: '#fee2e2',
-  200: '#fecaca',
-  300: '#fca5a5',
-  400: '#f87171',
-  500: '#F75643', // Secondary/text color for purple
-  600: '#dc2626',
-  700: '#b91c1c',
-  800: '#991b1b',
-  900: '#7f1d1d',
-};
-
 // Yellow variant colors
 export const yellowVariant: ColorRange = {
   50: '#fffcf0',
@@ -135,58 +122,6 @@ export const darkPurpleVariant: ColorRange = {
   700: '#7c3aed',
   800: '#6b21b6',
   900: '#581c87',
-};
-
-export const indigoBlue: ColorRange = {
-  50: 'hsl(235, 100%, 97%)',
-  100: 'hsl(235, 95%, 90%)',
-  200: 'hsl(235, 90%, 80%)',
-  300: 'hsl(235, 85%, 70%)',
-  400: 'hsl(235, 80%, 60%)',
-  500: 'hsl(235, 75%, 55%)', // #2c32de
-  600: 'hsl(235, 70%, 45%)',
-  700: 'hsl(235, 65%, 35%)',
-  800: 'hsl(235, 60%, 25%)',
-  900: 'hsl(235, 55%, 15%)',
-};
-
-export const hotPink: ColorRange = {
-  50: 'hsl(315, 100%, 97%)',
-  100: 'hsl(315, 90%, 90%)',
-  200: 'hsl(315, 85%, 80%)',
-  300: 'hsl(315, 80%, 70%)',
-  400: 'hsl(315, 75%, 60%)',
-  500: 'hsl(315, 70%, 55%)', // #f26bd9
-  600: 'hsl(315, 65%, 45%)',
-  700: 'hsl(315, 60%, 35%)',
-  800: 'hsl(315, 55%, 25%)',
-  900: 'hsl(315, 50%, 15%)',
-};
-
-export const lightPink: ColorRange = {
-  50: 'hsl(330, 100%, 98%)',
-  100: 'hsl(330, 95%, 95%)',
-  200: 'hsl(330, 90%, 90%)',
-  300: 'hsl(330, 85%, 85%)',
-  400: 'hsl(330, 80%, 80%)',
-  500: 'hsl(330, 75%, 75%)', // #ffc0f4
-  600: 'hsl(330, 70%, 70%)',
-  700: 'hsl(330, 65%, 65%)',
-  800: 'hsl(330, 60%, 60%)',
-  900: 'hsl(330, 55%, 55%)',
-};
-
-export const aqua: ColorRange = {
-  50: 'hsl(190, 100%, 97%)',
-  100: 'hsl(190, 90%, 90%)',
-  200: 'hsl(190, 85%, 80%)',
-  300: 'hsl(190, 80%, 70%)',
-  400: 'hsl(190, 75%, 60%)',
-  500: 'hsl(190, 70%, 65%)', // #8bf1ff
-  600: 'hsl(190, 65%, 55%)',
-  700: 'hsl(190, 60%, 45%)',
-  800: 'hsl(190, 55%, 35%)',
-  900: 'hsl(190, 50%, 25%)',
 };
 
 export const gray = {
@@ -444,9 +379,9 @@ export const colorSchemes = {
         contrastText: '#FFFFFF',
       },
       secondary: {
-        light: orangeRed[300],
-        main: orangeRed[500], // #F75643
-        dark: orangeRed[700],
+        light: orangeVariant[300],
+        main: orangeVariant[500], // #F75643
+        dark: orangeVariant[700],
         contrastText: '#FFFFFF',
       },
       info: {
