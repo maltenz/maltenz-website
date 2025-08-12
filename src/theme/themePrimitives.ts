@@ -68,6 +68,75 @@ export const brand: ColorRange = {
   900: 'hsl(270, 90%, 15%)',
 };
 
+// Purple variant colors
+export const purple: ColorRange = {
+  50: '#f3e8ff',
+  100: '#e9d5ff',
+  200: '#d8b4fe',
+  300: '#c084fc',
+  400: '#a855f7',
+  500: '#7B3BB9', // Primary background
+  600: '#7c3aed',
+  700: '#6d28d9',
+  800: '#5b21b6',
+  900: '#4c1d95',
+};
+
+export const orangeRed: ColorRange = {
+  50: '#fef2f2',
+  100: '#fee2e2',
+  200: '#fecaca',
+  300: '#fca5a5',
+  400: '#f87171',
+  500: '#F75643', // Secondary/text color for purple
+  600: '#dc2626',
+  700: '#b91c1c',
+  800: '#991b1b',
+  900: '#7f1d1d',
+};
+
+// Yellow variant colors
+export const yellow: ColorRange = {
+  50: '#fffbeb',
+  100: '#fef3c7',
+  200: '#fde68a',
+  300: '#fcd34d',
+  400: '#fbbf24',
+  500: '#FFD700', // Primary background for yellow
+  600: '#d97706',
+  700: '#b45309',
+  800: '#92400e',
+  900: '#78350f',
+};
+
+// Orange variant colors
+export const orangeVariant: ColorRange = {
+  50: '#fff7ed',
+  100: '#ffedd5',
+  200: '#fed7aa',
+  300: '#fdba74',
+  400: '#fb923c',
+  500: '#FF6B35', // Primary background for orange
+  600: '#ea580c',
+  700: '#c2410c',
+  800: '#9a3412',
+  900: '#7c2d12',
+};
+
+// Dark purple variant colors
+export const darkPurple: ColorRange = {
+  50: '#faf5ff',
+  100: '#f3e8ff',
+  200: '#e9d5ff',
+  300: '#d8b4fe',
+  400: '#c084fc',
+  500: '#260449', // Primary background for dark-purple
+  600: '#9333ea',
+  700: '#7c3aed',
+  800: '#6b21b6',
+  900: '#581c87',
+};
+
 export const indigoBlue: ColorRange = {
   50: 'hsl(235, 100%, 97%)',
   100: 'hsl(235, 95%, 90%)',
@@ -363,6 +432,210 @@ export const colorSchemes = {
       action: {
         hover: alpha(gray[600], 0.2),
         selected: alpha(gray[600], 0.3),
+      },
+    },
+  },
+  purple: {
+    palette: {
+      primary: {
+        light: purple[300],
+        main: purple[500], // #7B3BB9
+        dark: purple[700],
+        contrastText: '#FFFFFF',
+      },
+      secondary: {
+        light: orangeRed[300],
+        main: orangeRed[500], // #F75643
+        dark: orangeRed[700],
+        contrastText: '#FFFFFF',
+      },
+      info: {
+        light: purple[100],
+        main: purple[300],
+        dark: purple[600],
+        contrastText: gray[50],
+      },
+      warning: {
+        light: orange[300],
+        main: orange[400],
+        dark: orange[800],
+      },
+      error: {
+        light: red[300],
+        main: red[400],
+        dark: red[800],
+      },
+      success: {
+        light: green[300],
+        main: green[400],
+        dark: green[800],
+      },
+      grey: {
+        ...gray,
+      },
+      divider: alpha(gray[300], 0.4),
+      background: bodyScheme.light,
+      text: {
+        primary: gray[800],
+        secondary: gray[600],
+        warning: orange[400],
+      },
+      action: {
+        hover: alpha(gray[200], 0.2),
+        selected: `${alpha(gray[200], 0.3)}`,
+      },
+    },
+  },
+  yellow: {
+    palette: {
+      primary: {
+        light: yellow[300],
+        main: yellow[500], // #FFD700
+        dark: yellow[700],
+        contrastText: '#000000',
+      },
+      secondary: {
+        light: purple[300],
+        main: purple[500], // #7B3BB9
+        dark: purple[700],
+        contrastText: '#FFFFFF',
+      },
+      info: {
+        light: yellow[100],
+        main: yellow[300],
+        dark: yellow[600],
+        contrastText: gray[800],
+      },
+      warning: {
+        light: orange[300],
+        main: orange[400],
+        dark: orange[800],
+      },
+      error: {
+        light: red[300],
+        main: red[400],
+        dark: red[800],
+      },
+      success: {
+        light: green[300],
+        main: green[400],
+        dark: green[800],
+      },
+      grey: {
+        ...gray,
+      },
+      divider: alpha(gray[300], 0.4),
+      background: bodyScheme.light,
+      text: {
+        primary: gray[800],
+        secondary: gray[600],
+        warning: orange[400],
+      },
+      action: {
+        hover: alpha(gray[200], 0.2),
+        selected: `${alpha(gray[200], 0.3)}`,
+      },
+    },
+  },
+  orange: {
+    palette: {
+      primary: {
+        light: orangeVariant[300],
+        main: orangeVariant[500], // #FF6B35
+        dark: orangeVariant[700],
+        contrastText: '#FFFFFF',
+      },
+      secondary: {
+        light: purple[300],
+        main: purple[500], // #7B3BB9
+        dark: purple[700],
+        contrastText: '#FFFFFF',
+      },
+      info: {
+        light: orangeVariant[100],
+        main: orangeVariant[300],
+        dark: orangeVariant[600],
+        contrastText: gray[50],
+      },
+      warning: {
+        light: orange[300],
+        main: orange[400],
+        dark: orange[800],
+      },
+      error: {
+        light: red[300],
+        main: red[400],
+        dark: red[800],
+      },
+      success: {
+        light: green[300],
+        main: green[400],
+        dark: green[800],
+      },
+      grey: {
+        ...gray,
+      },
+      divider: alpha(gray[300], 0.4),
+      background: bodyScheme.light,
+      text: {
+        primary: gray[800],
+        secondary: gray[600],
+        warning: orange[400],
+      },
+      action: {
+        hover: alpha(gray[200], 0.2),
+        selected: `${alpha(gray[200], 0.3)}`,
+      },
+    },
+  },
+  'dark-purple': {
+    palette: {
+      primary: {
+        light: darkPurple[300],
+        main: darkPurple[500], // #260449
+        dark: darkPurple[700],
+        contrastText: '#FFFFFF',
+      },
+      secondary: {
+        light: yellow[300],
+        main: yellow[500], // #FFD700
+        dark: yellow[700],
+        contrastText: '#000000',
+      },
+      info: {
+        light: darkPurple[100],
+        main: darkPurple[300],
+        dark: darkPurple[600],
+        contrastText: gray[50],
+      },
+      warning: {
+        light: orange[300],
+        main: orange[400],
+        dark: orange[800],
+      },
+      error: {
+        light: red[300],
+        main: red[400],
+        dark: red[800],
+      },
+      success: {
+        light: green[300],
+        main: green[400],
+        dark: green[800],
+      },
+      grey: {
+        ...gray,
+      },
+      divider: alpha(gray[300], 0.4),
+      background: bodyScheme.light,
+      text: {
+        primary: gray[800],
+        secondary: gray[600],
+        warning: orange[400],
+      },
+      action: {
+        hover: alpha(gray[200], 0.2),
+        selected: `${alpha(gray[200], 0.3)}`,
       },
     },
   },

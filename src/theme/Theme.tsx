@@ -22,8 +22,8 @@ export default function Theme({ children, colorScheme }: Props) {
     () =>
       createTheme({
         palette: {
-          mode: colorScheme,
-          ...(colorScheme === 'light' ? colorSchemes.light.palette : colorSchemes.dark.palette),
+          mode: colorScheme === 'dark' ? 'dark' : 'light',
+          ...colorSchemes[colorScheme].palette,
         },
         typography,
         shadows,

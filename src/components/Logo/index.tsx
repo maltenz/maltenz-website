@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 
 type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple' | 'dark' | 'light';
@@ -9,42 +9,44 @@ type LogoProps = {
 };
 
 function Logo({ variant = 'purple', sx }: LogoProps) {
+  const theme = useTheme();
+
   const getColors = () => {
     switch (variant) {
       case 'purple':
         return {
-          background: '#7B3BB9',
-          text: '#F75643',
+          background: theme.palette.primary.main,
+          text: theme.palette.secondary.main,
         };
       case 'yellow':
         return {
-          background: '#FFD700',
-          text: '#7B3BB9',
+          background: theme.palette.primary.main,
+          text: theme.palette.secondary.main,
         };
       case 'orange':
         return {
-          background: '#FF6B35',
-          text: '#7B3BB9',
+          background: theme.palette.primary.main,
+          text: theme.palette.secondary.main,
         };
       case 'dark-purple':
         return {
-          background: '#260449',
-          text: '#FFD700',
+          background: theme.palette.primary.main,
+          text: theme.palette.secondary.main,
         };
       case 'dark':
         return {
-          background: '#000',
-          text: '#fff',
+          background: theme.palette.common.black,
+          text: theme.palette.common.white,
         };
       case 'light':
         return {
-          background: '#fff',
-          text: '#000',
+          background: theme.palette.common.white,
+          text: theme.palette.common.black,
         };
       default:
         return {
-          background: '#7B3BB9',
-          text: '#F75643',
+          background: theme.palette.primary.main,
+          text: theme.palette.secondary.main,
         };
     }
   };

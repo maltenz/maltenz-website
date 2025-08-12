@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import PaletteIcon from '@mui/icons-material/Palette';
 import { Stack, useTheme } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
@@ -19,6 +20,7 @@ import { gsap } from 'gsap';
 import useWindowSize from 'react-use/lib/useWindowSize';
 
 import { useThemeStore } from '../../../stores/themeStore';
+import type { ColorScheme } from '../../../stores/themeStore';
 import Logo from '../../Logo';
 
 type NavLinkProps = {
@@ -55,12 +57,34 @@ function NavLink({ href, children, sx }: NavLinkProps) {
 
 function AppBar() {
   const theme = useTheme();
-  const { colorScheme, toggleColorScheme } = useThemeStore();
+  const { colorScheme, cycleColorScheme } = useThemeStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const { width } = useWindowSize();
 
   const isDark = colorScheme === 'dark';
+
+  // Function to get icon and tooltip for current theme
+  const getThemeDisplay = (currentScheme: ColorScheme) => {
+    switch (currentScheme) {
+      case 'light':
+        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
+      case 'dark':
+        return { icon: <DarkModeIcon />, tooltip: 'Dark Mode' };
+      case 'purple':
+        return { icon: <PaletteIcon sx={{ color: '#7B3BB9' }} />, tooltip: 'Purple Theme' };
+      case 'yellow':
+        return { icon: <PaletteIcon sx={{ color: '#FFD700' }} />, tooltip: 'Yellow Theme' };
+      case 'orange':
+        return { icon: <PaletteIcon sx={{ color: '#FF6B35' }} />, tooltip: 'Orange Theme' };
+      case 'dark-purple':
+        return { icon: <PaletteIcon sx={{ color: '#260449' }} />, tooltip: 'Dark Purple Theme' };
+      default:
+        return { icon: <LightModeIcon />, tooltip: 'Light Mode' };
+    }
+  };
+
+  const themeDisplay = getThemeDisplay(colorScheme);
 
   const bgColor = {
     bgcolor: alpha(theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.common.black, 0.75),
@@ -73,7 +97,6 @@ function AppBar() {
   useEffect(() => {
     if (mobileMenuRef.current) {
       if (mobileMenuOpen) {
-        // Show animation
         gsap.fromTo(
           mobileMenuRef.current,
           {
@@ -89,7 +112,6 @@ function AppBar() {
           },
         );
       } else {
-        // Hide animation
         gsap.to(mobileMenuRef.current, {
           height: 0,
           opacity: 0,
@@ -100,7 +122,6 @@ function AppBar() {
     }
   }, [mobileMenuOpen]);
 
-  // Close mobile menu when window width exceeds md breakpoint
   useEffect(() => {
     if (width >= theme.breakpoints.values.md && mobileMenuOpen) {
       setMobileMenuOpen(false);
@@ -201,7 +222,7 @@ function AppBar() {
                     },
                   }}
                 >
-                  <Logo variant="yellow" sx={{ ml: 0.5, mr: 1 }} />
+                  <Logo variant={colorScheme === 'light' ? 'dark-purple' : colorScheme} sx={{ ml: 0.5, mr: 1 }} />
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
@@ -238,17 +259,19 @@ function AppBar() {
                 </Link>
               </Tooltip>
 
-              <IconButton
-                onClick={toggleColorScheme}
-                size="small"
-                color="primary"
-                sx={{
-                  ...iconSx,
-                  display: 'flex',
-                }}
-              >
-                {isDark ? <LightModeIcon /> : <DarkModeIcon />}
-              </IconButton>
+              <Tooltip title={themeDisplay.tooltip} arrow>
+                <IconButton
+                  onClick={cycleColorScheme}
+                  size="small"
+                  color="primary"
+                  sx={{
+                    ...iconSx,
+                    display: 'flex',
+                  }}
+                >
+                  {themeDisplay.icon}
+                </IconButton>
+              </Tooltip>
 
               <Box>
                 <IconButton
@@ -280,10 +303,6 @@ function AppBar() {
             >
               <Box sx={{ py: 4 }}>
                 <Stack gap={2}>
-                  <NavLink href="/latest">Latest</NavLink>
-                  <NavLink href="/merch">Merch</NavLink>
-                  <NavLink href="/about">About</NavLink>
-
                   <NavLink sx={mobileMenuSx} href="/latest">
                     Latest
                   </NavLink>
