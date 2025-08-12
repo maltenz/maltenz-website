@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3072px" height="3072px" viewBox="0 0 3072 3072" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Dali Logo Gray</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Dali-Logo-Gray" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F75643" x="0" y="0" width="3072" height="3072"></rect>
+        <rect id="Rectangle" fill="#000000" x="0" y="0" width="1536" height="1606"></rect>
+        <rect id="Rectangle-Copy" fill="#94A0B8" x="1536" y="0" width="1536" height="1606"></rect>
+        <g id="Group" transform="translate(0.000000, 1606.000000)">
+            <rect id="Rectangle-Copy-2" fill="#94A0B8" x="0" y="0" width="1536" height="1466"></rect>
+            <rect id="Rectangle-Copy-3" fill="#000000" x="1536" y="0" width="1536" height="1466"></rect>
+        </g>
+        <g id="Group-5" transform="translate(424.000000, 466.000000)" fill="#94A0B8">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M0,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 5.07265313e-15,606.100124 0,523.257411 L0,353.460141 Z" id="Rectangle"></path>
+            <path d="M-4.54747351e-13,1.42108547e-13 L343.075623,1.42108547e-13 L343.075623,319.79727 L150,319.79727 C67.1572875,319.79727 -4.49674698e-13,252.639983 -4.54747351e-13,169.79727 L-4.54747351e-13,1.42108547e-13 Z" id="Rectangle-Copy-4" transform="translate(171.537811, 159.898635) scale(1, -1) translate(-171.537811, -159.898635) "></path>
+        </g>
+        <g id="Group-5" transform="translate(1960.000000, 466.000000)">
+            <ellipse id="Oval" fill="#F75643" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle" fill="#000000"></path>
+        </g>
+        <g id="Group-5" transform="translate(2303.500000, 803.000000) scale(-1, 1) translate(-2303.500000, -803.000000) translate(1960.000000, 466.000000)" fill="#000000">
+            <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
+            <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
+        </g>
+        <rect id="Rectangle" fill="#000000" x="589" y="2002" width="357" height="674" rx="150"></rect>
+        <rect id="Rectangle" fill="#94A0B8" x="1960" y="2002" width="687" height="674" rx="150"></rect>
+    </g>
+</svg>

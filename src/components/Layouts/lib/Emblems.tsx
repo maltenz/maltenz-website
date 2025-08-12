@@ -4,9 +4,16 @@ export default function Emblems() {
   return (
     <Box
       component="img"
-      src="/brand/dali-logo.svg"
+      src="/brand/dali-logo-gray.svg"
       alt="Aimii Emblems"
-      sx={{ display: 'block', margin: '0 auto', width: 100, borderRadius: 1, filter: `grayscale(1) contrast(1.2)` }}
+      sx={{
+        display: 'block',
+        margin: '0 auto',
+        width: 60,
+        borderRadius: 1,
+        border: `1px solid`,
+        borderColor: 'divider',
+      }}
     />
   );
 }
