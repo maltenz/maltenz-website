@@ -14,7 +14,7 @@ type LatestProps = {
 export default function Latest({ data }: LatestProps) {
   return (
     <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
-      <Typography variant="h2" mb={-2}>
+      <Typography variant="h2" mb={-2} color="text.secondary">
         Latest
       </Typography>
 

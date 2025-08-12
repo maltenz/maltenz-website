@@ -27,10 +27,18 @@ declare module '@mui/material/styles' {
 
   interface Palette {
     baseShadow: string;
+    link: {
+      main: string;
+      hover: string;
+    };
   }
 
   interface PaletteOptions {
     baseShadow?: string;
+    link?: {
+      main: string;
+      hover: string;
+    };
   }
 
   interface TypeText {
@@ -336,6 +344,10 @@ export const colorSchemes = {
         secondary: gray[600],
         warning: orange[400],
       },
+      link: {
+        main: brand[600],
+        hover: brand[700],
+      },
       action: {
         hover: alpha(gray[200], 0.2),
         selected: `${alpha(gray[200], 0.3)}`,
@@ -379,6 +391,10 @@ export const colorSchemes = {
       text: {
         primary: 'hsl(0, 0%, 100%)',
         secondary: gray[400],
+      },
+      link: {
+        main: brand[300],
+        hover: brand[200],
       },
       action: {
         hover: alpha(gray[600], 0.2),
@@ -431,6 +447,10 @@ export const colorSchemes = {
         secondary: purpleVariant[200], // Complementary warm orange for purple theme
         warning: orange[400],
       },
+      link: {
+        main: yellowVariant[500],
+        hover: yellowVariant[500],
+      },
       action: {
         hover: alpha(gray[200], 0.2),
         selected: `${alpha(gray[200], 0.3)}`,
@@ -481,6 +501,10 @@ export const colorSchemes = {
         primary: darkPurpleVariant[500],
         secondary: darkPurpleVariant[500], // Complementary purple for yellow theme
         warning: orange[400],
+      },
+      link: {
+        main: purpleVariant[500],
+        hover: purpleVariant[500],
       },
       action: {
         hover: alpha(gray[200], 0.2),
@@ -533,6 +557,10 @@ export const colorSchemes = {
         secondary: orangeVariant[200], // Complementary purple for orange theme
         warning: orange[400],
       },
+      link: {
+        main: purpleVariant[500],
+        hover: purpleVariant[500],
+      },
       action: {
         hover: alpha(gray[200], 0.2),
         selected: `${alpha(gray[200], 0.3)}`,
@@ -583,6 +611,10 @@ export const colorSchemes = {
         primary: '#FFFFFF',
         secondary: darkPurpleVariant[200], // Complementary yellow for dark-purple theme
         warning: orange[400],
+      },
+      link: {
+        main: yellowVariant[500],
+        hover: yellowVariant[500],
       },
       action: {
         hover: alpha(gray[200], 0.2),
