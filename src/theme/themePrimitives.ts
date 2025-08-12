@@ -185,6 +185,22 @@ export const bodyScheme = {
     default: gray[900],
     paper: 'hsl(220, 30%, 7%)',
   },
+  yellow: {
+    default: gray[900],
+    paper: yellowVariant[400],
+  },
+  purple: {
+    default: gray[900],
+    paper: purpleVariant[400],
+  },
+  orange: {
+    default: gray[900],
+    paper: orangeVariant[400],
+  },
+  darkPurple: {
+    default: gray[900],
+    paper: darkPurpleVariant[600],
+  },
 };
 
 export const getDesignTokens = (mode: PaletteMode) => {
@@ -409,7 +425,7 @@ export const colorSchemes = {
         ...gray,
       },
       divider: alpha(purpleVariant[300], 0.4),
-      background: bodyScheme.light,
+      background: bodyScheme.purple,
       text: {
         primary: darkPurpleVariant[900],
         secondary: purpleVariant[200], // Complementary warm orange for purple theme
@@ -460,10 +476,10 @@ export const colorSchemes = {
         ...gray,
       },
       divider: alpha(yellowVariant[200], 0.4),
-      background: bodyScheme.light,
+      background: bodyScheme.yellow,
       text: {
         primary: darkPurpleVariant[500],
-        secondary: yellowVariant[200], // Complementary purple for yellow theme
+        secondary: darkPurpleVariant[500], // Complementary purple for yellow theme
         warning: orange[400],
       },
       action: {
@@ -511,7 +527,7 @@ export const colorSchemes = {
         ...gray,
       },
       divider: alpha(orangeVariant[300], 0.4),
-      background: bodyScheme.light,
+      background: bodyScheme.orange,
       text: {
         primary: '#FFFFFF',
         secondary: orangeVariant[200], // Complementary purple for orange theme
@@ -562,7 +578,7 @@ export const colorSchemes = {
         ...gray,
       },
       divider: 'rgb(80 42 121 / 40%)',
-      background: bodyScheme.light,
+      background: bodyScheme.darkPurple,
       text: {
         primary: '#FFFFFF',
         secondary: darkPurpleVariant[200], // Complementary yellow for dark-purple theme

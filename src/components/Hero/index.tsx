@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { styled, useTheme } from '@mui/material/styles';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 
 import { useThemeStore } from '../../stores/themeStore';
 import { yellowVariant, orangeVariant, darkPurpleVariant, purpleVariant } from '../../theme/themePrimitives';
@@ -17,7 +17,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   flexDirection: 'column',
   padding: 0,
   height: '100%',
-  backgroundColor: (theme.vars || theme).palette.background.paper,
+  backgroundColor: alpha((theme.vars || theme).palette.background.paper, 0.25),
 }));
 
 const StyledCardContent = styled(CardContent)(({ theme }) => ({
