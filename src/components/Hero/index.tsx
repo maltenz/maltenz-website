@@ -1,3 +1,4 @@
+import { Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -178,7 +179,7 @@ export default function Hero({ data }: HeroProps) {
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
-                <Typography variant="h4" mb={2}>
+                <Typography component={Link} href="#" variant="h4" mb={2}>
                   John meets Aimii{' '}
 
                   <Typography
