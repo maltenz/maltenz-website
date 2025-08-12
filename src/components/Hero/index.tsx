@@ -119,7 +119,14 @@ export default function Hero({ data }: HeroProps) {
         </div> */}
 
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Box component="svg" width="300px" height="108px" viewBox="0 0 159 57" xmlns="http://www.w3.org/2000/svg">
+          <Box
+            component="svg"
+            width="300px"
+            height="108px"
+            viewBox="0 0 159 57"
+            sx={{ maxWidth: '45vw', height: 'auto' }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g transform="translate(0.138021, 0.339329)" fillRule="nonzero">
                 <path
