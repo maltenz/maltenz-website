@@ -178,8 +178,8 @@ export default function Hero({ data }: HeroProps) {
               <StyledCardContent>
                 <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
-                <Typography variant="h4">
-                  Get started with{' '}
+                <Typography variant="h4" mb={2}>
+                  John meets Aimii{' '}
 
                   <Typography
                     component="span"
