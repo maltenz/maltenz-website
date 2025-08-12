@@ -41,7 +41,6 @@ function NavLink({ href, children, sx }: NavLinkProps) {
         ...theme.typography.body2,
         textDecoration: 'none',
         fontWeight: 500,
-        color: 'text.primary',
         '&:hover': {
           color: colorScheme === 'dark' ? 'primary.light' : 'primary.main',
         },
@@ -287,10 +286,6 @@ function AppBar() {
                     fontFamily: '"Pacifico", cursive',
                     mr: 2,
                     textDecoration: 'none',
-                    color: 'text.primary',
-                    '&:hover': {
-                      color: isDark ? 'primary.light' : 'primary.main',
-                    },
                   }}
                 >
                   Aimii
@@ -321,7 +316,7 @@ function AppBar() {
                       xs: 'flex',
                       md: 'none',
                     },
-                    color: mobileMenuOpen ? menuIconActiveColor : 'text.primary',
+                    color: mobileMenuOpen ? menuIconActiveColor : 'red',
                   }}
                 >
                   <MenuIcon />

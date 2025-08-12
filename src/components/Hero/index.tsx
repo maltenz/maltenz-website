@@ -169,7 +169,7 @@ export default function Hero({ data }: HeroProps) {
 
         <Grid container spacing={2} columns={12}>
           <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
-            <Typography variant="h4" mb={2} sx={{ fontWeight: '400' }}>
+            <Typography variant="h2" mb={2} color="text.secondary" sx={{ fontWeight: '400' }}>
               Demo
             </Typography>
 
