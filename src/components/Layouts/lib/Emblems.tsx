@@ -9,8 +9,8 @@ export default function Emblems() {
       sx={{
         display: 'block',
         margin: '0 auto',
-        width: 60,
-        borderRadius: 1,
+        width: 40,
+        borderRadius: 0.5,
         border: `1px solid`,
         borderColor: 'divider',
       }}

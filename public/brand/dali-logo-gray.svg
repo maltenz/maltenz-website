@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="3072px" height="3072px" viewBox="0 0 3072 3072" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
-    <title>Dali Logo Gray</title>
+    <title>Dali Logo Gray Copy</title>
     <desc>Created with Sketch.</desc>
-    <g id="Dali-Logo-Gray" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Dali-Logo-Gray-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#F75643" x="0" y="0" width="3072" height="3072"></rect>
         <rect id="Rectangle" fill="#000000" x="0" y="0" width="1536" height="1606"></rect>
         <rect id="Rectangle-Copy" fill="#94A0B8" x="1536" y="0" width="1536" height="1606"></rect>
@@ -24,7 +24,7 @@
             <ellipse id="Oval" cx="343.075623" cy="336.628706" rx="343.075623" ry="336.628706"></ellipse>
             <path d="M-5.68434189e-14,353.460141 L343.075623,353.460141 L343.075623,673.257411 L150,673.257411 C67.1572875,673.257411 -5.17707657e-14,606.100124 -5.68434189e-14,523.257411 L-5.68434189e-14,353.460141 Z" id="Rectangle"></path>
         </g>
-        <rect id="Rectangle" fill="#000000" x="589" y="2002" width="357" height="674" rx="150"></rect>
         <rect id="Rectangle" fill="#94A0B8" x="1960" y="2002" width="687" height="674" rx="150"></rect>
+        <path d="M675.659356,2030.95286 L1074.53122,2422.36507 C1132.87178,2479.61455 1133.75628,2573.3188 1076.50679,2631.65936 C1048.67542,2660.02115 1010.60821,2676 970.871867,2676 L572,2676 C490.261857,2676 424,2609.73814 424,2528 L424,2136.58778 C424,2054.84964 490.261857,1988.58778 572,1988.58778 C610.768189,1988.58778 647.98858,2003.79958 675.659356,2030.95286 Z" id="Rectangle-Copy-5" fill="#000000"></path>
     </g>
 </svg>
