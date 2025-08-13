@@ -45,14 +45,17 @@ export default function TagList({ tags = Object.values(Tags), sx }: TagListProps
           icon={tagIcons[tag]}
           variant="outlined"
           sx={{
-            color: isDark ? 'white' : 'black',
-            borderColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)',
-            backgroundColor: isDark ? '#1e1e1e' : '#f5f5f5',
+            // color: isDark ? 'white' : 'black',
+            // borderColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)',
+            borderColor: 'text.secondary',
+            color: 'text.secondary',
             borderRadius: '999px',
             paddingX: '5px',
             minHeight: '25px',
+            backgroundColor: 'transparent',
             '& .MuiChip-icon': {
-              color: isDark ? 'white' : 'black',
+              color: 'text.secondary',
+              mr: 0,
             },
           }}
         />
