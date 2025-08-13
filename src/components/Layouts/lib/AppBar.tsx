@@ -269,33 +269,10 @@ function AppBar() {
                 </Box>
               </Box>
 
-              <Tooltip
-                title={
-                  <Box sx={{ textAlign: 'center', lineHeight: 1.25 }}>
-                    Website
-                    <br />
-                    Builder
-                  </Box>
-                }
-                arrow
-              >
-                <Link
-                  href="/"
-                  sx={{
-                    ...theme.typography.h6,
-                    fontFamily: '"Pacifico", cursive',
-                    mr: 2,
-                    textDecoration: 'none',
-                  }}
-                >
-                  Aimii
-                </Link>
-              </Tooltip>
-
               <IconButton
                 onClick={cycleColorScheme}
                 size="small"
-                color="primary"
+                color="text.secondary"
                 sx={{
                   ...iconSx,
                   display: 'flex',
