@@ -15,9 +15,11 @@ try {
 
 // Fetch all blog posts with proper typing
 const posts: ProjectEntry[] = await getCollection('latest');
+// Sort posts by publishDate (newest first)
+const sortedPosts = posts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 ---
 
 <Layout>
-  <Home heroData={heroData.data} client:load projectsData={posts} />
+  <Home heroData={heroData.data} client:load projectsData={sortedPosts} />
 </Layout>
 
