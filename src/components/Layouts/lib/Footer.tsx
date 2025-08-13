@@ -87,49 +87,29 @@ export default function Footer() {
   const renderForm = (
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
-        <Stack spacing={2.5}>
-          <RHFTextField
-            variant="standard"
-            name="name"
-            placeholder="Name"
-            sx={{
-              '& .MuiInput-underline:before': {
-                borderBottomColor: 'text.primary',
-              },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                borderBottomColor: 'text.primary',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'primary.main',
-              },
-            }}
-          />
-
-          <RHFTextField
-            variant="standard"
-            name="email"
-            placeholder="Email"
-            sx={{
-              '& .MuiInput-underline:before': {
-                borderBottomColor: 'text.primary',
-              },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                borderBottomColor: 'text.primary',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'primary.main',
-              },
-            }}
-          />
+        <Stack spacing={1.8}>
+          <RHFTextField variant="standard" name="name" placeholder="Name" />
+          <RHFTextField variant="standard" name="email" placeholder="Email" sx={{ mb: 0 }} />
 
           <LoadingButton
-            color="inherit"
-            variant="outlined"
+            color="primary"
+            variant="text"
             size="small"
             type="submit"
             loading={isSubmitting}
             sx={{
-              alignSelf: 'flex-start',
+              alignSelf: 'flex-end',
+              textDecoration: 'underline',
+              textUnderlineOffset: '4px',
+              color: 'text.primary',
+              paddingRight: 0,
+              paddingLeft: 0,
+              fontSize: (theme) => theme.typography.body2.fontSize,
+              '&:hover': {
+                textDecoration: 'underline',
+                backgroundColor: 'transparent',
+                color: 'primary.main',
+              },
             }}
           >
             Subscribe

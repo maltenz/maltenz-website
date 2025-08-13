@@ -449,4 +449,29 @@ export const inputsCustomizations: Components<Theme> = {
       }),
     },
   },
+  MuiInput: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '&::placeholder': {
+          color: (theme.vars || theme).palette.text.secondary,
+          opacity: 1,
+        },
+        '& input::placeholder': {
+          color: (theme.vars || theme).palette.text.secondary,
+          opacity: 1,
+        },
+      }),
+      underline: ({ theme }) => ({
+        '&:before': {
+          borderBottomColor: (theme.vars || theme).palette.text.primary,
+        },
+        '&:hover:not(.Mui-disabled):before': {
+          borderBottomColor: (theme.vars || theme).palette.text.primary,
+        },
+        '&:after': {
+          borderBottomColor: (theme.vars || theme).palette.primary.main,
+        },
+      }),
+    },
+  },
 };
