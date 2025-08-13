@@ -292,7 +292,7 @@ function AppBar() {
                       xs: 'flex',
                       md: 'none',
                     },
-                    color: mobileMenuOpen ? menuIconActiveColor : 'red',
+                    color: mobileMenuOpen ? menuIconActiveColor : 'text.primary',
                   }}
                 >
                   <MenuIcon />
