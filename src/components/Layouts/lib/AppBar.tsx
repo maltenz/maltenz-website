@@ -272,7 +272,6 @@ function AppBar() {
               <IconButton
                 onClick={cycleColorScheme}
                 size="small"
-                color="text.secondary"
                 sx={{
                   ...iconSx,
                   display: 'flex',

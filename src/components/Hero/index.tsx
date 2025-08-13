@@ -169,10 +169,6 @@ export default function Hero({ data }: HeroProps) {
 
         <Grid container spacing={2} columns={12}>
           <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
-            <Typography variant="h2" mb={2} color="text.secondary" sx={{ fontWeight: '400' }}>
-              Demo
-            </Typography>
-
             <StyledCard variant="outlined">
               <Box sx={{ position: 'relative' }}>
                 <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1, width: '100%' }} />
