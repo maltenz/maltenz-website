@@ -2,13 +2,10 @@
 import type { ReactNode } from 'react';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import GithubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { type SxProps, type Theme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -91,8 +88,39 @@ export default function Footer() {
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
         <Stack spacing={2.5}>
-          <RHFTextField name="name" placeholder="Name" />
-          <RHFTextField name="email" placeholder="Email" />
+          <RHFTextField
+            variant="standard"
+            name="name"
+            placeholder="Name"
+            sx={{
+              '& .MuiInput-underline:before': {
+                borderBottomColor: 'text.primary',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                borderBottomColor: 'text.primary',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'primary.main',
+              },
+            }}
+          />
+
+          <RHFTextField
+            variant="standard"
+            name="email"
+            placeholder="Email"
+            sx={{
+              '& .MuiInput-underline:before': {
+                borderBottomColor: 'text.primary',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                borderBottomColor: 'text.primary',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'primary.main',
+              },
+            }}
+          />
 
           <LoadingButton
             color="inherit"
