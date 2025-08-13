@@ -443,7 +443,7 @@ export const colorSchemes = {
       divider: alpha(purpleVariant[300], 0.4),
       background: bodyScheme.purple,
       text: {
-        primary: darkPurpleVariant[900],
+        primary: darkPurpleVariant[400],
         secondary: purpleVariant[200], // Complementary warm orange for purple theme
         warning: orange[400],
       },
