@@ -4,7 +4,7 @@
 import type { CollectionEntry } from 'astro:content';
 
 // Content collection types
-export type ProjectEntry = CollectionEntry<'projects'>;
+export type ProjectEntry = CollectionEntry<'latest'>;
 export type HeroEntry = CollectionEntry<'hero'>;
 
 // Data-only types (just the data part without slug/id)

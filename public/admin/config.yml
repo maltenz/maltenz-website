@@ -20,9 +20,9 @@ collections:
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
 
   
-  - name: "projects"
-    label: "Projects"
-    folder: "src/content/projects"
+  - name: "latest"
+    label: "Latest"
+    folder: "src/content/latest"
     create: true
     slug: "{{slug}}"
     identifier_field: "title"

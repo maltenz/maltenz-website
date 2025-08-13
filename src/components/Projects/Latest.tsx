@@ -42,7 +42,7 @@ export default function Latest({ data }: LatestProps) {
 
               <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
 
-              <Link href={`/projects/${post.slug}`} gutterBottom variant="h6">
+              <Link href={`/latest/${post.slug}`} gutterBottom variant="h6">
                 {post.data.title}
               </Link>
 

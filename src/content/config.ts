@@ -11,7 +11,7 @@ const heroCollection = defineCollection({
   }),
 });
 
-const projectsCollection = defineCollection({
+const latestCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -23,6 +23,6 @@ const projectsCollection = defineCollection({
 });
 
 export const collections = {
-  projects: projectsCollection,
+  latest: latestCollection,
   hero: heroCollection,
 };
