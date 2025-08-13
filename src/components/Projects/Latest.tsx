@@ -30,6 +30,8 @@ export default function Latest({ data }: LatestProps) {
                 objectFit: 'cover',
                 borderRadius: 1,
                 mb: 2,
+                border: '1px solid',
+                borderColor: 'divider',
               }}
             />
 
