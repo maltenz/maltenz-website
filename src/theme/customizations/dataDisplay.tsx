@@ -232,4 +232,20 @@ export const dataDisplayCustomizations: Components<Theme> = {
       },
     },
   },
+  MuiAvatarGroup: {
+    styleOverrides: {
+      root: {
+        '& .MuiAvatar-root': {
+          border: 'none',
+        },
+      },
+    },
+  },
+  MuiAvatar: {
+    styleOverrides: {
+      root: {
+        border: 'none',
+      },
+    },
+  },
 };
