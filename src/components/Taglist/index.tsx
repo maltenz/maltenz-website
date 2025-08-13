@@ -47,15 +47,16 @@ export default function TagList({ tags = Object.values(Tags), sx }: TagListProps
           sx={{
             // color: isDark ? 'white' : 'black',
             // borderColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)',
-            borderColor: 'text.secondary',
-            color: 'text.secondary',
+            borderColor: (theme.vars || theme).palette.text.secondary,
             borderRadius: '999px',
             paddingX: '5px',
             minHeight: '25px',
             backgroundColor: 'transparent',
             '& .MuiChip-icon': {
-              color: 'text.secondary',
               mr: 0,
+            },
+            '& .MuiChip-icon, & .MuiChip-label': {
+              color: `${(theme.vars || theme).palette.text.secondary}`,
             },
           }}
         />
