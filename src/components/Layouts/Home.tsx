@@ -13,7 +13,7 @@ type HomeProps = {
 export default function Home({ heroData, projectsData }: HomeProps) {
   return (
     <AppWrapper>
-      <Hero data={heroData} />
+      <Hero data={heroData} variant="full" />
       <Latest data={projectsData} />
       <Emblems />
       <Footer />

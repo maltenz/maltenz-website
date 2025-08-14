@@ -31,9 +31,10 @@ const StyledCardContent = styled(CardContent)(({ theme }) => ({
 
 type HeroProps = {
   data: HeroData;
+  variant?: 'full' | 'minimal';
 };
 
-export default function Hero({ data }: HeroProps) {
+export default function Hero({ data, variant = 'minimal' }: HeroProps) {
   const theme = useTheme();
   const { colorScheme } = useThemeStore();
 
@@ -170,128 +171,129 @@ export default function Hero({ data }: HeroProps) {
           Express Yourself
         </Typography>
 
-        <Grid container spacing={2} columns={12}>
-          <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
-            <StyledCard variant="outlined">
-              <Box sx={{ position: 'relative' }}>
-                <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1, width: '100%' }} />
+        {variant === 'full' && (
+          <Grid container spacing={2} columns={12}>
+            <Grid size={{ xs: 12, md: 12 }} sx={{ height: '100%' }}>
+              <StyledCard variant="outlined">
+                <Box sx={{ position: 'relative' }}>
+                  <Box component="img" src="/brand/build-your-dream-min.png" sx={{ borderRadius: 1, width: '100%' }} />
 
-                {/* Episode Info positioned under play button */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '80%', // Position below the play button
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    textAlign: 'center',
-                    color: 'white',
-                  }}
-                >
-                  <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
-                    Episode 1
-                  </Typography>
+                  {/* Episode Info positioned under play button */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: '80%', // Position below the play button
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      textAlign: 'center',
+                      color: 'white',
+                    }}
+                  >
+                    <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
+                      Episode 1
+                    </Typography>
 
-                  <Typography variant="h3">Save the house</Typography>
-                </Box>
+                    <Typography variant="h3">Save the house</Typography>
+                  </Box>
 
-                {/* Video Play Button with Liquid Glass Effect */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '66.67%', // 2/3 down vertically
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: 120, // Scaled up by 50% from 80px
-                    height: 120, // Scaled up by 50% from 80px
-                    borderRadius: '50%',
-                    background: `linear-gradient(135deg, 
-                      ${alpha(theme.palette.primary.main, 0.9)} 0%, 
-                      ${alpha(theme.palette.primary.light, 0.8)} 50%, 
-                      ${alpha(theme.palette.primary.main, 0.9)} 100%)`,
-                    backdropFilter: 'blur(20px)',
-                    border: `1px solid ${alpha(theme.palette.common.white, 0.2)}`,
-                    boxShadow: `
-                      0 8px 32px ${alpha(theme.palette.primary.main, 0.3)},
-                      inset 0 1px 0 ${alpha(theme.palette.common.white, 0.4)},
-                      inset 0 -1px 0 ${alpha(theme.palette.common.black, 0.1)}
-                    `,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    '&:hover': {
-                      transform: 'translate(-50%, -50%) scale(1.5)',
+                  {/* Video Play Button with Liquid Glass Effect */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: '66.67%', // 2/3 down vertically
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: 120, // Scaled up by 50% from 80px
+                      height: 120, // Scaled up by 50% from 80px
+                      borderRadius: '50%',
                       background: `linear-gradient(135deg, 
-                        ${alpha(theme.palette.primary.main, 1)} 0%, 
-                        ${alpha(theme.palette.primary.light, 0.9)} 50%, 
-                        ${alpha(theme.palette.primary.main, 1)} 100%)`,
+                        ${alpha(theme.palette.primary.main, 0.9)} 0%, 
+                        ${alpha(theme.palette.primary.light, 0.8)} 50%, 
+                        ${alpha(theme.palette.primary.main, 0.9)} 100%)`,
+                      backdropFilter: 'blur(20px)',
+                      border: `1px solid ${alpha(theme.palette.common.white, 0.2)}`,
                       boxShadow: `
-                        0 12px 40px ${alpha(theme.palette.primary.main, 0.4)},
-                        inset 0 1px 0 ${alpha(theme.palette.common.white, 0.5)},
+                        0 8px 32px ${alpha(theme.palette.primary.main, 0.3)},
+                        inset 0 1px 0 ${alpha(theme.palette.common.white, 0.4)},
                         inset 0 -1px 0 ${alpha(theme.palette.common.black, 0.1)}
                       `,
-                    },
-                    '&:active': {
-                      transform: 'translate(-50%, -50%) scale(0.95)',
-                    },
-                  }}
-                >
-                  {/* Play Triangle Icon */}
-                  <Box
-                    component="svg"
-                    width="20"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    sx={{
-                      marginBottom: '5px',
-                      marginLeft: '5px', // Slight offset to center visually
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      '&:hover': {
+                        transform: 'translate(-50%, -50%) scale(1.5)',
+                        background: `linear-gradient(135deg, 
+                          ${alpha(theme.palette.primary.main, 1)} 0%, 
+                          ${alpha(theme.palette.primary.light, 0.9)} 50%, 
+                          ${alpha(theme.palette.primary.main, 1)} 100%)`,
+                        boxShadow: `
+                          0 12px 40px ${alpha(theme.palette.primary.main, 0.4)},
+                          inset 0 1px 0 ${alpha(theme.palette.common.white, 0.5)},
+                          inset 0 -1px 0 ${alpha(theme.palette.common.black, 0.1)}
+                        `,
+                      },
+                      '&:active': {
+                        transform: 'translate(-50%, -50%) scale(0.95)',
+                      },
                     }}
                   >
-                    <path
-                      d="M9.5 7.5a2 2 0 0 0-3 1.74v7.52a2 2 0 0 0 3 1.74l6.5-3.76a2 2 0 0 0 0-3.48L9.5 7.5z"
-                      fill={theme.palette.primary.contrastText}
-                    />
+                    {/* Play Triangle Icon */}
+                    <Box
+                      component="svg"
+                      width="20"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      sx={{
+                        marginBottom: '5px',
+                        marginLeft: '5px', // Slight offset to center visually
+                      }}
+                    >
+                      <path
+                        d="M9.5 7.5a2 2 0 0 0-3 1.74v7.52a2 2 0 0 0 3 1.74l6.5-3.76a2 2 0 0 0 0-3.48L9.5 7.5z"
+                        fill={theme.palette.primary.contrastText}
+                      />
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
 
-              <StyledCardContent>
-                <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
+                <StyledCardContent>
+                  <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
 
-                <Typography component={Link} href="#" variant="h4" mb={2}>
-                  John meets Aimii{' '}
-
-                  <Typography
-                    component="span"
-                    sx={{
-                      fontFamily: '"Pacifico", cursive',
-                    }}
-                  >
-                    Aimii
+                  <Typography component={Link} href="#" variant="h4" mb={2}>
+                    John meets Aimii{' '}
+                    <Typography
+                      component="span"
+                      sx={{
+                        fontFamily: '"Pacifico", cursive',
+                      }}
+                    >
+                      Aimii
+                    </Typography>
                   </Typography>
-                </Typography>
 
-                <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
-                  {data.description}
-                </Typography>
-              </StyledCardContent>
+                  <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
+                    {data.description}
+                  </Typography>
+                </StyledCardContent>
 
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: 2,
-                }}
-              >
-                <Author />
-                <Typography variant="caption">{getDisplayDate()}</Typography>
-              </Box>
-            </StyledCard>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: 2,
+                  }}
+                >
+                  <Author />
+                  <Typography variant="caption">{getDisplayDate()}</Typography>
+                </Box>
+              </StyledCard>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
       </Box>
     </Container>
   );
