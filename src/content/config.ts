@@ -22,7 +22,19 @@ const latestCollection = defineCollection({
   }),
 });
 
+const aboutCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    publishDate: z.date(),
+  }),
+});
+
 export const collections = {
   latest: latestCollection,
   hero: heroCollection,
+  about: aboutCollection,
 };

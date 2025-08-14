@@ -199,7 +199,7 @@ export default function Footer() {
               Services
             </Typography>
 
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="text.secondary" variant="body2" href="/merch">
               Merch
             </Link>
 
@@ -207,8 +207,8 @@ export default function Footer() {
               Websites & Apps
             </Link>
 
-            <Link color="text.secondary" variant="body2" href="#">
-              Branding
+            <Link color="text.secondary" variant="body2" href="/latest/brand">
+              Brand
             </Link>
           </Box>
 
@@ -234,7 +234,7 @@ export default function Footer() {
               Aimii
             </Link>
 
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="text.secondary" variant="body2" href="/about">
               About
             </Link>
 

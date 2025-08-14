@@ -1,0 +1,19 @@
+---
+import { getEntry } from 'astro:content';
+import type { AboutEntry } from '../types/content';
+import Layout from '../layouts/Layout.astro';
+import Project from '../components/Projects';
+
+// Get about content
+const aboutData: AboutEntry = await getEntry('about', 'main') as AboutEntry;
+const { Content } = await aboutData.render();
+---
+
+<Layout title="About - Malte">
+  <Project
+    {...aboutData.data}
+    client:load
+  >
+    <Content />
+  </Project>
+</Layout>
