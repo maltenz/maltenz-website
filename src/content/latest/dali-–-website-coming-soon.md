@@ -1,8 +1,10 @@
 ---
 title: Dali – Website Coming Soon
-description: Dali’s bold, vibrant style has grown into a movement — brightening
-  spaces across New Zealand and bringing the spirit of music and creativity to
-  life
+description: >-
+  More than a movement. Dali is known for his signature style, brightening space
+  across New Zealand.
+
+  And leaving a smile on our face.
 image: /uploads/dali.png
 tags:
   - Website
