@@ -10,10 +10,7 @@ const { Content } = await aboutData.render();
 ---
 
 <Layout title="About - Malte">
-  <Project
-    {...aboutData.data}
-    client:load
-  >
+  <Project {...aboutData.data} client:load>
     <Content />
   </Project>
 </Layout>

@@ -1,20 +1,13 @@
-import Footer from './lib/Footer';
-import type { HeroData, ProjectEntry } from '../../types/content';
-import AppWrapper from '../AppWrapper';
-import Hero from '../Hero';
-import AboutContent from './lib/AboutContent';
+import type { ReactNode } from 'react';
+
+import type { AboutData } from '../../types/content';
+import Project from '../Projects';
 
 type AboutProps = {
-  heroData: HeroData;
-  projectsData: ProjectEntry[];
+  aboutData: AboutData;
+  children: ReactNode;
 };
 
-export default function About({ heroData }: AboutProps) {
-  return (
-    <AppWrapper>
-      <Hero data={heroData} slogan="about" />
-      <AboutContent />
-      <Footer />
-    </AppWrapper>
-  );
+export default function About({ aboutData, children }: AboutProps) {
+  return <Project {...aboutData}>{children}</Project>;
 }
