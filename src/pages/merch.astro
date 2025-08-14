@@ -1,0 +1,24 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { ProjectEntry, HeroEntry } from '../types/content';
+import Layout from '../layouts/Layout.astro';
+import MerchLayout from '../components/Layouts/Merch';
+
+// Get hero content with proper typing - try main first, then get the first available entry
+let heroData: HeroEntry;
+try {
+  heroData = await getEntry('hero', 'main') as HeroEntry;
+} catch (error) {
+  const allHero = await getCollection('hero') as HeroEntry[];
+  heroData = allHero?.[0];
+}
+
+// Fetch all blog posts with proper typing
+const posts: ProjectEntry[] = await getCollection('latest');
+// Sort posts by publishDate (newest first)
+const sortedPosts = posts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+---
+
+<Layout title="Merch - Malte">
+  <MerchLayout heroData={heroData.data} client:load projectsData={sortedPosts} />
+</Layout>
