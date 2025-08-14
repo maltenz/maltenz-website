@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -28,19 +28,38 @@ type NavLinkProps = {
   href: string;
   children: ReactNode;
   sx?: SxProps<Theme>;
+  scrollToId?: string;
 };
 
-function NavLink({ href, children, sx }: NavLinkProps) {
+function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
   const { colorScheme } = useThemeStore();
   const theme = useTheme();
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (scrollToId) {
+      e.preventDefault();
+      const element = document.getElementById(scrollToId);
+      if (element) {
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - 100;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
 
   return (
     <Link
       href={href}
+      onClick={handleClick}
       sx={{
         ...theme.typography.body2,
         textDecoration: 'none',
         fontWeight: 500,
+        cursor: 'pointer',
         '&:hover': {
           color: colorScheme === 'dark' ? 'primary.light' : 'primary.main',
         },
@@ -263,7 +282,7 @@ function AppBar() {
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                  <NavLink href="/latest">Latest</NavLink>
+                  <NavLink href="#latest" scrollToId="latest">Latest</NavLink>
                   <NavLink href="/merch">Merch</NavLink>
                   <NavLink href="/about">About</NavLink>
                 </Box>
@@ -310,7 +329,7 @@ function AppBar() {
             >
               <Box sx={{ py: 4 }}>
                 <Stack gap={2}>
-                  <NavLink sx={mobileMenuSx} href="/latest">
+                  <NavLink sx={mobileMenuSx} href="#latest" scrollToId="latest">
                     Latest
                   </NavLink>
 
