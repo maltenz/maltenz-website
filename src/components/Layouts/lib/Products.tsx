@@ -62,7 +62,7 @@ export default function Products({ slogan = 'main' }: ProductsProps) {
               Premium T-Shirt
             </Typography>
 
-            <Typography variant="body1" color="text.secondary" paragraph>
+            <Typography color="text.secondary" paragraph>
               Express yourself with our signature Aimii design featuring bold colors and geometric patterns that reflect
               creativity and innovation.
             </Typography>
@@ -71,7 +71,7 @@ export default function Products({ slogan = 'main' }: ProductsProps) {
               Coming Soon
             </Typography>
 
-            <Typography variant="body2" color="text.secondary">
+            <Typography color="text.secondary">
               We&apos;re currently sourcing the highest quality suppliers to ensure our merch meets the same standards
               as our creative work. Stay tuned for updates on availability.
             </Typography>
