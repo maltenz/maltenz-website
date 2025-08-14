@@ -32,11 +32,26 @@ const StyledCardContent = styled(CardContent)(({ theme }) => ({
 type HeroProps = {
   data: HeroData;
   variant?: 'full' | 'minimal';
+  slogan?: 'main' | 'product' | 'about';
 };
 
-export default function Hero({ data, variant = 'minimal' }: HeroProps) {
+export default function Hero({ data, variant = 'minimal', slogan = 'main' }: HeroProps) {
   const theme = useTheme();
   const { colorScheme } = useThemeStore();
+
+  // Function to get slogan text based on slogan prop
+  const getSloganText = () => {
+    switch (slogan) {
+      case 'main':
+        return 'Express Yourself';
+      case 'product':
+        return 'Be Bold Like Dali';
+      case 'about':
+        return 'Say What You Mean';
+      default:
+        return 'Express Yourself';
+    }
+  };
 
   // Function to get SVG colors based on current theme
   const getSvgColors = () => {
@@ -168,7 +183,7 @@ export default function Hero({ data, variant = 'minimal' }: HeroProps) {
           variant="h5"
           sx={{ fontWeight: '400', textAlign: 'center', mt: -2, mb: 2, color: 'text.secondary' }}
         >
-          Express Yourself
+          {getSloganText()}
         </Typography>
 
         {variant === 'full' && (
