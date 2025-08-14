@@ -163,7 +163,10 @@ export default function Hero({ data }: HeroProps) {
           </Box>
         </Box>
 
-        <Typography variant="h5" sx={{ fontWeight: '400', textAlign: 'center', mt: -2, color: 'text.secondary' }}>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: '400', textAlign: 'center', mt: -2, mb: 2, color: 'text.secondary' }}
+        >
           Express Yourself
         </Typography>
 
