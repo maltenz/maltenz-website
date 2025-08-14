@@ -223,23 +223,8 @@ export default function Footer() {
               Links
             </Typography>
 
-            <Link
-              color="text.secondary"
-              variant="body2"
-              href="#"
-              sx={{
-                fontFamily: '"Pacifico", cursive',
-              }}
-            >
-              Aimii
-            </Link>
-
             <Link color="text.secondary" variant="body2" href="/about">
               About
-            </Link>
-
-            <Link color="text.secondary" variant="body2" href="#">
-              Contact
             </Link>
           </Box>
         </Stack>
