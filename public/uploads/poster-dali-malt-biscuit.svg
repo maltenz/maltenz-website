@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1536px" height="1024px" viewBox="0 0 1536 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Hero</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hero" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#000000" x="0" y="0" width="1536" height="1024"></rect>
+        <rect id="Rectangle-Copy-6" fill="#260449" x="0" y="0" width="512" height="512"></rect>
+        <rect id="Rectangle-Copy-7" fill="#F3B426" x="512" y="0" width="512" height="512"></rect>
+        <rect id="Rectangle-Copy-8" fill="#F75643" x="0" y="512" width="512" height="512"></rect>
+        <rect id="Rectangle-Copy-9" fill="#7B3BB9" x="512" y="512" width="512" height="512"></rect>
+        <ellipse id="Oval-Copy" fill="#7B3BB9" cx="255.5" cy="267.5" rx="114.5" ry="112.5"></ellipse>
+        <path d="M141,273 L256,273 L256,380 L170.296875,380 C154.116658,380 141,366.883342 141,350.703125 L141,273 Z" id="Rectangle-Copy-10" fill="#7B3BB9"></path>
+        <path d="M141,155 L256,155 L256,262 L170.296875,262 C154.116658,262 141,248.883342 141,232.703125 L141,155 Z" id="Rectangle-Copy-11" fill="#7B3BB9" transform="translate(198.500000, 208.500000) scale(1, -1) translate(-198.500000, -208.500000) "></path>
+        <ellipse id="Oval-Copy-2" fill="#F75643" cx="767.5" cy="267.5" rx="114.5" ry="112.5"></ellipse>
+        <path d="M653,273 L768,273 L768,380 L682.296875,380 C666.116658,380 653,366.883342 653,350.703125 L653,273 Z" id="Rectangle-Copy-12" fill="#F75643"></path>
+        <ellipse id="Oval-Copy-3" fill="#F75643" transform="translate(768.000000, 267.500000) scale(-1, 1) translate(-768.000000, -267.500000) " cx="768" cy="267.5" rx="114" ry="112.5"></ellipse>
+        <path d="M768,273 L882,273 L882,380 L797.296875,380 C781.116658,380 768,366.883342 768,350.703125 L768,273 Z" id="Rectangle-Copy-13" fill="#F75643" transform="translate(825.000000, 326.500000) scale(-1, 1) translate(-825.000000, -326.500000) "></path>
+        <rect id="Rectangle-Copy-14" fill="#260449" x="710" y="667" width="116" height="225" rx="29.296875"></rect>
+        <path d="M190.149721,681.218855 L354.503098,842.459478 C365.899091,853.639639 366.074059,871.941228 354.893898,883.337221 C349.457903,888.878159 342.021845,892 334.259627,892 L169.90625,892 C153.941769,892 141,879.058231 141,863.09375 L141,701.853127 C141,685.888646 153.941769,672.946877 169.90625,672.946877 C177.476951,672.946877 184.745495,675.916982 190.149721,681.218855 Z" id="Rectangle-Copy-15" fill="#F3B426"></path>
+        <g id="Group" transform="translate(1188.000000, 445.000000)">
+            <rect id="Rectangle-Copy-11" fill="#F3B426" x="-3.26849658e-13" y="15" width="166.666667" height="174.262153" rx="83.3333333"></rect>
+            <ellipse id="Oval-Copy-2" fill="#F75643" cx="63.5594209" cy="125.526552" rx="37.2260875" ry="36.5265523"></ellipse>
+            <text id="👁️" font-family="AppleColorEmoji, Apple Color Emoji" font-size="121" font-weight="normal" fill="#4F4F4F">
+                <tspan x="32" y="121">👁️</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
