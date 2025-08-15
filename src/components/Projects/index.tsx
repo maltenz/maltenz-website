@@ -49,6 +49,10 @@ const StyledMarkdownContainer = styled('div')(({ theme }) => ({
     color: theme.palette.primary.main,
     textDecoration: 'underline',
   },
+
+  '& img ': {
+    maxWidth: '100%',
+  },
   // add more styles for other elements as needed
 }));
 
