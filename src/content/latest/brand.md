@@ -6,4 +6,4 @@ tags:
   - Brand
 publishDate: 1985-04-24T09:43:00.000+12:00
 ---
-Content
+![](/uploads/dali-logo-color.svg)
