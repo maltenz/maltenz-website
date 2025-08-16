@@ -213,9 +213,6 @@ function AppBar() {
     borderRadius: '50%',
     display: 'flex',
     backgroundColor: 'transparent',
-    '&:hover': {
-      backgroundColor: 'action.hover',
-    },
   };
 
   return (
@@ -303,6 +300,9 @@ function AppBar() {
                   '& svg': {
                     color: 'inherit',
                   },
+                  '&:hover': {
+                    backgroundColor: alpha(theme.palette.text.primary, 0.08),
+                  },
                 }}
               >
                 {themeDisplay.icon}
@@ -322,6 +322,9 @@ function AppBar() {
                     color: mobileMenuOpen ? 'primary.main' : 'text.primary',
                     '& svg': {
                       color: 'inherit',
+                    },
+                    '&:hover': {
+                      backgroundColor: alpha(theme.palette.text.primary, 0.08),
                     },
                   }}
                 >
