@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Typography, Box, Stack, Container, styled } from '@mui/material';
+import { Typography, Box, Stack, Container, styled, Button } from '@mui/material';
 
 import type { ProjectData } from '../../types/content';
 import AppWrapper from '../AppWrapper';
@@ -115,47 +115,23 @@ export default function Project({
 
             {/* Instagram Buttons */}
             <Box sx={{ display: 'flex', gap: 2, mb: 4, justifyContent: 'center' }}>
-              <Box
-                component="a"
+              <Button
+                variant="outlined"
                 href="https://instagram.com/dalisusanto"
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{
-                  px: 2,
-                  py: 1,
-                  borderRadius: 1,
-                  border: 1,
-                  borderColor: 'divider',
-                  textDecoration: 'none',
-                  color: 'text.primary',
-                  '&:hover': {
-                    backgroundColor: 'action.hover',
-                  },
-                }}
               >
-                <Typography variant="button">@dalisusanto</Typography>
-              </Box>
+                @dalisusanto
+              </Button>
 
-              <Box
-                component="a"
+              <Button
+                variant="outlined"
                 href="https://instagram.com/maltbiscuit"
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{
-                  px: 2,
-                  py: 1,
-                  borderRadius: 1,
-                  border: 1,
-                  borderColor: 'divider',
-                  textDecoration: 'none',
-                  color: 'text.primary',
-                  '&:hover': {
-                    backgroundColor: 'action.hover',
-                  },
-                }}
               >
-                <Typography variant="button">@maltbiscuit</Typography>
-              </Box>
+                @maltbiscuit
+              </Button>
             </Box>
           </StyledInner>
         </Stack>

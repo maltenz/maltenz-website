@@ -42,10 +42,10 @@ function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
       if (element) {
         const elementPosition = element.offsetTop;
         const offsetPosition = elementPosition - 100;
-        
+
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     }
@@ -87,19 +87,19 @@ function AppBar() {
   const getThemeDisplay = (currentScheme: ColorScheme) => {
     switch (currentScheme) {
       case 'light':
-        return { icon: <LightModeIcon sx={{ color: darkPurpleVariant[500] }} /> };
+        return { icon: <LightModeIcon sx={{ color: 'inherit' }} /> };
       case 'dark':
-        return { icon: <DarkModeIcon sx={{ color: '#fff' }} /> };
+        return { icon: <DarkModeIcon sx={{ color: 'inherit' }} /> };
       case 'purple':
-        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: 'inherit' }} /> };
       case 'yellow':
-        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: 'inherit' }} /> };
       case 'orange':
-        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: 'inherit' }} /> };
       case 'dark-purple':
-        return { icon: <PaletteIcon sx={{ color: darkPurpleVariant[500] }} /> };
+        return { icon: <PaletteIcon sx={{ color: 'inherit' }} /> };
       default:
-        return { icon: <LightModeIcon /> };
+        return { icon: <LightModeIcon sx={{ color: 'inherit' }} /> };
     }
   };
 
@@ -207,13 +207,15 @@ function AppBar() {
     // fontSize: '2rem',
   } as const;
 
-  const menuIconActiveColor = isDark ? 'primary.light' : 'primary.main';
-
   const iconSx = {
     minHeight: '35px',
     minWidth: '35px',
     borderRadius: '50%',
     display: 'flex',
+    backgroundColor: 'transparent',
+    '&:hover': {
+      backgroundColor: 'action.hover',
+    },
   };
 
   return (
@@ -282,7 +284,10 @@ function AppBar() {
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                  <NavLink href="#latest" scrollToId="latest">Latest</NavLink>
+                  <NavLink href="#latest" scrollToId="latest">
+                    Latest
+                  </NavLink>
+
                   <NavLink href="/merch">Merch</NavLink>
                   <NavLink href="/about">About</NavLink>
                 </Box>
@@ -294,6 +299,10 @@ function AppBar() {
                 sx={{
                   ...iconSx,
                   display: 'flex',
+                  color: 'text.primary',
+                  '& svg': {
+                    color: 'inherit',
+                  },
                 }}
               >
                 {themeDisplay.icon}
@@ -302,7 +311,6 @@ function AppBar() {
               <Box>
                 <IconButton
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  color="primary"
                   size="small"
                   sx={{
                     ...iconSx,
@@ -311,7 +319,10 @@ function AppBar() {
                       xs: 'flex',
                       md: 'none',
                     },
-                    color: mobileMenuOpen ? menuIconActiveColor : 'text.primary',
+                    color: mobileMenuOpen ? 'primary.main' : 'text.primary',
+                    '& svg': {
+                      color: 'inherit',
+                    },
                   }}
                 >
                   <MenuIcon />

@@ -22,7 +22,7 @@ export default function Theme({ children, colorScheme }: Props) {
     () =>
       createTheme({
         palette: {
-          mode: colorScheme === 'dark' ? 'dark' : 'light',
+          mode: colorScheme === 'dark' || colorScheme === 'dark-purple' ? 'dark' : 'light',
           ...colorSchemes[colorScheme].palette,
         },
         typography,

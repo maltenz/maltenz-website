@@ -408,13 +408,13 @@ export const colorSchemes = {
         light: purpleVariant[300],
         main: purpleVariant[500], // #7B3BB9
         dark: purpleVariant[700],
-        contrastText: '#FFFFFF',
+        contrastText: gray[50],
       },
       secondary: {
         light: orangeVariant[300],
         main: orangeVariant[500], // #F75643
         dark: orangeVariant[700],
-        contrastText: '#FFFFFF',
+        contrastText: gray[50],
       },
       info: {
         light: purpleVariant[100],
@@ -440,20 +440,20 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
-      divider: alpha(purpleVariant[300], 0.4),
+      divider: alpha(gray[50], 0.3),
       background: bodyScheme.purple,
       text: {
-        primary: darkPurpleVariant[400],
-        secondary: purpleVariant[200], // Complementary warm orange for purple theme
+        primary: gray[50],
+        secondary: alpha(gray[50], 0.8),
         warning: orange[400],
       },
       link: {
-        main: yellowVariant[500],
-        hover: yellowVariant[500],
+        main: yellowVariant[300],
+        hover: yellowVariant[200],
       },
       action: {
-        hover: alpha(gray[200], 0.2),
-        selected: `${alpha(gray[200], 0.3)}`,
+        hover: alpha(gray[50], 0.1),
+        selected: alpha(gray[50], 0.2),
       },
     },
   },

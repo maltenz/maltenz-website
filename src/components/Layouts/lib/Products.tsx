@@ -21,10 +21,6 @@ export default function Products({ slogan = 'main' }: ProductsProps) {
 
   return (
     <Container maxWidth="lg" component="main" sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}>
-      <Typography variant="h2" sx={{ mb: 4 }}>
-        Store
-      </Typography>
-
       <Grid container spacing={6}>
         {/* Left Column - Shirt Image */}
         <Grid size={{ xs: 12, md: 4 }}>
@@ -58,7 +54,7 @@ export default function Products({ slogan = 'main' }: ProductsProps) {
               Aimii Collection
             </Typography>
 
-            <Typography variant="h5" color="primary" gutterBottom>
+            <Typography variant="h5" color="secondary" gutterBottom>
               Premium T-Shirt
             </Typography>
 
@@ -67,7 +63,7 @@ export default function Products({ slogan = 'main' }: ProductsProps) {
               creativity and innovation.
             </Typography>
 
-            <Typography variant="h6" color="warning.main" gutterBottom>
+            <Typography variant="h6" color="secondary" gutterBottom>
               Coming Soon
             </Typography>
 
