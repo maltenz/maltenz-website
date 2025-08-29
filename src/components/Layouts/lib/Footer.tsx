@@ -88,16 +88,7 @@ export default function Footer() {
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
         <Stack spacing={1.8}>
-          <RHFTextField
-            variant="standard"
-            name="name"
-            placeholder="Name"
-            sx={{
-              '& .MuiInputBase-input': {
-                fontFamily: '"Pacifico", cursive',
-              },
-            }}
-          />
+          <RHFTextField variant="standard" name="name" placeholder="Name" />
 
           <RHFTextField
             variant="standard"
@@ -105,9 +96,6 @@ export default function Footer() {
             placeholder="Email"
             sx={{
               mb: 0,
-              '& .MuiInputBase-input': {
-                fontFamily: '"Pacifico", cursive',
-              },
             }}
           />
 
