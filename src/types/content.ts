@@ -7,11 +7,13 @@ import type { CollectionEntry } from 'astro:content';
 export type ProjectEntry = CollectionEntry<'latest'>;
 export type HeroEntry = CollectionEntry<'hero'>;
 export type AboutEntry = CollectionEntry<'about'>;
+export type WebsitesAppsEntry = CollectionEntry<'websites-apps'>;
 
 // Data-only types (just the data part without slug/id)
 export type ProjectData = ProjectEntry['data'];
 export type HeroData = HeroEntry['data'];
 export type AboutData = AboutEntry['data'];
+export type WebsitesAppsData = WebsitesAppsEntry['data'];
 
 // Utility types for components
 export type Project = {

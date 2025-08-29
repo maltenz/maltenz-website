@@ -61,7 +61,7 @@ function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
         fontWeight: 500,
         cursor: 'pointer',
         '&:hover': {
-          color: colorScheme === 'dark' ? 'primary.light' : 'primary.main',
+          color: theme.palette.secondary.light,
         },
         '&::before': {
           display: 'none',

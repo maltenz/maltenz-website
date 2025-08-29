@@ -33,6 +33,20 @@ collections:
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
 
+  - name: "websites-apps"
+    label: "Websites & Apps Page"
+    files:
+      - label: "Websites & Apps Content"
+        name: "websites-apps"
+        file: "src/content/websites-apps/main.md"
+        fields:
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+
   - name: "latest"
     label: "Latest"
     folder: "src/content/latest"
