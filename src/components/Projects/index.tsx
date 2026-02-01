@@ -104,7 +104,7 @@ export default function Project({
 
           <StyledInner>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-              <TagList tags={[Tags.Feedback, Tags.Source, Tags.BundleSize]} />
+              {/* <TagList tags={[Tags.Feedback, Tags.Source, Tags.BundleSize]} /> */}
 
               <Typography variant="body2" color="text.secondary" textAlign="right">
                 {formattedDate}

@@ -22,7 +22,7 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 import { useThemeStore } from '../../../stores/themeStore';
 import type { ColorScheme } from '../../../stores/themeStore';
 import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant } from '../../../theme/themePrimitives';
-import Logo from '../../Logo';
+import Logo, { getColors } from '../../Logo';
 
 type NavLinkProps = {
   href: string;
@@ -213,6 +213,7 @@ function AppBar() {
     borderRadius: '50%',
     display: 'flex',
     backgroundColor: 'transparent',
+    border: isDark ? '1px solid rgba(0,0,0,0.35)' : '1px solid rgba(255,255,255,0.35)',
   };
 
   return (

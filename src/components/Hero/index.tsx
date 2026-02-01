@@ -274,7 +274,7 @@ export default function Hero({ data, variant = 'minimal', slogan = 'main' }: Her
                 </Box>
 
                 <StyledCardContent>
-                  <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} />
+                  {/* <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} /> */}
 
                   <Typography component={Link} href="#" variant="h4" mb={2}>
                     John meets Aimii{' '}

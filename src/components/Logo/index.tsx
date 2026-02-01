@@ -1,53 +1,53 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material';
 
 import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant, gray } from '../../theme/themePrimitives';
 
-type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple' | 'dark' | 'light';
+export type LogoVariant = 'purple' | 'yellow' | 'orange' | 'dark-purple' | 'dark' | 'light';
 
 type LogoProps = {
   variant?: LogoVariant;
   sx?: SxProps<Theme>;
 };
 
+export const getColors = ({ variant = 'purple' }: Pick<LogoProps, 'variant'>) => {
+  switch (variant) {
+    case 'purple':
+      return {
+        background: purpleVariant[500],
+        text: orangeVariant[500],
+        divider: purpleVariant[300],
+      };
+    case 'yellow':
+      return {
+        background: yellowVariant[500],
+        text: purpleVariant[500],
+        divider: yellowVariant[300],
+      };
+    case 'orange':
+      return {
+        background: orangeVariant[500],
+        text: purpleVariant[500],
+        divider: orangeVariant[200],
+      };
+    case 'dark-purple':
+      return {
+        background: darkPurpleVariant[500],
+        text: yellowVariant[500],
+        divider: darkPurpleVariant[400],
+      };
+
+    default:
+      return {
+        background: darkPurpleVariant[500],
+        text: yellowVariant[500],
+        divider: darkPurpleVariant[400],
+      };
+  }
+};
+
 function Logo({ variant = 'purple', sx }: LogoProps) {
-  const getColors = () => {
-    switch (variant) {
-      case 'purple':
-        return {
-          background: purpleVariant[500],
-          text: orangeVariant[500],
-          divider: purpleVariant[300],
-        };
-      case 'yellow':
-        return {
-          background: yellowVariant[500],
-          text: purpleVariant[500],
-          divider: yellowVariant[300],
-        };
-      case 'orange':
-        return {
-          background: orangeVariant[500],
-          text: purpleVariant[500],
-          divider: orangeVariant[200],
-        };
-      case 'dark-purple':
-        return {
-          background: darkPurpleVariant[500],
-          text: yellowVariant[500],
-          divider: darkPurpleVariant[400],
-        };
-
-      default:
-        return {
-          background: darkPurpleVariant[500],
-          text: yellowVariant[500],
-          divider: darkPurpleVariant[400],
-        };
-    }
-  };
-
-  const colors = getColors();
+  const colors = getColors({ variant });
 
   return (
     <Box

@@ -45,7 +45,7 @@ export default function Latest({ data }: LatestProps) {
                 {post.data.tags && post.data.tags.length > 0 ? post.data.tags[0] : ''}
               </Typography> */}
 
-              <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} />
+              {/* <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 3 }} /> */}
 
               <Link href={`/latest/${post.slug}`} gutterBottom variant="h6">
                 {post.data.title}
