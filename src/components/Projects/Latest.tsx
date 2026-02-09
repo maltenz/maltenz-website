@@ -20,7 +20,7 @@ export default function Latest({ data }: LatestProps) {
       sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
     >
       <Typography variant="h2" mb={-2} color="text.secondary">
-        Latest
+        Projects
       </Typography>
 
       <Grid container spacing={{ xs: 8, md: 10 }} columns={12} sx={{ my: 2 }}>
