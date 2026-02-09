@@ -1,11 +1,11 @@
 ---
-title: Dali – Website Coming Soon
+title: Believe It Or Not Quiz
 description: >-
   More than a movement. Dali is known for his signature style, brightening space
   across New Zealand.
 
   And leaving a smile on our face.
-image: /uploads/dali.png
+image: /uploads/bion-demo-main.jpg
 tags:
   - Website
   - Brand
