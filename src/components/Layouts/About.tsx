@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import type { AboutData } from '../../types/content';
 import AppWrapper from '../AppWrapper';
-import Project from '../Projects';
+import Project from '../Content';
 
 type AboutProps = {
   aboutData: AboutData;

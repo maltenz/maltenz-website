@@ -84,49 +84,6 @@ export default function Footer() {
     }
   });
 
-  const renderForm = (
-    <FormProvider {...methods}>
-      <form onSubmit={onSubmit}>
-        <Stack spacing={1.8}>
-          <RHFTextField variant="standard" name="name" placeholder="Name" />
-
-          <RHFTextField
-            variant="standard"
-            name="email"
-            placeholder="Email"
-            sx={{
-              mb: 0,
-            }}
-          />
-
-          <LoadingButton
-            color="primary"
-            variant="text"
-            size="small"
-            type="submit"
-            loading={isSubmitting}
-            sx={{
-              alignSelf: 'flex-end',
-              textDecoration: 'underline',
-              textUnderlineOffset: '4px',
-              color: 'text.primary',
-              paddingRight: 0,
-              paddingLeft: 0,
-              fontSize: (theme) => theme.typography.body2.fontSize,
-              '&:hover': {
-                textDecoration: 'underline',
-                backgroundColor: 'transparent',
-                color: 'primary.main',
-              },
-            }}
-          >
-            Subscribe
-          </LoadingButton>
-        </Stack>
-      </form>
-    </FormProvider>
-  );
-
   return (
     <Container
       sx={{
@@ -166,20 +123,17 @@ export default function Footer() {
               gap: 4,
             }}
           >
-            {renderForm}
-
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ mb: 1 }}>
                 <Logo variant={isDark ? 'light' : 'dark'} />
               </Box>
 
               <Typography variant="body2" gutterBottom sx={{ fontWeight: 600 }}>
-                Newsletter
+                Let’s build something great
               </Typography>
 
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, maxWidth: 300 }}>
-                Subscribe to our newsletter for
-                <wbr /> updates and promotions.
+                Available for web and mobile projects.
               </Typography>
             </Box>
           </Box>
@@ -207,16 +161,8 @@ export default function Footer() {
               Services
             </Typography>
 
-            <Link color="text.secondary" variant="body2" href="/merch">
-              Merch
-            </Link>
-
             <Link color="text.secondary" variant="body2" href="#">
               Websites & Apps
-            </Link>
-
-            <Link color="text.secondary" variant="body2" href="/latest/brand">
-              Brand
             </Link>
           </Box>
 

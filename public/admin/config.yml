@@ -15,15 +15,15 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "text"}
           - {label: "Description", name: "description", widget: "text", required: false}
-          - {label: "Vimeo URL", name: "vimeo", widget: "string"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Slug", name: "postSlug", widget: "string", required: false}
           - {label: "Tags", name: "tag", widget: "list", required: false}
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
-          - { label: "Slug", name: "postSlug", widget: "string", required: false }
 
   - name: "about"
-    label: "About Page"
+    label: "About"
     files:
-      - label: "About Content"
+      - label: "About"
         name: "about"
         file: "src/content/about/main.md"
         fields:
@@ -35,14 +35,13 @@ collections:
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
 
   - name: "websites-apps"
-    label: "Websites & Apps Page"
+    label: "Websites & Apps"
     files:
-      - label: "Websites & Apps Content"
+      - label: "Websites & Apps"
         name: "websites-apps"
         file: "src/content/websites-apps/main.md"
         fields:
           - {label: "Title", name: "title", widget: "text"}
-          - {label: "Description", name: "description", widget: "text"}
           - {label: "Image", name: "image", widget: "image", required: false}
           - {label: "Tags", name: "tags", widget: "list", required: false}
           - {label: "Body", name: "body", widget: "markdown"}
@@ -61,3 +60,5 @@ collections:
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+      - {label: "Slug", name: "postSlug", widget: "string", required: false}
+

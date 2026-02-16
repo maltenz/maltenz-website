@@ -5,7 +5,6 @@ import { Typography, Box, Stack, Container, styled, Button } from '@mui/material
 import type { ProjectData } from '../../types/content';
 import AppWrapper from '../AppWrapper';
 import Footer from '../Layouts/lib/Footer';
-import TagList, { Tags } from '../Taglist';
 
 const StyledInner = styled('div')({
   width: '100%',
@@ -62,7 +61,7 @@ const StyledMarkdownContainer = styled('div')(({ theme }) => ({
   // add more styles for other elements as needed
 }));
 
-export default function Project({
+export default function Content({
   title,
   publishDate,
   // tags,

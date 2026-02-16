@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Project from '../../components/Projects';
+import Project from '../../components/Content';
 
 export async function getStaticPaths() {
   const latest = await getCollection('latest');

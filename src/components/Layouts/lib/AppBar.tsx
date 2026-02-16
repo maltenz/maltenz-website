@@ -286,8 +286,8 @@ function AppBar() {
                     Latest
                   </NavLink>
 
-                  <NavLink href="/merch">Art</NavLink>
-                  <NavLink href="/studio">Studio</NavLink>
+                  <NavLink href="/websites-&-apps">Websites & Apps</NavLink>
+                  <NavLink href="/about">About</NavLink>
                 </Box>
               </Box>
 
@@ -349,11 +349,11 @@ function AppBar() {
                   </NavLink>
 
                   <NavLink sx={mobileMenuSx} href="/art">
-                    Art
+                    Websites & Apps
                   </NavLink>
 
-                  <NavLink sx={mobileMenuSx} href="/studio">
-                    Studio
+                  <NavLink sx={mobileMenuSx} href="/about">
+                    About
                   </NavLink>
                 </Stack>
               </Box>

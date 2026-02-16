@@ -1,16 +1,16 @@
 ---
 import { getEntry } from 'astro:content';
-import type { WebsitesAppsEntry } from '../types/content';
+import type {  WebsitesAppsEntry } from '../types/content';
 import Layout from '../layouts/Layout.astro';
-import Project from '../components/Projects';
+import Wrapper from '../components/Content';
 
-// Get websites-apps content
+// Get about content
 const websitesAppsData: WebsitesAppsEntry = await getEntry('websites-apps', 'main') as WebsitesAppsEntry;
 const { Content } = await websitesAppsData.render();
 ---
 
-<Layout title="Websites & Apps - Malte">
-  <Project {...websitesAppsData.data} client:load>
+<Layout title="About - Malte">
+  <Wrapper {...websitesAppsData.data} client:load>
     <Content />
-  </Project>
+  </Wrapper>
 </Layout>
