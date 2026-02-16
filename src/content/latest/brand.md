@@ -1,5 +1,5 @@
 ---
-title: Brand
+title: About
 description: House — a space where imagination comes to life.
 image: /uploads/founding-aimii.svg
 tags:
