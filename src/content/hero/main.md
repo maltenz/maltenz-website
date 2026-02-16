@@ -1,6 +1,8 @@
 ---
 title: Websites & Apps
-description: ""
+description: Modern websites and apps built with clarity, performance, and
+  personality. This is where solid engineering meets visual storytelling —
+  scalable, production-ready solutions shaped with creative intent.
 vimeo: https://player.vimeo.com/video/1104424434?h=96c12fa9ce&loop=1&muted=1
 tag:
   - AI
