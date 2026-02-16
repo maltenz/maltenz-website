@@ -68,12 +68,3 @@ We are deeply experienced in **UI/UX design**, creating:
 * Interfaces that feel intentional and refined
 
 Performance, clarity, and aesthetic identity move together.
-
-If you’d like, we can:
-
-* Make this shorter and sharper
-* Make it more bold and manifesto-driven
-* Add subtle “hire us” conversion language
-* Or lean more into your personal authority (senior-level experience, production streaming platforms, etc.)
-
-What level of confidence do you want this page to project — polished studio or elite specialist?
