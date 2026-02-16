@@ -18,6 +18,7 @@ collections:
           - {label: "Vimeo URL", name: "vimeo", widget: "string"}
           - {label: "Tags", name: "tag", widget: "list", required: false}
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+          - { label: "Slug", name: "postSlug", widget: "string", required: false }
 
   - name: "about"
     label: "About Page"

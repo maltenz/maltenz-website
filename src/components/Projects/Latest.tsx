@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 
 import type { ProjectEntry } from '../../types/content';
 import Author from '../Author';
-import TagList, { Tags } from '../Taglist';
 
 type LatestProps = {
   data: ProjectEntry[];

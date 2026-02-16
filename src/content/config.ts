@@ -5,7 +5,7 @@ const heroCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    vimeo: z.string(),
+    postSlug: z.string().optional(),
     tag: z.array(z.string()).optional(),
     publishDate: z.date().optional(),
   }),

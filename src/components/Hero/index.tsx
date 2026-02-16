@@ -11,7 +11,6 @@ import { useThemeStore } from '../../stores/themeStore';
 import { yellowVariant, orangeVariant, darkPurpleVariant, purpleVariant } from '../../theme/themePrimitives';
 import type { HeroData } from '../../types/content';
 import Author from '../Author';
-import TagList, { Tags } from '../Taglist';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -171,18 +170,8 @@ export default function Hero({ data, variant = 'minimal', slogan = 'main' }: Her
                 </Box>
 
                 <StyledCardContent>
-                  {/* <TagList tags={[Tags.Sketch, Tags.Source]} sx={{ mb: 2 }} /> */}
-
-                  <Typography component={Link} href="#" variant="h4" mb={2}>
-                    Build your dreams with{' '}
-                    <Typography
-                      component="span"
-                      sx={{
-                        fontFamily: '"Pacifico", cursive',
-                      }}
-                    >
-                      Aimii
-                    </Typography>
+                  <Typography component={Link} href={data.postSlug} variant="h4" mb={2}>
+                    {data.title}
                   </Typography>
 
                   <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
