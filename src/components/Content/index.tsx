@@ -111,27 +111,6 @@ export default function Content({
             </Box>
 
             <StyledMarkdownContainer>{children}</StyledMarkdownContainer>
-
-            {/* Instagram Buttons */}
-            <Box sx={{ display: 'flex', gap: 2, mb: 4, justifyContent: 'center' }}>
-              <Button
-                variant="outlined"
-                href="https://instagram.com/dalisusanto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @dalisusanto
-              </Button>
-
-              <Button
-                variant="outlined"
-                href="https://instagram.com/maltbiscuit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @maltbiscuit
-              </Button>
-            </Box>
           </StyledInner>
         </Stack>
       </Container>
