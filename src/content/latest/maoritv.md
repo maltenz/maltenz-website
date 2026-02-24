@@ -17,8 +17,6 @@ This was a full greenfield project — architecture, implementation, performance
 
 This is the kind of work I pride myself on: clean foundations, strong architecture, and slick, responsive performance.
 
----
-
 ### 🚀 What I Delivered
 
 - Designed and built the entire React application from scratch
@@ -28,8 +26,6 @@ This is the kind of work I pride myself on: clean foundations, strong architectu
 - Implemented routing, state management, and persistence
 - Delivered production builds across multiple environments (dev, QA, UAT, prod)
 - Maintained CI/CD packaging and release versioning
-
----
 
 ### 🧱 Architecture & Stack
 
@@ -46,8 +42,6 @@ This is the kind of work I pride myself on: clean foundations, strong architectu
 
 The project was structured for long-term maintainability, clear domain separation, and predictable state management.
 
----
-
 ### ⚡ Performance & Experience
 
 Performance was a major focus from day one.
@@ -59,8 +53,6 @@ Performance was a major focus from day one.
 - Maintained strong Lighthouse performance metrics
 
 The result was a fast, modern streaming-ready web platform built to scale.
-
----
 
 ### 🧠 Ownership & Impact
 
