@@ -20,8 +20,6 @@ A creative umbrella that brings together the three things I care about most:
 
 Aimii represents the intersection of structured systems and emotional output — logic and intuition coexisting.
 
----
-
 ### 🎨 A Flexible Identity
 
 The Aimii mark was designed to live across contexts.
@@ -42,8 +40,6 @@ Modern but human.
 
 The goal was to create something modular — a visual system that feels consistent without being rigid.
 
----
-
 ### 🧠 What Aimii Means To Me
 
 Aimii is my container.
@@ -60,8 +56,6 @@ It represents independence, experimentation, and long-term thinking.
 I’ve spent years building platforms for broadcasters, streaming services, and live systems.  
 Aimii is where I build for myself — and for collaborators who value craft.
 
----
-
 ### 🚀 What I Hope It Becomes
 
 I see Aimii evolving into:
@@ -76,8 +70,6 @@ I see Aimii evolving into:
 Not just a portfolio.  
 Not just a brand.  
 But a foundation for building things that feel alive.
-
----
 
 Aimii is structured like my code:
 
