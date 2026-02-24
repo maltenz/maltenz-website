@@ -4,7 +4,7 @@ description: HBO Max Rollout (Web & React Native)
 image: /uploads/sky-go.jpg
 publishDate: 2026-02-10T10:25:00.000+13:00
 ---
-## Sky Go — HBO Max Rollout (Web & React Native)
+## HBO Max Rollout (Web & React Native)
 
 **Role:** Senior Frontend Engineer (Contract)  
 **Platforms:** Web (React) & React Native (iOS / Android)  
