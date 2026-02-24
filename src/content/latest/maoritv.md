@@ -4,7 +4,7 @@ description: Full Website Rebuild
 image: /uploads/maoritv-demo.jpg
 publishDate: 2026-02-10T10:09:00.000+13:00
 ---
-## Māori Television — Full Website Rebuild
+## Full Website Rebuild
 
 **Role:** Sole Frontend Engineer  
 **Platform:** Web (React)  
