@@ -1,5 +1,16 @@
 # Maltenz Website
 
+## 🔐 Netlify Account & Identity Notes
+This project is deployed via Netlify.
+For stability and account recovery purposes, the Netlify account and Netlify Identity admin access use:
+biscuitmalt@gmail.com
+Do not use hello@malte.nz for:
+Netlify account login
+Netlify Identity admin users
+Account recovery
+2FA verification
+The custom domain email previously caused verification and identity issues.
+
 A modern website built with Astro, React, and Material-UI, featuring a Netlify CMS for content management.
 
 ## 🚀 Quick Start
