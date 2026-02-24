@@ -4,7 +4,7 @@ description: Multi-Platform Quiz Ecosystem
 image: /uploads/bion-demo-main.jpg
 publishDate: 2026-02-10T10:01:00.000+13:00
 ---
-## Believe It Or Not Quiz — Multi-Platform Quiz Ecosystem
+## Multi-Platform Quiz Ecosystem
 
 **Role:** Frontend Lead  
 **Platforms:** Web, Responsive Mobile, Electron (Windows & macOS)  
