@@ -14,8 +14,6 @@ I was contracted to lead the rollout of Sky’s new **HBO Max section** across a
 
 This was a high-visibility release requiring close collaboration with product, design, backend, and platform teams to deliver a seamless, premium streaming experience across devices.
 
----
-
 ### 🚀 What I Delivered
 
 - Implemented the full HBO Max content section within the Sky Go ecosystem
@@ -25,8 +23,6 @@ This was a high-visibility release requiring close collaboration with product, d
 - Ensured feature parity between web and mobile platforms
 - Maintained high performance standards for streaming-heavy UI surfaces
 - Worked within and extended an existing enterprise design system
-
----
 
 ### 🧩 Key Challenges
 
@@ -39,8 +35,6 @@ Streaming platforms demand fast load times and smooth browsing — especially fo
 **Enterprise codebase integration**  
 The rollout needed to integrate cleanly into a mature production codebase without introducing regressions or impacting existing user flows.
 
----
-
 ### 🛠 Technical Stack
 
 - React (Web)
@@ -49,8 +43,6 @@ The rollout needed to integrate cleanly into a mature production codebase withou
 - Modular component architecture
 - API integration for dynamic content feeds
 - CI/CD within an enterprise OTT environment
-
----
 
 ### 📈 Impact
 
