@@ -16,8 +16,6 @@ This wasn’t a single application — it was a coordinated, live, multi-applica
 
 As Frontend Lead, I was responsible for architectural direction, cross-application consistency, and delivery across all frontend surfaces.
 
----
-
 ### 🧩 Platform Ecosystem
 
 The system consisted of multiple coordinated applications:
@@ -31,9 +29,7 @@ The system consisted of multiple coordinated applications:
 - **User Management Portal**
 - **Shared Middleware Package**
 
-Each app served a different role but operated on shared real-time state and synchronized business logic.
-
----
+Each app served a different role but operated on shared real-time state and synchronised business logic.
 
 ### ⚙️ What I Delivered
 
@@ -46,8 +42,6 @@ Each app served a different role but operated on shared real-time state and sync
 - Integrated Firebase middleware for authentication and user management
 - Delivered animated presentation and leaderboard systems
 - Established structured testing, linting, and release workflows
-
----
 
 ### 🔄 Real-Time State & Host Marking Complexity
 
@@ -76,8 +70,6 @@ All while ensuring:
 
 This required careful separation of concerns between UI state, server-driven state, and middleware orchestration.
 
----
-
 ### 🛠 Technical Stack
 
 - **React 18**
@@ -91,8 +83,6 @@ This required careful separation of concerns between UI state, server-driven sta
 - **Yarn Workspaces Monorepo**
 - Structured UAT / Production build pipelines
 
----
-
 ### 🎯 Leadership & Architectural Ownership
 
 As Frontend Lead, I:
@@ -105,8 +95,6 @@ As Frontend Lead, I:
 - Oversaw feature rollouts across the ecosystem
 
 This project required thinking in systems — not just components — designing orchestration layers rather than isolated screens.
-
----
 
 ### 🚀 Impact
 
