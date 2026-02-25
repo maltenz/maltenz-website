@@ -1,19 +1,81 @@
 ---
-title: About
-description: content
-image: /uploads/malte-wellington.jpg
-publishDate: 2026-02-25T16:43:00.000+13:00
+title: Terms
+description: Terms governing the use of this website and related services.
+publishDate: 2026-02-25T17:19:00.000+13:00
 ---
-### Hello — I’m Malte Boeing.
 
-I’m a frontend engineer and creative builder based in New Zealand, with over 15 years of experience in software development. My career has been shaped across both European and New Zealand environments — combining structured engineering discipline with creative exploration.
+# Terms & Conditions
 
-I design and develop platforms from the ground up — complex, multi-application systems, streaming platforms, live event software, and modern web experiences. I specialise not only in architecture and frontend systems, but also in crafting thoughtful, high-quality user interfaces.
+_Last updated: February 2026_
 
-Over the years I’ve led frontend delivery for national broadcasters, multi-platform quiz ecosystems, and real-time production tools. I’ve built React applications, Electron desktop apps, mobile-first systems, and large-scale monorepos designed to scale and last.
+Welcome to this website ("Site"). By accessing or using this Site, you agree to the following Terms & Conditions.
 
-But I’m not just interested in shipping features.
+If you do not agree with these terms, please do not use the Site.
 
-I’m interested in building systems that feel intentional — fast, responsive, well-structured, and visually refined. Clean architecture matters to me. 
+## 1. About This Site
 
-Outside of engineering, I work across music, design, and visual art. I think in systems, patterns, and composition — whether that’s code, sound, or interface design.
+This Site is operated by Malte Schulze-Boeing, a New Zealand-based software developer and creative professional.
+
+The Site showcases portfolio work, creative projects, and professional services.
+
+## 2. Use of This Website
+
+You agree to use this Site only for lawful purposes. You must not:
+
+- Attempt to gain unauthorised access to any part of the Site
+- Interfere with the Site’s operation or security
+- Use the Site in a way that could damage its functionality or reputation
+- Copy or scrape content for commercial use without permission
+
+## 3. Intellectual Property
+
+Unless otherwise stated, all content on this Site — including text, code, designs, visual artwork, branding, music and audio, graphics, and layouts — is the intellectual property of Malte Schulze-Boeing.
+
+You may:
+
+- View the content for personal use
+- Share links to the Site
+
+You may not:
+
+- Reproduce, distribute, or commercially exploit content without written permission.
+
+## 4. Portfolio & Case Studies
+
+Projects shown on this Site may include work completed for clients, employers, or collaborators. All trademarks, logos, and brand names belong to their respective owners.
+
+Displayed work is for demonstration purposes only and does not imply endorsement.
+
+## 5. Services & Engagement
+
+Any freelance or contract work agreed upon will be governed by a separate written agreement. Nothing on this Site constitutes a binding offer or contract.
+
+## 6. External Links
+
+This Site may contain links to third-party websites. I am not responsible for the content, policies, or practices of external websites.
+
+## 7. Disclaimer
+
+This Site is provided "as is" without warranties of any kind. While reasonable effort is made to ensure accuracy, no guarantees are made regarding completeness, reliability, or availability.
+
+Use of the Site is at your own risk.
+
+## 8. Limitation of Liability
+
+To the fullest extent permitted by law, I shall not be liable for any direct, indirect, incidental, or consequential damages arising from use of this Site.
+
+## 9. Changes to These Terms
+
+These Terms may be updated at any time without prior notice. Continued use of the Site constitutes acceptance of the updated Terms.
+
+## 10. Governing Law
+
+These Terms are governed by the laws of New Zealand.
+
+## 11. Contact
+
+For questions regarding these Terms, contact:
+
+**Malte Schulze-Boeing**  
+New Zealand  
+Email: your@email.com
