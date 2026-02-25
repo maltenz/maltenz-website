@@ -197,9 +197,9 @@ export default function Footer() {
           borderColor: 'divider',
         }}
       >
-        <FooterLink href="#">Privacy Policy</FooterLink>
+        <FooterLink href="/privacy">Privacy Policy</FooterLink>
 
-        <FooterLink href="#" sx={{ textAlign: 'center' }}>
+        <FooterLink href="/terms" sx={{ textAlign: 'center' }}>
           Terms of Service
         </FooterLink>
 
