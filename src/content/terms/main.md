@@ -76,7 +76,7 @@ These Terms are governed by the laws of New Zealand.
 
 For questions regarding these Terms, contact:
 
-**Malte Schulze-Boeing**  
+**Malte Boeing**  
 New Zealand  
 Email: your@email.com
 
