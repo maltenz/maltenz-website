@@ -4,7 +4,7 @@ description: A space where imagination comes to life.
 image: /uploads/founding-aimii.svg
 tags:
   - Brand
-publishDate: 1985-04-24T09:43:00.000+12:00
+publishDate: 2026-02-25T17:24:00.000+13:00
 postSlug: /about
 ---
 ## Aimii — A Creative Label
