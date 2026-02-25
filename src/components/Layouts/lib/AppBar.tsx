@@ -14,7 +14,6 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
 import { alpha } from '@mui/material/styles';
 import { gsap } from 'gsap';
 import useWindowSize from 'react-use/lib/useWindowSize';
@@ -22,7 +21,7 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 import { useThemeStore } from '../../../stores/themeStore';
 import type { ColorScheme } from '../../../stores/themeStore';
 import { orangeVariant, purpleVariant, darkPurpleVariant, yellowVariant } from '../../../theme/themePrimitives';
-import Logo, { getColors } from '../../Logo';
+import Logo from '../../Logo';
 
 type NavLinkProps = {
   href: string;
@@ -31,13 +30,58 @@ type NavLinkProps = {
   scrollToId?: string;
 };
 
-function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
-  const { colorScheme } = useThemeStore();
-  const theme = useTheme();
+function scrollToHashWithOffset(offset = 100) {
+  const { hash } = window.location;
+  if (!hash) return;
 
+  const id = decodeURIComponent(hash.slice(1));
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+/**
+ * Robust: attempts multiple times to survive Astro/React hydration timing.
+ */
+function useScrollToHash(offset = 100) {
+  useEffect(() => {
+    const attempt = () => scrollToHashWithOffset(offset);
+
+    // Try immediately
+    attempt();
+
+    // Try again next paint
+    const raf = requestAnimationFrame(attempt);
+
+    // Try again after a short delay (fonts/images/layout shifts)
+    const t1 = window.setTimeout(attempt, 50);
+    const t2 = window.setTimeout(attempt, 250);
+
+    // Also handle hash changes (e.g. clicking #latest while staying on /)
+    const onHashChange = () => attempt();
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.removeEventListener('hashchange', onHashChange);
+    };
+  }, [offset]);
+}
+
+function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
+  const theme = useTheme();
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (scrollToId) {
+    if (!scrollToId) return;
+
+    const isHome = window.location.pathname === '/';
+
+    if (isHome) {
       e.preventDefault();
+
       const element = document.getElementById(scrollToId);
       if (element) {
         const elementPosition = element.offsetTop;
@@ -49,6 +93,8 @@ function NavLink({ href, children, sx, scrollToId }: NavLinkProps) {
         });
       }
     }
+    // If NOT home, do nothing.
+    // Let the browser navigate naturally to "/#latest"
   };
 
   return (
@@ -184,6 +230,8 @@ function AppBar() {
     }
   }, [width, mobileMenuOpen, theme.breakpoints.values.md]);
 
+  useScrollToHash(100);
+
   const mobileMenuSx = {
     width: '100%',
     ...theme.typography.body1,
@@ -282,7 +330,7 @@ function AppBar() {
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                  <NavLink href={`${window.location.hostname}#latest`} scrollToId="latest">
+                  <NavLink href="/#latest" scrollToId="latest">
                     Latest
                   </NavLink>
 
