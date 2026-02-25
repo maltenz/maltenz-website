@@ -159,7 +159,7 @@ export default function Footer() {
               Services
             </Typography>
 
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="text.secondary" variant="body2" href="/websites-&-apps">
               Websites & Apps
             </Link>
           </Box>
