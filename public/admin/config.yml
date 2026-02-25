@@ -28,8 +28,28 @@ collections:
         file: "src/content/about/main.md"
         fields:
           - {label: "Title", name: "title", widget: "text"}
-          - {label: "Description", name: "description", widget: "text"}
           - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+  - name: "terms"
+    label: "Terms"
+    files:
+      - label: "Terms"
+        name: "terms"
+        file: "src/content/terms/main.md"
+        fields:
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+  - name: "privacy"
+    label: "Privacy"
+    files:
+      - label: "Privacy"
+        name: "privacy"
+        file: "src/content/privacy/main.md"
+        fields:
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "Description", name: "description", widget: "text"}
           - {label: "Tags", name: "tags", widget: "list", required: false}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Publish Date", name: "publishDate", widget: "datetime"}

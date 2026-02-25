@@ -22,7 +22,7 @@ const latestCollection = defineCollection({
   }),
 });
 
-const aboutCollection = defineCollection({
+const pageCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -47,6 +47,8 @@ const websitesAppsCollection = defineCollection({
 export const collections = {
   latest: latestCollection,
   hero: heroCollection,
-  about: aboutCollection,
+  about: pageCollection,
+  terms: pageCollection,
+  privacy: pageCollection,
   'websites-apps': websitesAppsCollection,
 };
