@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../components/Content";
+
+// Generate routes for all entries in the "pages" collection
+export async function getStaticPaths() {
+  const entries = await getCollection("pages");
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+if (!entry) {
+  throw new Error("Page not found");
+}
+
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} - Malte`}>
+  <Wrapper {...entry.data} client:load>
+    <Content />
+  </Wrapper>
+</Layout>

@@ -22,6 +22,17 @@ const latestCollection = defineCollection({
   }),
 });
 
+const pagesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    publishDate: z.date().optional(),
+  }),
+});
+
 const pageCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -47,8 +58,7 @@ const websitesAppsCollection = defineCollection({
 export const collections = {
   latest: latestCollection,
   hero: heroCollection,
+  pages: pagesCollection,
   about: pageCollection,
-  terms: pageCollection,
-  privacy: pageCollection,
   'websites-apps': websitesAppsCollection,
 };
