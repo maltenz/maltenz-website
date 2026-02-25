@@ -51,8 +51,6 @@ const StyledMarkdownContainer = styled('div')(({ theme }) => ({
 
   '& img ': {
     maxWidth: '100%',
-    border: '1px solid',
-    borderColor: 'divider',
   },
   '& a': {
     color: theme.palette.primary.main,
