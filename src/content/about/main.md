@@ -2,7 +2,7 @@
 title: About
 description: content
 image: /uploads/malte-wellington.jpg
-publishDate: 2026-02-25T16:43:00.000+13:00
+publishDate: 2026-02-25T17:07:00.000+13:00
 ---
 ### Hello — I’m Malte Boeing.
 
