@@ -282,7 +282,7 @@ function AppBar() {
                 </Link>
 
                 <Box sx={{ mt: 0.4, display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                  <NavLink href="#latest" scrollToId="latest">
+                  <NavLink href="/#latest" scrollToId="latest">
                     Latest
                   </NavLink>
 
