@@ -21,6 +21,8 @@ This is the foundation across everything we build — giving us:
 
 Whether it’s a marketing website, complex web application, or mobile product — the core thinking remains consistent and structured.
 
+![](/uploads/stack.png)
+
 ### Websites — Astro & Headless Architecture
 
 For modern websites, we prefer **Astro**.
