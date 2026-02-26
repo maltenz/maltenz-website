@@ -4,8 +4,6 @@ description: "How personal information is collected, used, and protected."
 publishDate: 2026-02-26
 ---
 
-# Privacy Policy
-
 This Privacy Policy explains how personal information is collected, used, and protected when you visit this website ("Site").
 
 By using this Site, you agree to the practices described in this policy.
