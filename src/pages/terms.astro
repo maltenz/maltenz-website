@@ -1,0 +1,16 @@
+---
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Wrapper from '../components/Content';
+
+// Get terms content
+const termsData: CollectionEntry<'terms'> = await getEntry('terms', 'main') as CollectionEntry<'terms'>;
+const { Content } = await termsData.render();
+---
+
+<Layout title="About - Malte">
+  <Wrapper {...termsData.data} client:load>
+    <Content />
+  </Wrapper>
+</Layout>

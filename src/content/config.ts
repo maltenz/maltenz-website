@@ -60,5 +60,7 @@ export const collections = {
   hero: heroCollection,
   pages: pagesCollection,
   about: pageCollection,
+  terms: pagesCollection,
+  privacy: pagesCollection,
   'websites-apps': websitesAppsCollection,
 };

@@ -1,0 +1,16 @@
+---
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Wrapper from '../components/Content';
+
+// Get privacy content
+const privacyData: CollectionEntry<'privacy'> = await getEntry('privacy', 'main') as CollectionEntry<'privacy'>;
+const { Content } = await privacyData.render();
+---
+
+<Layout title="Privacy - Malte">
+  <Wrapper {...privacyData.data} client:load>
+    <Content />
+  </Wrapper>
+</Layout>
