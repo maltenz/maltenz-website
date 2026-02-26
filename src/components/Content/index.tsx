@@ -63,7 +63,7 @@ export default function Content({
   title,
   publishDate,
   // tags,
-  image = 'https://placehold.co/600x300/7322c3/orange',
+  image,
   children,
 }: ProjectData & { children: ReactNode }) {
   const formattedDate = publishDate.toLocaleDateString('en-US', {

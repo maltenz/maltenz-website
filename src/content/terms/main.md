@@ -1,12 +1,8 @@
 ---
-title: Terms
+title: Terms & Conditions
 description: Terms governing the use of this website and related services.
 publishDate: 2026-02-25T17:19:00.000+13:00
 ---
-
-# Terms & Conditions
-
-_Last updated: February 2026_
 
 Welcome to this website ("Site"). By accessing or using this Site, you agree to the following Terms & Conditions.
 

@@ -6,7 +6,6 @@ const heroCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     postSlug: z.string().optional(),
-    tag: z.array(z.string()).optional(),
     publishDate: z.date().optional(),
   }),
 });
@@ -17,7 +16,6 @@ const latestCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     publishDate: z.date(),
   }),
 });
@@ -28,7 +26,6 @@ const pagesCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     image: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     publishDate: z.date().optional(),
   }),
 });
@@ -39,7 +36,6 @@ const pageCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     publishDate: z.date(),
   }),
 });
@@ -50,7 +46,6 @@ const websitesAppsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     publishDate: z.date(),
   }),
 });
