@@ -2,7 +2,7 @@
 title: About
 description: "Information about Malte Boeing, frontend engineer and creative builder."
 image: /uploads/malte-wellington.jpg
-publishDate: 2026-02-26T16:57:00.000+13:00
+publishDate: 2026-02-26T17:01:00.000+13:00
 ---
 # Hello — I’m Malte Boeing.
 
