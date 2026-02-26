@@ -1,9 +1,9 @@
 ---
 title: About
 image: /uploads/malte-wellington.jpg
-publishDate: 2026-02-26T16:57:00.000+13:00
+publishDate: 2026-02-26T17:01:00.000+13:00
 ---
-#Hello — I’m Malte Boeing.
+# Hello — I’m Malte Boeing.
 
 I’m a frontend engineer and creative builder based in New Zealand, with over 15 years of experience in software development. My career has been shaped across both European and New Zealand environments — combining structured engineering discipline with creative exploration.
 
